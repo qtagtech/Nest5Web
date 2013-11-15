@@ -1,0 +1,1181 @@
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css
+   ========================================================================== */
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+    url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+    url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'Entypo';
+    src: url('entypo/entypo-webfont.eot');
+    src: url('entypo/entypo-webfont.eot?#iefix') format('embedded-opentype'),
+    url('entypo/entypo-webfont.woff') format('woff'),
+    url('entypo/entypo-webfont.ttf') format('truetype'),
+    url('entypo/entypo-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'BebasNeue';
+    src: url('bebas_neue/bebasneue-webfont.eot');
+    src: url('bebas_neue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+    url('bebas_neue/bebasneue-webfont.woff') format('woff'),
+    url('bebas_neue/bebasneue-webfont.ttf') format('truetype'),
+    url('bebas_neue/bebasneue-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+#subscription{
+	background: #F18500;
+}
+.fixed-container{
+    background: #FFFFFF;
+    -webkit-shadow: 0px 0px 0px;
+    -moz-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
+
+}
+
+
+
+
+
+
+#title{ color:white; }
+
+
+
+
+.partner
+{
+	max-width: 20%;
+	margin: 0 2.5%;
+	
+} 
+
+.checkbox {
+    display: block;
+    width: 32%;
+    height: 27px;
+    overflow: hidden;
+    border: 0px solid #000;
+    border-radius: 0px;
+  }
+#smartList
+{
+	display: none;
+}
+
+#loading
+{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: none;
+}
+.loading-space
+{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: none;
+}
+#loading img
+{
+    width: 20%;
+    height: auto;
+    left: 50%;
+    position: relative;
+    margin: 0 0 0 -10%;
+}
+.loading-space img
+{
+    width: 20%;
+    height: auto;
+    left: 50%;
+    position: relative;
+    margin: 0 0 0 -10%;
+}
+
+
+
+/* ==============
+    ALL: Brands
+   ============== */
+.brand-image{
+    text-align: center;
+    }
+
+.brand-title h2 {
+font-family: BebasNeue;
+    font-size: 2em;
+    font-weight: bold;
+    }
+.brand-title a{
+text-decoration: none;
+
+    }
+
+.ca-menu:not(.index) li{
+
+
+    list-style: none;
+    width: 100%;
+    margin: 8px 0 8px 0;
+    font-size: 1em;
+    padding: 2px 0;
+    background: #555555;
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.ca-menu:not(.index) li a{
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding: 0;
+
+
+}
+.ca-icon:not(.index){
+
+    position: absolute;
+    font-family: 'entypo', cursive;
+    font-size: 3.2em;
+    color: #fff6bf;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 0 1%;
+    top: -0px;
+    font-weight: normal;
+
+}
+
+.sub{
+    color: #fff6bf;
+}
+
+.ca-main:not(.index){
+    margin: 5px 0;
+    opacity: 0.8;
+    text-align: center;
+    color: #ffffff;
+    font-weight: normal;
+
+}
+
+#sub-settings
+{
+    display: none;
+}
+
+
+
+
+
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+#main{
+	padding:30px 0;
+}
+#header-container header h1
+{
+	font-family: 'BebasNeue','Varela', Arial, sans-serif;
+	line-height: 1.1em;
+	text-align: center;
+}
+#logo
+{
+	position: relative;
+	width: 20%;
+	left: 40%;
+}
+#main article h1{
+	font-family: 'Varela', Arial, sans-serif;
+	line-height:1.1em;
+	text-align: center;
+	font-size:2em;
+}
+
+#subscription{
+	color:white;
+	padding:0px 5% 10px;
+}
+#fixed-container{
+    color:white;
+    padding:0px 0px 10px;
+}
+
+#footer-container footer{
+	color:white;
+	padding:20px 0;
+}
+
+	/* ====================
+    MOBILE: Checkboxes
+   ==================== */
+.checkbox {
+    display: block;
+    width: 32%;
+    height: 27px;
+    overflow: hidden;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }	
+ div:not(#foo) > input[type=checkbox] {
+    display: none;
+  }
+
+ div:not(#foo) > input[type=checkbox] + label {
+    text-indent: -9999px;
+    display: block;
+    width: 100%;
+    height: 27px;
+    line-height: 27px;
+    background: transparent url(../images/sprite2.png) no-repeat -56px 0;
+    -webkit-transition: background-position 0.3s ease-in-out;
+    -moz-transition: background-position 0.3s ease-in-out;
+  }
+
+  div:not(#foo) > input[type=checkbox]:checked + label {
+    -webkit-transition: background-position 0.3s ease-in-out;
+    -moz-transition: background-position 0.3s ease-in-out;
+    background-position: -3px 0;
+  }
+  
+ /* ==============
+    MOBILE: Footer
+   ============== */
+
+
+
+/* ==============
+    MOBILE: Social Links
+   ============== */
+   .social-links
+   {
+   	position: absolute;
+   	left: 10%;
+   	width: 90%;
+   	background: #fff;
+   	margin: 5px 0;
+   }
+   .social-links a
+   {
+   	background: #fff;
+   	width: 20%;
+   	margin: 0 0 0 2%;
+   	display: inline-block;
+   	float: left;
+
+   	
+   	
+   }
+/* ==============
+MOBILE: Messages
+============== */
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 1% 15px 10%;
+    background-repeat: no-repeat;
+    background-position: 1% center;
+    background-size: 8% auto;
+    font-size: 0.9em;
+    line-height: 1em;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url("../images/info.png");
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url("../images/success.png");
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url("../images/warning.png");
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url("../images/error.png");
+}
+
+.validation {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url("../images/warning.png");
+    display: none;
+}
+
+#errorMessage
+{
+    display: none;
+}
+
+#ranking
+{
+  width: 20%;
+    float: right;
+}
+
+
+
+
+/* ==============
+MOBILE: Points
+============== */
+
+
+#points-counter
+{
+    background: #FFCC29;
+    width: 100%;
+    color: #000000;
+    border-top: solid 15px #e58837;
+    margin: 5px 0;
+    border-bottom: solid 5px #e58837;
+    font-family: 'BebasNeue', cursive;
+    line-height: 2.5em;
+    font-weight: normal;
+}
+
+#points-counter h4
+{
+   font-weight: normal;
+   width: 35%;
+   font-size: 2em;
+   margin: 0 0 0 35%;
+   padding: 0;
+}
+
+#points-counter span
+{
+    font-weight: bold;
+    font-size: 4em;
+    width: 30%;
+    margin: 0 0 0 35%;
+    padding: 0;
+}
+
+
+/* ==============
+MOBILE: Profile
+============== */
+
+.profile-header img, .profile-header h1 {
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+
+}
+.profile-header img{
+    left: 25%;
+    width: 50%;
+    height: auto;
+}
+
+.profile-header h1
+{
+    width: 90%;
+    left: 5%;
+}
+
+.race-title{
+    font-family: 'BebasNeue',cursive;
+    font-size: 3em;
+}
+
+.race-explanation{
+    font-weight: normal;
+}
+
+
+.race-steps {
+
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+.race-steps a{
+    text-decoration: none;
+    height: 100%;
+
+}
+.item-disabled
+{
+
+    color: #000000;
+
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+.item-enabled{
+
+    color: #000000;
+}
+.item-done{
+    color: #ffffff;
+
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+}
+.race-steps li {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0px 2px;
+    display: block;
+    border: solid 3px #ffcc29;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #f18500;
+
+}
+
+.item-icon
+{
+    display: block;
+    width: 10%;
+    margin: 0;
+    padding: 10px 0%;
+    float: left;
+    text-align: center;
+    font-size: 2em;
+
+    font-family: 'websymbolsregular', cursive;
+}
+.race-item{
+   display: block;
+    width: 65%;
+    margin: 0;
+    padding: 10px 2%;
+    float: left;
+    text-align: center;
+    font-size: 0.6em;
+    overflow: hidden;
+}
+
+.item-lock
+{
+
+
+    width: 10%;
+    margin: 0 0 0 0;
+    padding: 0px 0%;
+    float: left;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'entypo', cursive;
+
+
+}
+.race-points{
+
+    display: block;
+    width: 10%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.item-explanation{
+    position: relative;
+    width: 98%;
+    margin: -20px 0 20px 0;
+    padding: 0px 2%;
+    display: block;
+    border: dotted 2px #ffe45c;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    font-family: 'varela',cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 #title{ padding-top:20px; }
+
+
+/* ===== Primary Styles ========================================================
+   Author:
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+
+@media only screen and (min-width: 480px) {
+
+
+	/* ====================
+    INTERMEDIATE: Checkboxes
+   ==================== */
+.checkbox {
+    display: block;
+    width: 17%;
+    height: 27px;
+    overflow: hidden;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  div:not(#foo) > input[type=checkbox] {
+    display: none;
+  }
+
+  div:not(#foo) > input[type=checkbox] + label {
+    text-indent: -9999px;
+    display: block;
+    width: 100%;
+    height: 27px;
+    line-height: 27px;
+    background: transparent url(../images/sprite2.png) no-repeat -56px 0;
+    -webkit-transition: background-position 0.3s ease-in-out;
+    -moz-transition: background-position 0.3s ease-in-out;
+  }
+
+  div:not(#foo) > input[type=checkbox]:checked + label {
+    -webkit-transition: background-position 0.3s ease-in-out;
+    -moz-transition: background-position 0.3s ease-in-out;
+    background-position: -3px 0;
+  }
+
+
+/* ==============
+    INTERMEDIATE: Social Links
+   ============== */
+   .social-links
+   {
+   	position: relative;
+   	display: block;
+   	float: left;
+   	left: 25%;
+   	width: 70%;
+   	background: none;
+   	margin: 0px 0 0 0;
+   	padding: 0 0;
+   	clear: both;
+   	
+   }
+   .social-links a
+   {
+   	background: none;
+   	width: 10%;
+   	margin: 0 0 0 1%;
+   	display: inline-block;
+   	float: left;
+   	
+   	
+   }
+
+
+    /* ==============
+   INTERMEDIATE: Points
+   ============== */
+
+    #points-counter
+    {
+        display: block;
+        float: left;
+        padding: 20px 0;
+    }
+
+
+    #points-counter h4
+    {
+        font-weight: normal;
+        display: block;
+        font-size: 2em;
+        float: right;
+        padding: 0;
+        margin: 0 0;
+    }
+
+    #points-counter span
+    {
+        font-weight: bold;
+        font-size: 4em;
+        display: block;
+        float: right;
+        padding: 0;
+        margin: 0 0;
+    }
+
+
+    /* ==============
+INTERMEDIATE: Profile
+============== */
+
+    .profile-header img, .profile-header h1 {
+
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+
+    }
+    .profile-header img{
+        left: 40%;
+        width: 20%;
+        height: auto;
+    }
+
+    .profile-header h1
+    {
+        width: 90%;
+        left: 5%;
+    }
+
+
+    .race-item{
+        display: block;
+        width: 65%;
+        margin: 0;
+        padding: 10px 2%;
+        float: left;
+        text-align: center;
+        font-size: 1em;
+        overflow: hidden;
+    }
+
+
+    .race-points{
+
+        display: block;
+        width: 10%;
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+
+
+	
+	
+}
+
+@media only screen and (min-width: 768px) {
+
+
+
+
+
+
+	
+	/* ============
+    WIDE: Checkboxes
+   ============ */
+.checkbox {
+    display: block;
+    width: 100%;
+    height: 27px;
+    overflow: hidden;
+    border-radius: 0px;
+  }	
+  div:not(#foo) > input[type=checkbox] {
+    display: none;
+  }
+
+ div:not(#foo) > input[type=checkbox] + label {
+    text-indent: -9999px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    line-height: 27px;
+    background: url(../images/checkbox.png) no-repeat;
+    -webkit-transition: none;
+    -moz-transition: none;
+  }
+
+  div:not(#foo) > input[type=checkbox]:checked + label {
+    
+    background-position: -18px 0px;
+    width: 17px;
+    height: 17px;
+    -webkit-transition: none;
+    -moz-transition: none;
+  }
+  
+
+    /* ============
+    WIDE: Settings Menu
+   ============ */
+
+    .ca-menu:not(.index) li:hover{
+        border-color: #333;
+        z-index: 999;
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    .ca-menu:not(.index) li:hover .ca-icon:not(.index){
+        color: #fff6bf;
+        font-size: 60px;
+        top: 0px;
+        text-shadow: 0px 0px 1px #000;
+        -webkit-animation: moveFromBottom 700ms ease;
+        -moz-animation: moveFromBottom 700ms ease;
+        -ms-animation: moveFromBottom 700ms ease;
+    }
+
+/* ==============
+    WIDE: Social Links
+   ============== */
+   .social-links
+   {
+   	margin: 0px 0 0 0;
+
+   }
+
+    /* ==============
+   WIDE: Points
+   ============== */
+
+    #points-counter
+    {
+        width: 130px;
+        height: 130px;
+        border: 10px solid #E58837;
+        overflow: hidden;
+        position: fixed;
+        top: 2.4em;
+        right: 2.9%;
+        background: #FFCC29;
+        z-index: 9999;
+        margin-left:-48px;
+        -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        -webkit-border-radius: 75px;
+        -moz-border-radius: 75px;
+        border-radius: 75px;
+        padding: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+
+        /* IE 5-7 */
+        filter: alpha(opacity=65);
+
+        /* Netscape */
+        -moz-opacity: 0.65;
+
+        /* Safari 1.x */
+        -khtml-opacity: 0.65;
+
+        /* Good browsers */
+        opacity: 0.65;
+    }
+
+
+    #points-counter h4
+    {
+        font-weight: normal;
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        width: 100%;
+        font-size: 2em;
+        padding: 0;
+        margin: 0 0;
+    }
+
+    #points-counter span
+    {
+        position: absolute;
+        top: 1.1em;
+        left: 50%;
+        font-weight: bold;
+        font-size: 3em;
+        padding: 0;
+        margin: 0 0 0 -30%;
+    }
+
+
+    /* ==============
+   WIDE: Profile
+   ============== */
+    .clear{ clear: both;}
+    .profile-header img, .profile-header h1 {
+
+        margin: 0;
+        padding: 0;
+        position: static;
+        display: block;
+        float: left;
+
+
+    }
+    .profile-header img{
+        float: left;
+        width: 25%;
+        height: auto;
+    }
+
+    .profile-header h1
+    {
+        float: left;
+        width: 60%;
+        margin: 0 5%;
+
+    }
+    .profile-header h3
+    {
+        font-weight: normal;
+        float: right;
+        font-size: 0.9em;
+    }
+    .race-steps {
+
+        position: relative;
+        display: block;
+        padding: 0;
+        margin: 50px 0;
+        max-width: 400px;
+    }
+    .race-steps a{
+        text-decoration: none;
+        height: 100%;
+
+    }
+    .race-steps li {
+        position: relative;
+        width: 100%;
+        margin: 30px 0;
+        padding: 0px 2px;
+        display: block;
+        border: solid 3px #ffcc29;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+
+
+    }
+    .item-icon
+    {
+        display: block;
+        width: 10%;
+        margin: 0;
+        padding: 10px 0%;
+        float: left;
+        text-align: center;
+        font-size: 2em;
+
+        font-family: 'websymbolsregular', cursive;
+    }
+    .race-item{
+        display: block;
+        width: 65%;
+        margin: 0;
+        padding: 10px 2%;
+        float: left;
+        text-align: center;
+        font-size: 1em;
+        overflow: hidden;
+    }
+
+    .item-lock
+    {
+
+
+        width: 10%;
+        margin: 0 0 0 0;
+        padding: 0px 0%;
+        float: left;
+        text-align: center;
+        font-size: 4em;
+        font-family: 'entypo', cursive;
+
+
+    }
+    .race-points{
+
+        display: block;
+        width: 10%;
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+
+    /* ==============
+   WIDE: Profile
+   ============== */
+    .fixed-container-social{
+      margin: 4em 0%;
+      float:right;
+      max-width: 350px;
+
+    }
+
+    /* ==============
+    Wide: Brands
+   ============== */
+    .brand-image{
+
+        display: block;
+        width: 40%;
+        float: left;
+        clear: left;
+
+    }
+    .brand-title
+    {
+
+        display: block;
+        float: left;
+        width: 40%;
+        margin: 20px 10%;
+
+    }
+    .brand-title h2 {
+        font-family: BebasNeue;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+
+    /* ============
+    WIDE: Article Backgrounds
+   ============ */
+
+    .background_article{
+
+        background: url(../images/bg_muneca.png) no-repeat center center fixed;
+        -webkit-background-size: auto 100%;
+        -moz-background-size: auto 100%;
+        -o-background-size: auto 100%;
+        background-size: auto 100%;
+
+
+    }
+
+
+
+
+
+
+	
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+}
+
+
+
+
+/* =============================================================================
+   Form
+   ========================================================================== */
+  /*
+   :invalid { 
+  border-color: #e88;
+  -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+  -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+  -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+  -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+  box-shadow:0 0 5px rgba(255, 0, 0, .8);
+}
+
+:required {
+  border-color: #88a;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+  -ms-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+  box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+}
+
+form {
+  width:100%;
+  margin: 20px auto;
+}
+
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border:1px solid #ccc;
+  font-size:1em;
+  width:100%;
+  min-height:30px;
+  display:block;
+  margin-bottom:15px;
+  margin-top:5px;
+  outline: none;
+
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -o-border-radius:5px;
+  -ms-border-radius:5px;
+  border-radius:5px;
+}
+button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border:1px solid #ccc;
+    font-size:1em;
+    width:100%;
+    min-height:30px;
+    display:block;
+    margin-bottom:15px;
+    margin-top:5px;
+    outline: none;
+
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -o-border-radius:5px;
+    -ms-border-radius:5px;
+    border-radius:5px;
+    background:#555555;
+    padding:10px 0;
+    color: #ffffff;
+}
+button:hover {
+    background:#d9f3ff;
+    color: #000000;
+}
+button:active {
+    background:#ffffff;
+    color: #000000;
+}
+
+input[type=submit] {
+  background:#555555;
+  padding:10px 0;
+  color: #ffffff;
+}
+input[type=submit]:hover {
+    background:#d9f3ff;
+    color: #000000;
+}
+input[type=submit]:active {
+    background:#ffffff;
+    color: #000000;
+}
+form a
+{
+	font-size: 0.8em;
+}
+*/
+
+
+/* =============================================================================
+Animations
+========================================================================== */
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform: translateY(100%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(100%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(100%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -ms-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+
+
+/*Cosas Especiales*/
+
+/*Flechas*/
+

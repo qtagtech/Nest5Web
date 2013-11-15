@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+
+h2{
+    margin: 30px 0 40px 0;
+    font-size: 2.9em;
+    text-align: center;
+    background: #f39c12;
+    color: #111;
+    border-radius: 5px;
+}
+.wrap {
+    width: 550px;
+    margin: 50px auto;
+}
+
+.content{
+    width: 500px;
+    /*height: 600px;*/
+    position: relative;
+    margin: 0 auto;
+}
+
+.mail {
+    margin: 30px 0;
+    width: 500px;
+    height: 80px;
+    background: ;
+    /*border-radius: 100px;*/
+    z-index: 100px;
+    overflow: hidden;
+}
+
+.message {
+    font-size: 1.0em;
+    width: 410px;
+    padding: 9px 0;
+}
+
+.img {
+    margin: 0 10px 0 0;
+    float:left;
+    height: 80px;
+    /*border-radius: 100px;*/
+}
+
+.delete {
+    color: #000;
+    position: absolute;
+    height: 30px;
+    /*width: 50px;*/
+    border-radius: 100px;
+    background-color: #fff;
+    /*cursor: pointer;*/
+    margin: 5px 0 0 210px;
+    z-index: 200;
+
+    -webkit-transition: all 0.2s;
+    display: none;
+}
+.delete p {
+    font-size: 0.7em;
+    padding: 0px 7px;
+}
+
+.delete:hover {
+    background-color: #FF988E;
+    color: #fff;
+
+    -webkit-transition: all 0.2s;
+}
+.linet{
+    cursor: pointer;
+}

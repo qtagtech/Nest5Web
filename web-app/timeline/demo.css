@@ -1,0 +1,28 @@
+body {
+    background-color: #EEEEEE;
+}
+select {
+    border: 1px solid #222222;
+    background: #666666;
+    color: #FFFFFF;
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+}
+#config {
+    margin-bottom: 20px;
+}
+#timeline.demo5 {
+    width: 600px;
+    margin: 0px auto;
+}
+@media screen and (max-width: 600px) {
+    #timeline.demo5 {
+        width: 100%;
+    }
+}
+@media screen and (orientation:portrait) {
+    #timeline.demo5 {
+        width: 100%;
+    }
+}

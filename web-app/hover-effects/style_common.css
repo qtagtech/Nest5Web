@@ -1,0 +1,64 @@
+.view {
+   width: 250px;
+   height: 250px;
+   margin: 10px;
+   /*border: 10px solid #111;*/
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   -webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   -moz-box-shadow: 1px 1px 2px #e6e6e6;
+   box-shadow: 1px 1px 2px #e6e6e6;
+   cursor: default;
+    display: inline-block;
+}
+.view .mask,.view .content {
+   width: 250px;
+   height: 250px;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
+.view img {
+   display: block;
+   position: relative;
+}
+.view h2 {
+    font-family: 'Passion One', cursive!important;
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 17px;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 20px 0 0 0;
+}
+.view p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view a.informa {
+   display: inline-block;
+   text-decoration: none;
+   padding: 1px 5px;
+   background: none;
+   color: red;
+   font-size: 7em;
+   text-transform: uppercase;
+   -webkit-text-shadow: 0 0 1px #000;
+   -moz-text-shadow: 0 0 1px #000;
+   text-shadow: 0 0 1px #000;
+
+}
+.view a.informa: hover {
+   -webkit-text-shadow: 0 0 5px #000;
+   -moz-text-shadow: 0 0 5px #000;
+   text-shadow: 0 0 5px #000;
+}
