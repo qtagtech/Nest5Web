@@ -110,7 +110,8 @@ class FacebookAuthService {
                     uid: token.uid,
                     date: json.birthday ?: "00/00/0000",
                     referer: " ",
-                    phone: " "
+                    phone: " ",
+                    magnetic5: "0000000000000000"
 
                     ).save(failOnError: true,flush: true)
 

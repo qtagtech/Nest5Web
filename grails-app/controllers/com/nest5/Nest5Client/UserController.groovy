@@ -84,6 +84,7 @@ class UserController {
         user.smartphoneBrand = params.smartphone ? params.smartphoneBrand : "NONE"
         user.date = params.date ? params.date : "NONE"
         user.phone = params.phone ? params.phone : "NONE"
+        user.magnetic5 = "0000000000000000"
         String charset = (('A'..'Z') + ('0'..'9')).join()
         Integer length = 18
         String randomString = RandomStringUtils.random(length, charset.toCharArray())
@@ -891,6 +892,7 @@ class UserController {
             user.smartphoneBrand = params.smartphone ? params.smartphoneBrand : "NONE"
             user.date = params.date ? params.date : "NONE"
             user.phone = params.phone ? params.phone : "NONE"
+            user.magnetic5 = "000000000000000"
             String charset = (('A'..'Z') + ('0'..'9')).join()
             Integer length = 18
             String randomString = RandomStringUtils.random(length, charset.toCharArray())
@@ -1121,6 +1123,7 @@ class UserController {
             //user.iphoneID = params.iphone
             user.rimID = "0"
             user.enabled = true
+            user.magnetic5 = "0000000000000000"
             //user.iphoneID = "0"
             //user.rimID = "0"
 
@@ -1645,7 +1648,8 @@ class UserController {
                 enabled: true,
                 accountExpired: false,
                 accountLocked: false,
-                passwordExpired: false
+                passwordExpired: false,
+                magnetic5: "0000000000000000"
         )
         if(!user.save(flush: true)){
             result = [status: 0, errors: "hubo errores creando el usuario, inténtalo de nuevo."]
@@ -1971,9 +1975,10 @@ class UserController {
 //    REegistrar usuario de manera manual en punto de venta o lugar publico
 
     def manual(){
+
         def empresas = Company.list()
         def companies = empresas.findAll{it.name != "Dummy Company" }
-       [companies: companies]
+       [companies: companies,prueba: "esta es la prueba de controlador"]
     }
 
 
@@ -2052,7 +2057,8 @@ class UserController {
                 enabled: true,
                 accountExpired: false,
                 accountLocked: false,
-                passwordExpired: false
+                passwordExpired: false,
+                magnetic5: "0000000000000000"
         )
         if(!user.save(flush: true)){
             result = [status: 0, errors: "hubo errores creando el usuario, inténtalo de nuevo."]

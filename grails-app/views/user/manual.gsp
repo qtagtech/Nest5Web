@@ -65,8 +65,8 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <g:each in="${companies}" >
-                                    <li><a href="#" id="company_${it?.id}">${it?.name}</a></li>
+                                <g:each in="${companies}" status="i" var="it" >
+                                    <li><a href="#" id="company_${it?.id}">${it?.name} - ${prueba}${[i]}</a></li>
                                 </g:each>
                             </ul>
                         </div>
