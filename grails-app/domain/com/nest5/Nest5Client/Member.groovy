@@ -1,6 +1,6 @@
 package com.nest5.Nest5Client
 
-class Member {
+class Member extends SecUser{
     static hasMany = [jobs: JobPosition, skills: Skill,studies: Education]
     String name
     String position

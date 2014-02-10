@@ -3,6 +3,7 @@ import com.nest5.Nest5Client.Company
 import com.nest5.Nest5Client.Country
 import com.nest5.Nest5Client.EventType
 import com.nest5.Nest5Client.Heart
+import com.nest5.Nest5Client.Member
 import com.nest5.Nest5Client.SecRole
 import com.nest5.Nest5Client.SecUserSecRole
 import com.nest5.Nest5Client.User
@@ -18,6 +19,7 @@ class BootStrap {
         def apiRole = SecRole.findByAuthority('ROLE_API') ?: new SecRole(authority: 'ROLE_API').save(failOnError: true)
         def facebookRole = SecRole.findByAuthority('ROLE_FACEBOOK') ?: new SecRole(authority: 'ROLE_FACEBOOK').save(failOnError: true)
         def companyRole = SecRole.findByAuthority('ROLE_COMPANY') ?: new SecRole(authority: 'ROLE_COMPANY').save(failOnError: true)
+        def memberRole =  SecRole.findByAuthority('ROLE_MEMBER') ?: new SecRole(authority: 'ROLE_MEMBER').save(failOnError: true)
 
         def adminUser = User.findByUsername('admin') ?: new User(
                 username: 'admin',
@@ -30,6 +32,22 @@ class BootStrap {
                 phone: '3014597229',
                 referer: 'none',
                 date: '1986/01/13').save(failOnError: true)
+        def member = Member.findByUsername('sara.monsalve@qtagtech.com') ?: new Member(
+                username: 'sara.monsalve@qtagtech.com',
+                password: 'farroyavefami',
+                enabled: true,
+                name : 'Sara Monsalve',
+                email: 'sara.monsalve@qtagtech.com',
+                date: new Date(),
+                position: "B2B Manager",
+                bio: "Publicista",
+                twitter: 'saramonsal',
+                linkedin: 'none',
+                gplus: 'none',
+                webaddress: 'sara.monsalve',
+                website: 'none',
+                address: 'Cara 37 #8A 43').save(failOnError: true)
+
         def apiUser = User.findByUsername('apiadmin') ?: new User(
                 username: 'apiadmin',
                 password: 'zAxEE9U1691Nq0h5JiJ0X20tcayF5RTpmzIOctVGNQNBByHslznDR0VP7rWOuyW',
@@ -94,6 +112,9 @@ class BootStrap {
         }
         if (!dummyCompany.authorities.contains(companyRole)) {
             SecUserSecRole.create dummyCompany, companyRole
+        }
+        if (!member.authorities.contains(memberRole)){
+            SecUserSecRole.create(member,memberRole)
         }
 
          /*
