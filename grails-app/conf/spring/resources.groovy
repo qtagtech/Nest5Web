@@ -20,7 +20,7 @@ beans = {
             redirectStrategy = ref('redirectStrategy')
             adminUrl = "/user/feed"
             userUrl = "/company/panel"
-
+            memberUrl = "/adminTask/dashboard"
         }
     }
 }

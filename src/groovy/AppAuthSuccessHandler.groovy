@@ -9,6 +9,7 @@ class AppAuthSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandle
 
     String companyUrl
     String userUrl
+    String memberUrl
 
     @Override
     protected String determineTargetUrl(HttpServletRequest request, HttpServletResponse response) {
@@ -17,8 +18,11 @@ class AppAuthSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandle
             return companyUrl
         }
 
-        if (SpringSecurityUtils.ifAllGranted('ROLE_COUPLE')) {
+        if (SpringSecurityUtils.ifAllGranted('ROLE_USER')) {
             return userUrl
+        }
+        if (SpringSecurityUtils.ifAllGranted('ROLE_MEMBER')){
+            return memberUrl
         }
 
         return super.determineTargetUrl(request, response);
