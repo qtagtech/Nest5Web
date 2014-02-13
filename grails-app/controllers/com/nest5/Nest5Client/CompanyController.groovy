@@ -196,6 +196,8 @@ class CompanyController {
 
     @Secured(['ROLE_COMPANY','ROLE_ADMIN'])
     def panel(){
+
+
         def activity = params.activity
         def template
         def menu
@@ -214,6 +216,9 @@ class CompanyController {
 
 
         def user = springSecurityService.currentUser
+        def config = CompanyConfig.findByCompany(user) ?: new CompanyConfig(company: user).save(flush:true,failOnError: true)      //no more properties are set since every config has a default value.
+        if(config.advancedPanel)
+            redirect(action: 'dashboard')
         //def userInstance = springSecurityService.currentUser
         //def stats = userService.getStats(userInstance)
         //def complete = (userInstance.phone != "NONE") && (userInstance.name != "NONE") && (userInstance.email != "NONE") && (userInstance.date != "NONE") ?: false
@@ -429,6 +434,11 @@ class CompanyController {
 
 
 
+    }
+
+    @Secured(['ROLE_COMPANY'])
+    def dashboard(){
+        def user = springSecurityService.currentUser
     }
 
     @Secured(["ROLE_COMPANY"])
