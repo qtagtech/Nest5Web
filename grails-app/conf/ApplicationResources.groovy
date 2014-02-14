@@ -188,6 +188,42 @@ modules = {
         resource id: 'jquerybrowserfix', url:'js/libs/jquery.mb.browser.min.js', disposition: 'head'
     }
 
+    dashboard{
+
+        resource id: 'dashboard', url:'js/dashboard/dashboard.js'
+    }
+    tables{
+
+        resource id: 'tables', url:'js/dashboard/tables.js'
+    }
+
+    jquerydatatables{
+
+        resource id: 'jquerydatatables', url:'js/dashboard/plugins/tables/dataTables/jquery.dataTables.min.js'
+    }
+    tabletools{
+
+         dependsOn('jquerydatatables')
+        resource id: 'tabletools', url:'js/dashboard/plugins/tables/dataTables/TableTools.min.js'
+    }
+    zeroclipboard{
+
+        dependsOn('tabletools')
+        resource id: 'zeroclipboard', url:'js/dashboard/plugins/tables/dataTables/ZeroClipboard.js'
+    }
+    responsivetables{
+
+        dependsOn('zeroclipboard')
+        resource id: 'responsivetables', url:'js/dashboard/plugins/tables/responsive-tables/responsive-tables.js'
+    }
+    datatables{
+
+        resource id: 'datatables', url:'js/dashboard/datatable.js'
+    }
+
+
+
+
 
 
 }
