@@ -439,6 +439,22 @@ class CompanyController {
     @Secured(['ROLE_COMPANY'])
     def dashboard(){
         def user = springSecurityService.currentUser
+        def youarehere = "Dashboard"
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+
+    @Secured(['ROLE_COMPANY'])
+    def tables(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Tablas Generales"
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+    @Secured(['ROLE_COMPANY'])
+    def datatable(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Tablas Generales"
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
 
     @Secured(["ROLE_COMPANY"])
