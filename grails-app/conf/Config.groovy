@@ -74,6 +74,7 @@ environments {
         grails.plugins.springsecurity.facebook.secret='c75f74270ce8dfdb455f05304fa68fc1'
         /*grails.plugins.springsecurity.facebook.appId='550109801691585'//Production
         grails.plugins.springsecurity.facebook.secret='513001ad6358dbb1cadedc820bd56b07'*/
+        com.nest5.Nest5Client.bigDataServerURL = "http://localhost:8090"
     }
     production {
         grails.logging.jul.usebridge = true
@@ -87,6 +88,7 @@ environments {
         grails.plugins.springsecurity.facebook.secret='c75f74270ce8dfdb455f05304fa68fc1'*/
         grails.plugins.springsecurity.facebook.appId='550109801691585'
         grails.plugins.springsecurity.facebook.secret='513001ad6358dbb1cadedc820bd56b07'
+        com.nest5.Nest5Client.bigDataServerURL = "http://pruebamongo-qtagtech.rhcloud.com"
 
     }
 }
