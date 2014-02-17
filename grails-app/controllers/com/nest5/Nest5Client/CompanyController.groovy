@@ -3,6 +3,10 @@ package com.nest5.Nest5Client
 import grails.converters.JSON
 import grails.plugins.springsecurity.Secured
 import groovy.time.TimeCategory
+import groovyx.net.http.*
+import static groovyx.net.http.ContentType.*
+import static groovyx.net.http.Method.*
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class CompanyController {
@@ -454,7 +458,42 @@ class CompanyController {
     def datatable(){
         def user = springSecurityService.currentUser
         def youarehere = "Tablas Generales"
-        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+        //check nest5 server since it hasn't synced
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = '/Nest5BusinessData/databaseOps/allSales'
+            uri.query = [company:318]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status != 1){
+
+        }
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,sales: jsonData?.payload]
+
     }
 
     @Secured(["ROLE_COMPANY"])

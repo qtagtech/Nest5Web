@@ -25,9 +25,9 @@ grails.project.dependency.resolution = {
         inherits true // Whether to inherit repository definitions from plugins
 
         grailsPlugins()
-        grailsHome()
-        grailsCentral()
-
+        //grailsHome()
+        //grailsCentral()
+        mavenRepo "http://repo.grails.org/grails/plugins"
         mavenLocal()
         mavenCentral()
 
