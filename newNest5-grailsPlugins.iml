@@ -18,11 +18,15 @@
           <unit-entry name="Gorm" />
           <unit-entry name="sessionFactory" />
         </datasource-map>
+        <naming-strategy-map />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins/ajax-proxy-0.1.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins/ajax-proxy-0.1.1/src/java" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins/cache-1.0.1">
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins/cache-1.0.1/src/java" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins/cache-1.0.1/src/groovy" isTestSource="false" />
@@ -101,6 +105,8 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.ezmorph/ezmorph/jars/ezmorph-1.0.6.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.json-lib/json-lib/jars/json-lib-2.3-jdk15.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

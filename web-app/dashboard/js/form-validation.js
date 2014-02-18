@@ -2,7 +2,7 @@
 $(document).ready(function() { 	
 
 	//------------- Select plugin -------------//
-	$("#select1").select2();
+//	$("#select1").select2();
 
 	//create success msg for wizard
 	function createSuccessMsg (loc, msg) {
@@ -12,7 +12,7 @@ $(document).ready(function() {
 	}
 
     //------------- Form wizard with steps-------------//
- 	$("#wizard").formwizard({ 
+ 	/*$("#wizard").formwizard({
 	 	formPluginEnabled: true,
 	 	validationEnabled: true,
 	 	focusFirstInput : true,
@@ -86,96 +86,39 @@ $(document).ready(function() {
 				gender: "Choise a gender"
 			}	
 	 	}
-	});
+	});*/
 
    
     
 	//--------------- Form validation ------------------//
-	$('#select1').select2({placeholder: "Select"});
-    $("#form-validate").validate({
+//	$('#select1').select2({placeholder: "Select"});
+    $("#form-ingredient-category").validate({
     	ignore: null,
     	ignore: 'input[type="hidden"]',
     	rules: {
-    		select1: "required",
-			required: "required",
-			requiredArea: "required",
-			required1: {
+
+			name: {
 				required: true,
 				minlength: 4
-			},
-			password: {
-				required: true,
-				minlength: 5
-			},
-			confirm_password: {
-				required: true,
-				minlength: 5,
-				equalTo: "#password"
-			},
-			email: {
-				required: true,
-				email: true
-			},
-			maxLenght: {
-				required: true,
-      			maxlength: 10
-			},
-			rangelenght: {
-		      required: true,
-		      rangelength: [10, 20]
-		    },
-		    minval: {
-		      required: true,
-		      min: 13
-		    },
-		    maxval: {
-		      required: true,
-		      max: 13
-		    },
-		    range: {
-		      required: true,
-		      range: [5, 10]
-		    },
-		    url: {
-		      required: true,
-		      url: true
-		    },
-		    date: {
-		      required: true,
-		      date: true
-		    },
-		    number: {
-		      required: true,
-		      number: true
-		    },
-		    digits: {
-		      required: true,
-		      digits: true
-		    },
-		    ccard: {
-		      required: true,
-		      creditcard: true
-		    },
-			agree: "required"
+			}
 		},
 		messages: {
-			required: "Please enter a something",
-			required1: {
-				required: "This field is required",
-				minlength: "This field must consist of at least 4 characters"
-			},
-			password: {
-				required: "Please provide a password",
-				minlength: "Your password must be at least 5 characters long"
-			},
-			confirm_password: {
-				required: "Please provide a password",
-				minlength: "Your password must be at least 5 characters long",
-				equalTo: "Please enter the same password as above"
-			},
-			email: "Please enter a valid email address",
-			agree: "Please accept our policy"
+
+			name: {
+				required: "Este campo es obligatorio.",
+				minlength: "Este campo debe tener al menos 4 caract&eacute;res."
+			}
 		}
+        /*submitHandler: function(form) {
+           *//* $.when(saveRow())
+                .then(function(response){
+                    if(response.status == 1) alert("LISTO");
+                    //alert(response.errors);
+                })
+                .fail(callError);*//*
+            form.preventDefault();
+        }*/
+
     });
 
 });//End document ready functions
