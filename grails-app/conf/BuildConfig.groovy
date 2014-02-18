@@ -75,6 +75,7 @@ grails.project.dependency.resolution = {
         compile ":spring-security-facebook:0.14.5"
         compile ":mail:1.0.1"
         compile ":qrcode:0.3"
+        compile ":ajax-proxy:0.1.1"
 
     }
 }

@@ -38,6 +38,7 @@
     <link href="${resource(dir:'dashboard/plugins/misc/qtip',file: 'jquery.qtip.css')}" rel="stylesheet" type="text/css" />
     <link href="${resource(dir:'dashboard/plugins/misc/fullcalendar',file: 'fullcalendar.css')}" rel="stylesheet" type="text/css" />
     <link href="${resource(dir:'dashboard/plugins/misc/search',file: 'tipuesearch.css')}" type="text/css" rel="stylesheet" />
+    <link href="${resource(dir:'dashboard/plugins/misc/pnotify',file: 'jquery.pnotify.default.css')}" type="text/css" rel="stylesheet" />
 
     <link href="${resource(dir:'dashboard/plugins/forms/uniform',file: 'uniform.default.css')}" type="text/css" rel="stylesheet" />
 
@@ -437,6 +438,7 @@
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/fullcalendar',file:'fullcalendar.min.js')}"></script><!-- Calendar plugin -->
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/qtip',file:'jquery.qtip.min.js')}"></script><!-- Custom tooltip plugin -->
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/totop',file:'jquery.ui.totop.min.js')}"></script> <!-- Back to top plugin -->
+    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/pnotify',file:'jquery.pnotify.min.js')}"></script> <!-- Pin Notify Plugin -->
 
     <!-- Search plugin -->
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/search',file:'tipuesearch_set.js')}"></script>

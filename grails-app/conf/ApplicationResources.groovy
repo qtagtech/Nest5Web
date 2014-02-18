@@ -221,6 +221,41 @@ modules = {
         resource id: 'datatables', url:'js/dashboard/datatable.js'
     }
 
+    formvalidation{
+
+        dependsOn('formwizard')
+        resource id: 'formvalidation', url:'js/dashboard/form-validation.js'
+    }
+    uniform{
+        resource id: 'uniform',url:'js/dashboard/plugins/forms/uniform/jquery.uniform.min.js'
+    }
+    select2{
+
+        dependsOn('uniform')
+        resource id: 'select2', url:'js/dashboard/plugins/forms/select/select2.min.js'
+    }
+    validate{
+
+        dependsOn('select2')
+        resource id: 'validate', url:'js/dashboard/plugins/forms/validate/jquery.validate.min.js'
+    }
+    bbq{
+
+        dependsOn('validate')
+        resource id: 'bbq', url:'js/dashboard/plugins/forms/wizard/jquery.bbq.js'
+    }
+    form{
+
+        dependsOn('bbq')
+        resource id: 'form', url:'js/dashboard/plugins/forms/wizard/jquery.form.js'
+    }
+    formwizard{
+
+        dependsOn('form')
+        resource id: 'formwizard', url:'js/dashboard/plugins/forms/wizard/jquery.form.wizard.js'
+    }
+
+
 
 
 
