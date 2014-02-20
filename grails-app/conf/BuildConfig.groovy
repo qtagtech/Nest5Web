@@ -40,7 +40,7 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        runtime 'postgresql:postgresql:8.4-702.jdbc3'
+        runtime: 'postgresql:postgresql:9.1-902.jdbc4'
         compile 'org.apache.http:httpcore:4.2'
         compile 'org.apache.http:httpclient:4.2.3'
         compile 'org.codehaus.jackson:jackson-core-asl:1.8.7'

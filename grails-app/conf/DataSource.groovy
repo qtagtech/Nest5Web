@@ -29,7 +29,7 @@ environments {
             url = "jdbc:h2:mem:testDb;MVCC=TRUE"
         }
     }
-    production {
+    /*production {
         dataSource {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
@@ -41,7 +41,7 @@ environments {
             username = uri.userInfo.split(":")[0]
             password = uri.userInfo.split(":")[1]
         }
-        /*dataSource {
+        *//*dataSource {
             //dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             //url = "jdbc:h2:mem:devDb;MVCC=TRUE"
             dbCreate = "update"
@@ -50,7 +50,20 @@ environments {
             url = "jdbc:postgresql://localhost:5432/newNest5DB2"
             username = "postgres"
             password = "qtagtech"
-        }*/
+        }*//*
+    }*/
+    production {
+        dataSource {
+            dbCreate = "update"
+            driverClassName = "org.postgresql.Driver"
+            dialect = org.hibernate.dialect.PostgreSQLDialect
+            //uri = new URI(System.env.OPENSHIFT_POSTGRESQL_DB_URL?:"postgres://test:test@localhost/test")
+            host = System.env.OPENSHIFT_POSTGRESQL_DB_HOST
+            port = System.env.OPENSHIFT_POSTGRESQL_DB_PORT
+            url = "jdbc:postgresql://"+host+":"+port+"/"+System.env.OPENSHIFT_APP_NAME
+            username = System.env.OPENSHIFT_POSTGRESQL_DB_USERNAME
+            password = System.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD
+        }
     }
 }
 
