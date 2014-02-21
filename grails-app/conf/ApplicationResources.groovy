@@ -254,6 +254,10 @@ modules = {
         dependsOn('form')
         resource id: 'formwizard', url:'js/dashboard/plugins/forms/wizard/jquery.form.wizard.js'
     }
+    nextindom{
+        dependsOn('form')
+        resource id: 'nextindom',url: 'js/libs/nextindom.js'
+    }
 
 
 

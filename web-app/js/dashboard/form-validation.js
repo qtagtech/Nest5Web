@@ -152,6 +152,114 @@ $(document).ready(function() {
 
     });
 
+    $("#form-measurament-unit").validate({
+        ignore: null,
+        ignore: 'input[type="hidden"]',
+        rules: {
+
+            name: {
+                required: true,
+                minlength: 2
+            },
+            initials: {
+                required: true,
+                minlength: 1
+            }
+
+        },
+        messages: {
+
+            name: {
+                required: "Este campo es obligatorio.",
+                minlength: "Este campo debe tener al menos 4 caract&eacute;res."
+            },
+            initials: {
+                required: "Este campo es obligatorio.",
+                minlength: "Este campo debe tener al menos 1 caracter."
+            }
+        },
+        submitHandler: function(form) {
+
+            var btn = $(form).find(":submit");
+            btn.hide(20);
+            var lElement = $('<div class="margin padding center"><img src="/dashboard/images/loaders/circular/070.gif" alt=""></div>');
+            $(form).append(lElement);
+            var multi_string = "{";
+            var multiplicadores = $("[name='mult_initials']");
+            if(multiplicadores.length < 1){
+                $(lElement).remove();
+                btn.show(20);
+
+            }
+            var perfect = true;
+            multiplicadores.each(function(index){
+                var initial = $(this);
+                var value = $(this).nextInDOM('input');
+                var ok = true;
+                if(index != 0) multi_string += ",";
+                if(!initial.val()) {
+                    $(this).css("background","red");
+                    ok = false;
+                }
+                if(!value.val()){
+                    value.css("background","red");
+                    ok = false;
+                }
+                if(ok){
+                    multi_string += "'"+initial.val()+"':"+value.val();
+                }
+                else{
+                    perfect = false;
+                }
+            });
+            if(perfect){
+                multi_string += "}";
+                console.log(multi_string);
+            }
+            else{
+                $(lElement).remove();
+                btn.show(20);
+            }
+            $.when(saveRow(multi_string))
+                .then(function(response){
+                    if(response.status == 1){
+                        $.pnotify({
+                            type: 'success',
+                            title: '&iexcl;&Eacute;xito!',
+                            text: 'Se ha guardado la categor&iacute;a con &eacute;xito. Actualiza tus dispositivos.',
+                            icon: 'picon icon16 iconic-icon-check-alt white',
+                            opacity: 0.95,
+                            history: false,
+                            sticker: false
+                        });
+                        $("[name='name']").val("");
+                        $("[name='initials']").val("")
+                            .removeAttr("disbaled");
+                    }else{
+                        $.pnotify({
+                            type: 'error',
+                            title: '&iexcl;Lo sentimos!',
+                            text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                            icon: 'picon icon24 typ-icon-cancel white',
+                            opacity: 0.95,
+                            hide:false,
+                            history: false,
+                            sticker: false
+                        });
+
+                    }
+                    $(form).find(":submit").show(20);
+                    $(lElement).remove();
+
+
+
+                })
+                .fail(callError);
+            return false;
+        }
+
+    });
+
 });//End document ready functions
 
 //sparkline in sidebar area
