@@ -529,6 +529,12 @@ class CompanyController {
         def youarehere = "Agregar Unidad de Medida"
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
+    @Secured(["ROLE_COMPANY"])
+    def addIngredient(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Agregar Ingrediente"
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
 
     /****************************
     *****************************
