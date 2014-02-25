@@ -40,15 +40,15 @@
     <link href="${resource(dir:'dashboard/plugins/misc/search',file: 'tipuesearch.css')}" type="text/css" rel="stylesheet" />
     <link href="${resource(dir:'dashboard/plugins/misc/pnotify',file: 'jquery.pnotify.default.css')}" type="text/css" rel="stylesheet" />
 
-    <link href="${resource(dir:'dashboard/plugins/forms/uniform',file: 'uniform.default.css')}" type="text/css" rel="stylesheet" />
-
+    %{--<link href="${resource(dir:'dashboard/plugins/forms/uniform',file: 'uniform.default.css')}" type="text/css" rel="stylesheet" />--}%
+    <r:layoutResources/>
     <!-- Main stylesheets -->
     <link href="${resource(dir:'dashboard/css',file: 'main.css')}" rel="stylesheet" type="text/css" />
 
     <!-- Custom stylesheets ( Put your own changes here ) -->
     <link href="${resource(dir:'dashboard/css',file: 'custom.css')}" rel="stylesheet" type="text/css" />
 
-    <r:layoutResources/>
+
     <!--[if IE 8]><link href="${resource(dir:'dashboard/css',file: 'ie8.css')}" rel="stylesheet" type="text/css" /><![endif]-->
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -423,14 +423,14 @@
     <script type="text/javascript" src="${resource(dir:'dashboard/js/libs',file: 'jRespond.min.js')}"></script>
 
     <!-- Charts plugins -->
-    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.js')}"></script>
+    %{--<script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.grow.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.pie.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.resize.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.tooltip_0.4.4.js')}"></script>
-    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.orderBars.js')}"></script>
+    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.orderBars.js')}"></script>--}%
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/sparkline',file:'jquery.sparkline.js')}"></script><!-- Sparkline plugin -->
-    <script type="text/javascript" src="${resource(dir: 'dashboard/plugins/charts/knob',file: 'jquery.knob.js')}"></script><!-- Circular sliders and stats -->
+    %{--<script type="text/javascript" src="${resource(dir: 'dashboard/plugins/charts/knob',file: 'jquery.knob.js')}"></script><!-- Circular sliders and stats -->--}%
 
     <!-- Misc plugins -->
     <script type="text/javascript" src="${resource(dir: 'dashboard/plugins/misc/nicescroll',file:'jquery.nicescroll.min.js')}"></script>
@@ -446,17 +446,7 @@
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/search',file:'tipuesearch.js')}"></script>
 
     <!-- Form plugins -->
-    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/forms/uniform',file:'jquery.uniform.min.js')}"></script>
-
-    <!-- Init plugins -->
-    <script type="text/javascript" src="${resource(dir:'dashboard/js',file:'main.js')}"></script><!-- Core js functions -->
-
-		<g:javascript library="application"/>
-        <g:javascript library="plugins"/>
-        <g:javascript library="script"  />
-
-
-
+    %{--<script type="text/javascript" src="${resource(dir:'dashboard/plugins/forms/uniform',file:'jquery.uniform.min.js')}"></script>--}%
     <r:script>
 var loading1;
 function loadContent(){
@@ -552,7 +542,21 @@ function loadContent(){
 
 
     </r:script>
+
+
+    <!-- Init plugins -->
+
+        <g:javascript library="underscore"/>
+        <g:javascript library="nextindom"/>
+		<g:javascript library="application"/>
+        <g:javascript library="plugins"/>
+        <g:javascript library="script"  />
+        <g:javascript library="mainscript"/>
+
     <r:layoutResources />
+
+
+
 
 
 	</body>

@@ -1,4 +1,12 @@
 modules = {
+    /*images*/
+
+    nextindom{
+        resource id: 'nextindom',url: 'js/libs/nextindom.js'
+    }
+    underscore{
+        resource id: 'underscore',url: 'js/libs/underscore.js'
+    }
     application {
         resource url:'js/application.js'
     }
@@ -188,8 +196,103 @@ modules = {
         resource id: 'jquerybrowserfix', url:'js/libs/jquery.mb.browser.min.js', disposition: 'head'
     }
 
-    dashboard{
 
+
+
+
+
+    /*Form scripts*/
+
+    elastic{
+        resource id: 'elastic', url:'js/dashboard/plugins/forms/elastic/jquery.elastic.js'
+    }
+    inputlimiter{
+        dependsOn('elastic')
+        resource id: 'inputlimiter',url: 'js/dashboard/plugins/forms/inputlimiter/jquery.inputlimiter.1.3.min.js'
+        resource id: 'inputlimitercss', url: 'js/dashboard/plugins/forms/inputlimiter/jquery.inputlimiter.css', disposition: 'head'
+    }
+    maskedinput{
+        dependsOn('inputlimiter')
+        resource id: 'maskedinput',url: 'js/dashboard/plugins/forms/maskedinput/jquery.maskedinput-1.3.min.js'
+    }
+    bootstrapswitch{
+        dependsOn('maskedinput')
+        resource id: 'bootstrapswitch',url: 'js/dashboard/libs/bootstrapswitch/js/bootstrap-switch.min.js'
+        resource id: 'bootstrapswitchcss', url: 'js/dashboard/libs/bootstrapswitch/css/bootstrap3/bootstrap-switch.min.css', disposition: 'head'
+    }
+    uniform{
+        dependsOn('bootstrapswitch')
+        resource id: 'uniform',url: 'js/dashboard/plugins/forms/uniform/jquery.uniform.min.js'
+        resource id: 'uniformcss', url: 'js/dashboard/plugins/forms/uniform/uniform.default.css', disposition: 'head'
+    }
+    globalize{
+        dependsOn('uniform')
+        resource id: 'globalize',url: 'js/dashboard/plugins/forms/globalize/globalize.js'
+    }
+    colorpicker{
+        dependsOn('globalize')
+        resource id: 'colorpicker',url: 'js/dashboard/plugins/forms/color-picker/colorpicker.js'
+        resource id: 'colorpickercss', url: 'js/dashboard/plugins/forms/color-picker/color-picker.css', disposition: 'head'
+    }
+    timentry{
+        dependsOn('colorpicker')
+        resource id: 'timentry',url: 'js/dashboard/plugins/forms/timeentry/jquery.timeentry.min.js'
+        resource id: 'timentrypack', url: 'js/dashboard/plugins/forms/timeentry/jquery.timeentry.pack.js'
+    }
+    select2{
+        dependsOn('timentry')
+        resource id: 'select2',url: 'js/dashboard/plugins/forms/select/select2.min.js'
+        resource id: 'select2css', url: 'js/dashboard/plugins/forms/select/select2.css', disposition: 'head'
+    }
+    duallistbox{
+        dependsOn('select2')
+        resource id: 'duallistbox',url: 'js/dashboard/plugins/forms/dualselect/jquery.dualListBox-1.3.min.js'
+    }
+    uitimepicker{
+        dependsOn('duallistbox')
+        resource id: 'uitimepicker',url: 'js/dashboard/supr-theme/jquery-ui-timepicker-addon.js'
+    }
+    uislider{
+        dependsOn('uitimepicker')
+        resource id: 'uislider',url: 'js/dashboard/supr-theme/jquery-ui-sliderAccess.js'
+    }
+    //Otros de formulario que estoy usando
+    validate{
+
+        dependsOn('uislider')
+        resource id: 'validate', url:'js/dashboard/plugins/forms/validate/jquery.validate.min.js'
+        resource id: 'validatecss', url:'js/dashboard/plugins/forms/validate/validate.css'
+    }
+    bbq{
+
+        dependsOn('validate')
+        resource id: 'bbq', url:'js/dashboard/plugins/forms/wizard/jquery.bbq.js'
+    }
+    form{
+        dependsOn('bbq')
+        resource id: 'form', url:'js/dashboard/plugins/forms/wizard/jquery.form.js'
+    }
+    formwizard{
+        dependsOn('form')
+        resource id: 'formwizard', url:'js/dashboard/plugins/forms/wizard/jquery.form.wizard.js'
+    }
+    //main.js, script ppal de todas las pagina
+
+    mainscript{
+        dependsOn('script')
+        resource id: 'mainscript', url:'js/dashboard/main.js'
+    }
+
+    //pagina crear ingredientes, productos, etc
+    formvalidation{
+        dependsOn('mainscript')
+        resource id: 'formvalidation', url:'js/dashboard/form-validation.js'
+    }
+
+    /*Pagina dashboard*/
+
+    dashboard{
+        dependsOn("mainscript")
         resource id: 'dashboard', url:'js/dashboard/dashboard.js'
     }
     tables{
@@ -203,7 +306,7 @@ modules = {
     }
     tabletools{
 
-         dependsOn('jquerydatatables')
+        dependsOn('jquerydatatables')
         resource id: 'tabletools', url:'js/dashboard/plugins/tables/dataTables/TableTools.min.js'
     }
     zeroclipboard{
@@ -217,47 +320,10 @@ modules = {
         resource id: 'responsivetables', url:'js/dashboard/plugins/tables/responsive-tables/responsive-tables.js'
     }
     datatables{
-
+        dependsOn("mainscript")
         resource id: 'datatables', url:'js/dashboard/datatable.js'
     }
 
-    formvalidation{
-
-        dependsOn('formwizard')
-        resource id: 'formvalidation', url:'js/dashboard/form-validation.js'
-    }
-    uniform{
-        resource id: 'uniform',url:'js/dashboard/plugins/forms/uniform/jquery.uniform.min.js'
-    }
-    select2{
-
-        dependsOn('uniform')
-        resource id: 'select2', url:'js/dashboard/plugins/forms/select/select2.min.js'
-    }
-    validate{
-
-        dependsOn('select2')
-        resource id: 'validate', url:'js/dashboard/plugins/forms/validate/jquery.validate.min.js'
-    }
-    bbq{
-
-        dependsOn('validate')
-        resource id: 'bbq', url:'js/dashboard/plugins/forms/wizard/jquery.bbq.js'
-    }
-    form{
-
-        dependsOn('bbq')
-        resource id: 'form', url:'js/dashboard/plugins/forms/wizard/jquery.form.js'
-    }
-    formwizard{
-
-        dependsOn('form')
-        resource id: 'formwizard', url:'js/dashboard/plugins/forms/wizard/jquery.form.wizard.js'
-    }
-    nextindom{
-        dependsOn('form')
-        resource id: 'nextindom',url: 'js/libs/nextindom.js'
-    }
 
 
 

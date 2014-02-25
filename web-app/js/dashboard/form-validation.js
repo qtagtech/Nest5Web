@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
     //------------- Select plugin -------------//
-//	$("#select1").select2();
+//	$("#select-category").select2();
 
     //create success msg for wizard
     function createSuccessMsg (loc, msg) {
@@ -11,8 +11,12 @@ $(document).ready(function() {
         );
     }
 
+    /*TOGGLE BUTTONS*/
+
+    $('#is_sellable').bootstrapSwitch();
+
     //------------- Form wizard with steps-------------//
-    /*$("#wizard").formwizard({
+    $("#wizard").formwizard({
      formPluginEnabled: true,
      validationEnabled: true,
      focusFirstInput : true,
@@ -35,58 +39,19 @@ $(document).ready(function() {
      }
      },
      rules: {
-     fname: {
-     required: true,
-     minlength: 4
-     },
-     lname: {
-     required: true,
-     minlength: 4
-     },
-     gender: {
+     category: {
      required: true
-     },
-     username1: {
-     required: true,
-     minlength: 4
-     },
-     password1: {
-     required: true,
-     minlength: 5
-     },
-     confirm_password1: {
-     required: true,
-     minlength: 5,
-     equalTo: "#password1"
-     },
-     email1: {
-     required: true,
-     email: true
      }
      },
      messages: {
-     fname: {
-     required: "This field is required",
-     minlength: "This field must consist of at least 4 characters"
-     },
+     category: "Debes seleccionar una categor&iacute;a",
      lname: {
      required: "This field is required",
      minlength: "This field must consist of at least 4 characters"
-     },
-     password1: {
-     required: "Please provide a password",
-     minlength: "Your password must be at least 5 characters long"
-     },
-     confirm_password1: {
-     required: "Please provide a password",
-     minlength: "Your password must be at least 5 characters long",
-     equalTo: "Please enter the same password as above"
-     },
-     email1: "Please enter a valid email address",
-     gender: "Choise a gender"
      }
      }
-     });*/
+     }
+     });
 
 
 
@@ -233,8 +198,9 @@ $(document).ready(function() {
                             sticker: false
                         });
                         $("[name='name']").val("");
-                        $("[name='initials']").val("")
-                            .removeAttr("disbaled");
+                        $("[name='initials']").val("");
+                        $("[name='initials']").removeAttr("disabled");
+                        $("#multipliers").empty();
                     }else{
                         $.pnotify({
                             type: 'error',

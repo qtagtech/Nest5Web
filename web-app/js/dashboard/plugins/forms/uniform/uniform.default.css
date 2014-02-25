@@ -79,7 +79,7 @@ textarea.uniform:focus {
 /* Select */
 
 div.selector {
-  background: url(select2.png) no-repeat 100% -1px;
+  background: url('select2.png') no-repeat 100% -1px;
   line-height: 30px;
   height: 30px;
   border: 1px solid #C4C4C4;
@@ -162,7 +162,7 @@ div.checker input {
 }
 
 div.checker span {
-  background: url(checkbox.png) no-repeat;
+  background: url('../../../../../css/dashboard/images/checkbox.png') no-repeat;
   background-position: 0px -3px;
   height: 19px;
   width: 19px;
@@ -235,7 +235,7 @@ div.radio input {
 div.radio span {
   height: 18px;
   width: 18px;
-  background: url(radio.png) no-repeat;
+  background: url('radio.png') no-repeat;
   background-position: 0px -3px;
 }
 
@@ -301,7 +301,7 @@ div.uploader {
 }
 
 div.uploader span.action {
-  background: url(choose-file.png) no-repeat;
+  background: url('choose-file.png') no-repeat;
   height: 30px;
   line-height: 24px;
 }
