@@ -478,7 +478,7 @@ class CompanyController {
         http.request( GET, TEXT ) {
 
             uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/allSales'
-            uri.query = [company:318]
+            uri.query = [company: user.id]
             println uri
 
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
@@ -533,7 +533,104 @@ class CompanyController {
     def addIngredient(){
         def user = springSecurityService.currentUser
         def youarehere = "Agregar Ingrediente"
+
+
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+
+    /*@Secured(["ROLE_COMPANY"])
+    def fetchIngredientCategories(){
+        def user = springSecurityService.currentUser as Company
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/allIngredientCategories'
+            uri.query = [company:user.id]
+            //println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        def result
+        //println jsonData
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData.message]
+            render result as JSON
+            return
+
+        }
+        result = [status: jsonData.status, categories: jsonData.payload]
+        render result as JSON
+        return
+
+    }*/
+    @Secured(["ROLE_COMPANY"])
+    def fetchProperty(){
+        def user = springSecurityService.currentUser as Company
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: params?.table]
+            //println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        def result
+        //println jsonData
+        if(jsonData?.status != 200){
+             result = [status: jsonData?.status, message: jsonData?.message]
+            render result as JSON
+            return
+
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        render result as JSON
+        return
+
     }
 
     /****************************
