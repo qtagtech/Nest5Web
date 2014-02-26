@@ -7,23 +7,72 @@ $(document).ready(function() {
     //create success msg for wizard
     function createSuccessMsg (loc, msg) {
         loc.append(
-            '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button><strong><i class="icon24 i-checkmark-circle"></i> Well done!</strong> '+ msg + ' </div>'
+            '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button><strong><i class="icon24 i-checkmark-circle"></i> ¡}muy Bien!</strong> '+ msg + ' </div>'
         );
     }
+
+    //------------- Masked input fields -------------//
+    $("#mask-percent").mask("99%");
+    $.mask.definitions['~'] = '([0-9] )?';
+    $("#cost").mask("99~~~~~~~.00($COP)");
+    $("#price").mask("99~~~~~~~.00($COP)");
+
+
 
     /*TOGGLE BUTTONS*/
 
     $('#is_sellable').bootstrapSwitch();
+    $('#is_taxable').bootstrapSwitch();
 
     //------------- Form wizard with steps-------------//
     $("#wizard").formwizard({
      formPluginEnabled: true,
      validationEnabled: true,
      focusFirstInput : true,
+     textSubmit: "Guardar",
      formOptions :{
      success: function(data){
      //produce success message
-     createSuccessMsg($("#wizard .msg"), "You successfully submit this form");
+         var btn = $("body").find(":submit");
+         btn.hide(20);
+         var lElement = $('<div class="margin padding center"><img src="/dashboard/images/loaders/circular/070.gif" alt=""></div>');
+         $(".wizard-actions").append(lElement);
+         $.when(saveRow())
+             .then(function(response){
+                 if(response.status == 1){
+                     $.pnotify({
+                         type: 'success',
+                         title: '&iexcl;&Eacute;xito!',
+                         text: 'Se ha guardado la categor&iacute;a con &eacute;xito. Actualiza tus dispositivos.',
+                         icon: 'picon icon16 iconic-icon-check-alt white',
+                         opacity: 0.95,
+                         history: false,
+                         sticker: false
+                     });
+                     $("#wizard").formwizard("reset");
+                     $("#wizard").formwizard("update_steps");
+                 }else{
+                     $.pnotify({
+                         type: 'error',
+                         title: '&iexcl;Lo sentimos!',
+                         text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                         icon: 'picon icon24 typ-icon-cancel white',
+                         opacity: 0.95,
+                         hide:false,
+                         history: false,
+                         sticker: false
+                     });
+
+                 }
+                 $("body").find(":submit").show(20);
+                 $(lElement).remove();
+
+
+
+             })
+             .fail(callError);
+         return false;
+     createSuccessMsg($("#wizard .msg"), "&iexcl;Ingrediente Guardado con éxito!");
      },
      resetForm: false
      },
@@ -39,16 +88,90 @@ $(document).ready(function() {
      }
      },
      rules: {
-     category: {
-     required: true
-     }
+         category: {
+         required: true
+         },
+         name: {
+             required: true,
+             minlength: 4
+         },
+         cost: {
+             required: true
+         },
+         quantity:{
+             required: true,
+             number: true
+         },
+         units:{
+             required: true
+         },
+         multipliers:{
+             required: true
+         },
+         price: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_sellable').bootstrapSwitch('state');
+                 }
+             }
+         },
+         sell_quantity: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_sellable').bootstrapSwitch('state');
+                 }
+             },
+             number:{
+                 depends: function(element) {
+                     return $('#is_sellable').bootstrapSwitch('state');
+                 }
+             }
+         },
+         sell_units: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_sellable').bootstrapSwitch('state');
+                 }
+             }
+         },
+         sell_multipliers: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_sellable').bootstrapSwitch('state');
+                 }
+             }
+         },
+         tax: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_taxable').bootstrapSwitch('state');
+                 }
+             }
+         }
+
      },
      messages: {
-     category: "Debes seleccionar una categor&iacute;a",
-     lname: {
-     required: "This field is required",
-     minlength: "This field must consist of at least 4 characters"
-     }
+         category: "Debes seleccionar una categor&iacute;a",
+         name: {
+             required: "Debes poner un nombre para reconocer el ingrediente",
+             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+         },
+         cost: "Por favor indica un costo del ingrediente.",
+         quantity: {
+             required:"&iquest;Qu&eacute; cantidad de este ingrediente compraste?",
+             number: "No has puesto un n&uacute;mero v&aacute;lido."
+            },
+         units: "Indica la unidad base en que mides el ingrediente",
+         multipliers: "Debes indicar la medida que se us&oacute; para medir la cantidad que indicaste de este ingrediente.",
+         price: "Has dicho que se puede vender este ingrediente, &iquest;A qu&eacute; precio?",
+         sell_quantity: {
+             required: "&iquest;Qu&eacute; cantidad vendes de este ingrediente?",
+             number:  "No has puesto un n&uacute;mero v&aacute;lido."
+         },
+         sell_units: "Indica en que unidad se mide la cantidad que se vende de este ingrediente.",
+         sell_multipliers: "Debes seleccionar una para indicar como medir la cantidad que has ingresado que se vende.",
+         tax: "Has indicado que este ingrediente al venderse se le aplica un impuesto. Selecciona cual."
+
      }
      }
      });
@@ -114,6 +237,74 @@ $(document).ready(function() {
          .fail(callError);
             return false;
          }
+
+    });
+
+    $("#form-tax").validate({
+        ignore: null,
+        ignore: 'input[type="hidden"]',
+        rules: {
+
+            name: {
+                required: true,
+                minlength: 1
+            },
+            'mask-percentage': {
+                required: true
+            }
+
+        },
+        messages: {
+
+            name: {
+                required: "Este campo es obligatorio.",
+                minlength: "Este campo debe tener al menos 4 caract&eacute;res."
+            },
+            percentage: {
+                required: "Este campo es obligatorio"
+            }
+        },
+        submitHandler: function(form) {
+            var btn = $(form).find(":submit");
+            btn.hide(20);
+            var lElement = $('<div class="margin padding center"><img src="/dashboard/images/loaders/circular/070.gif" alt=""></div>');
+            $(form).append(lElement);
+            $.when(saveRow())
+                .then(function(response){
+                    if(response.status == 1){
+                        $.pnotify({
+                            type: 'success',
+                            title: '&iexcl;&Eacute;xito!',
+                            text: 'Se ha guardado el Impuesto &eacute;xito. Actualiza tus dispositivos.',
+                            icon: 'picon icon16 iconic-icon-check-alt white',
+                            opacity: 0.95,
+                            history: false,
+                            sticker: false
+                        });
+                        $("[name='name']").val("");
+                        $("[name='percentage']").val("");
+                    }else{
+                        $.pnotify({
+                            type: 'error',
+                            title: '&iexcl;Lo sentimos!',
+                            text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                            icon: 'picon icon24 typ-icon-cancel white',
+                            opacity: 0.95,
+                            hide:false,
+                            history: false,
+                            sticker: false
+                        });
+
+                    }
+                    $(form).find(":submit").show(20);
+                    $(lElement).remove();
+
+
+
+                })
+                .fail(callError);
+            return false;
+        }
 
     });
 
