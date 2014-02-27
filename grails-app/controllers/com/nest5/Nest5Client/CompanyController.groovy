@@ -543,6 +543,14 @@ class CompanyController {
 
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
+    @Secured(["ROLE_COMPANY"])
+    def addProduct(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Agregar Producto"
+
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
 
     /*@Secured(["ROLE_COMPANY"])
     def fetchIngredientCategories(){
