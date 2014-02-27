@@ -524,6 +524,12 @@ class CompanyController {
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
     @Secured(["ROLE_COMPANY"])
+    def addTax(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Agregar Impuesto de Ventas / Consumo"
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+    @Secured(["ROLE_COMPANY"])
     def addMeasuramentUnit(){
         def user = springSecurityService.currentUser
         def youarehere = "Agregar Unidad de Medida"

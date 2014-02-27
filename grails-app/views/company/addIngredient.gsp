@@ -116,21 +116,21 @@
                                     <div class="form-group">
                                         <label class="col-lg-1 control-label" for="cost">Costo:</label>
                                         <div class="col-lg-2">
-                                            <input class="form-control" id="cost" name="cost" type="number" step="any"  />
+                                            <input class="form-control mask uniform-input text" name="cost" id="cost"  />
                                         </div>
                                         <label class="col-lg-1 control-label" for="quantity">Cantidad:</label>
                                         <div class="col-lg-2">
                                             <input class="form-control" id="quantity" name="quantity" type="number" step="any" />
                                         </div>
-                                        <label class="col-lg-1 control-label" for="unit">Unidad:</label>
+                                        <label class="col-lg-1 control-label" for="units">Unidad:</label>
                                         <div class="col-lg-2">
-                                            <select name="measurament-unit" id="units" class="nostyle form-control" placeholder="Selecciona una Medida">
+                                            <select name="units" id="units" class="nostyle form-control" placeholder="Selecciona una Medida">
                                                 <option></option>
                                             </select>
                                         </div>
-                                        <label class="col-lg-1 control-label" for="unit">Sub-Medida:</label>
+                                        <label class="col-lg-1 control-label" for="multipliers">Sub-Medida:</label>
                                         <div class="col-lg-2">
-                                            <select name="multiplier" id="multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
+                                            <select name="multipliers" id="multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
                                                 <option></option>
                                             </select>
                                         </div>
@@ -144,33 +144,54 @@
                                             <input type="checkbox" class="nostyle"  id="is_sellable" checked data-on-text="SI" data-off-text="NO"/>
                                         </div>
                                     </div> <!-- End .form-group  -->
-                                    <div class="form-group">
-                                        <label class="col-lg-1 control-label" for="sell_cost">Costo:</label>
+                                    <div class="form-group" id="sell_properties">
+                                        <label class="col-lg-1 control-label" for="price">Precio:</label>
                                         <div class="col-lg-2">
-                                            <input class="form-control" id="sell_cost" name="sell_cost" type="number" step="any"  />
+                                            <input class="form-control mask uniform-input text" name="price" id="price"  />
                                         </div>
                                         <label class="col-lg-1 control-label" for="sell_quantity">Cantidad:</label>
                                         <div class="col-lg-2">
                                             <input class="form-control" id="sell_quantity" name="sell_quantity" type="number" step="any" />
                                         </div>
-                                        <label class="col-lg-1 control-label" for="sell_unit">Unidad:</label>
+                                        <label class="col-lg-1 control-label" for="sell_units">Unidad:</label>
                                         <div class="col-lg-2">
-                                            <select name="sell_measurament-unit" id="sell_units" class="nostyle form-control" placeholder="Selecciona una Medida">
+                                            <select name="sell_units" id="sell_units" class="nostyle form-control" placeholder="Selecciona una Medida">
                                                 <option></option>
                                             </select>
                                         </div>
-                                        <label class="col-lg-1 control-label" for="sell_unit">Sub-Medida:</label>
+                                        <label class="col-lg-1 control-label" for="sell_multipliers">Sub-Medida:</label>
                                         <div class="col-lg-2">
-                                            <select name="sell_multiplier" id="sell_multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
+                                            <select name="sell_multipliers" id="sell_multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
                                                 <option></option>
                                             </select>
                                         </div>
+                                    </div><!-- End .form-group  -->
+                                </div>
+                                <div class="step submit_step" id="tax-details">   %{--Este era submit_step--}%
+                                    <span class="step-info" data-num="5" data-text="Detalles de Impuestos"></span>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="checkboxes">&iquest;Aplica algún Impuesto de venta para este Ingrediente?</label>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" class="nostyle"  id="is_taxable" data-on-text="SI" data-off-text="NO"/>
+                                        </div>
+                                    </div> <!-- End .form-group  -->
+                                    <div class="form-group invisible"  id="tax_properties">
+                                    <label class="col-lg-2 control-label" for="category">Impuesto que aplica: </label>
+                                    <div class="col-lg-8">
+                                        <select name="tax" id="tax" class="nostyle form-control" placeholder="Selecciona un Impuesto">
+                                            <option></option>
+
+                                        </select>
+                                    </div>
                                     </div><!-- End .form-group  -->
                                 </div>
                                 <div class="wizard-actions">
                                     <button class="btn btn-default pull-left" type="reset"> Atr&aacute;s </button>
                                     <button class="btn btn-default pull-right" type="submit"> Siguiente </button>
                                 </div><!-- End .form-group  -->
+                                <input type="hidden" name="table" value="ingredient"/>
+                                <input type="hidden" name="row_id" value="0"/>
+                                <input type="hidden" name="sync_row_id" value="0"/>
                             </form>
                         </div>
                     </div><!-- End .panel -->
@@ -218,11 +239,14 @@
 
                        for(var i = 0; i < cantidad; i++){
                         $("#units").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.initials+'</option>');
+                        $("#sell_units").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.initials+'</option>');
                         medidas[response.elements[i].syncId] = response.elements[i].fields.multipliers;
                        }
                     }
                     else{
                         $("#units").attr("placeholder","Aún no tienes unidades de medida creadas.").
+                        after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                        $("#sell_units").attr("placeholder","Aún no tienes unidades de medida creadas.").
                         after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
                     }
@@ -231,9 +255,36 @@
                 else{
                   $("#units").attr("placeholder","Aún no tienes unidades de medidas creadas.").
                         after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                  $("#sell_units").attr("placeholder","Aún no tienes unidades de medidas creadas.").
+                        after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                 }
                 $("#units").select2();
-                console.log(medidas);
+                $("#sell_units").select2();
+//                console.log(medidas);
+            })
+            .fail(callError);
+            $.when(fetchProperty('tax'))
+            .then(function(response){
+                if(response.status == 200){
+                    var cantidad = response.elements.length;
+                    if(cantidad > 0) {
+
+                       for(var i = 0; i < cantidad; i++){
+                        $("#tax").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+                       }
+                    }
+                    else{
+                        $("#tax").attr("placeholder","Aún no tienes impuestos creados.").
+                        after('<a href="${createLink(controller: 'company',action: 'addTax')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+
+                    }
+
+                }
+                else{
+                  $("#tax").attr("placeholder","Aún no tienes impuestos creados.").
+                        after('<a href="${createLink(controller: 'company',action: 'addTax')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                }
+                $("#tax").select2();
             })
             .fail(callError);
 
@@ -243,16 +294,40 @@
             var submedidas = medidas[syncid];
             if(!_.isUndefined(submedidas)){
                if(_.size(submedidas) > 0){
-                    console.log(submedidas);
+//                    console.log(submedidas);
                     for(var k in submedidas) {
                         $("#multipliers").append('<option value="'+submedidas[k]+'">'+k+'</option>');
                     }
                 }
             }
-
-
             $("#multipliers").select2();
-             //console.log($( "#units option:selected" ).val());
+            });
+            $("form").on('change',"#sell_units",function(){
+            $("#sell_multipliers").empty();
+            var syncid =  $( "#sell_units option:selected" ).val();
+            var submedidas = medidas[syncid];
+            if(!_.isUndefined(submedidas)){
+               if(_.size(submedidas) > 0){
+//                    console.log(submedidas);
+                    for(var k in submedidas) {
+                        $("#sell_multipliers").append('<option value="'+submedidas[k]+'">'+k+'</option>');
+                    }
+                }
+            }
+            $("#sell_multipliers").select2();
+            });
+
+            $('#is_sellable').on('switchChange', function (e, data) {
+              var $element = $(data.el),
+                  value = data.value;
+                  $("#sell_properties").toggleClass('invisible');
+              //console.log(e, $element, value);
+            });
+            $('#is_taxable').on('switchChange', function (e, data) {
+              var $element = $(data.el),
+                  value = data.value;
+                  $("#tax_properties").toggleClass('invisible');
+              //console.log(e, $element, value);
             });
 
         });
@@ -264,7 +339,32 @@
             var table = $("[name='table']").val();
             var rowid = $("[name='row_id']").val();
             var syncrowid = $("[name='sync_row_id']").val();
-            var fields = "{\"name\":"+$("[name='name']").val()+",\"initials\":"+$("[name='initials']").val()+",\"multipliers\":"+multi_string+"}";
+            var quantity = parseFloat($("#quantity").val()) * parseFloat($("#multipliers option:selected").val());
+            var costperunit = parseFloat($("#cost").val()) / quantity;
+            var sellquantity = 0;
+            var priceperunit = 0;
+            if($('#is_sellable').bootstrapSwitch('state')){
+                 sellquantity = parseFloat($("#sell_quantity").val()) * parseFloat($("#sell_multipliers option:selected").val());
+                 priceperunit = parseFloat($("#price").val()) / sellquantity;
+            }
+            var unit = $("#units option:selected").val();
+            var tax
+            if($('#is_taxable').bootstrapSwitch('state'))
+                tax = $("#tax option:selected").val();
+            else
+                tax = 0;
+
+
+            var fields = "{" +
+              "\"name\":"+$("[name='name']").val()+
+              ",\"category_id\":"+$("#select-category option:selected").val()+
+              ",\"cost_per_unit\":"+costperunit+
+              ",\"quantity\":"+quantity+
+              ",\"unit_id\":"+unit+
+              ",\"price_measure\":"+sellquantity+
+              ",\"price_per_unit\":"+priceperunit+
+              ",\"tax_id\":"+tax+
+              "}";
 
             return  $.ajax({
                 type: "POST",
