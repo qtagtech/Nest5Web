@@ -22,7 +22,7 @@
 
 
 
-    <r:require modules="elastic,inputlimiter,maskedinput,bootstrapswitch,uniform,globalize,colorpicker,timentry,select2,duallistbox,bbq,formwizard,formvalidation"/>
+    <r:require modules="elastic,inputlimiter,maskedinput,bootstrapswitch,uniform,globalize,colorpicker,timentry,select2,duallistboxnew,duallistbox,bbq,formwizard,formvalidation"/>
 
 </head>
       
@@ -76,7 +76,7 @@
 
                         </div>
                         <div class="panel-body noPad clearfix">
-                            <form id="wizard" class="form-horizontal" role="form">
+                            <form id="wizard2" class="form-horizontal" role="form">
                                 <div class="msg"></div>
                                 <div class="wizard-steps clearfix"></div>
 
@@ -112,127 +112,90 @@
                                     </div><!-- End .form-group  -->
                                 </div>
                                 <div class="step" id="recepy-details">   %{--Este era submit_step--}%
-                                    <span class="step-info" data-num="4" data-text="Receta de Producto"></span>
+                                    <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <div class="leftBox">
-                                                <div class="searchBox">
-                                                    <input type="text" id="box1Filter" class="searchField form-control uniform-input text" placeholder="filter ...">
-                                                    <button id="box1Clear" type="button" class="btn">
-                                                        <span class="icon12  icomoon-icon-cancel-circle"></span>
-                                                    </button>
+                                            <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4><span>&iquest;De qu&eacute; Ingredientes se compone este Producto?</span></h4>
                                                 </div>
-
-                                                <select id="box1View" multiple="multiple" class="multiple nostyle form-control" style="height:300px;"><option value="7">Argentina</option><option value="19">Australia</option><option value="4">Brazil</option><option value="13">Chile</option><option value="9">Croatia</option><option value="14">Côte d'Ivoire</option><option value="10">Denmark</option><option value="5">England</option><option value="15">France</option><option value="2">Germany</option><option value="12">Greece</option><option value="8">Italy</option><option value="6">Portugal</option><option value="18">Republic of Ireland</option><option value="11">Russia</option><option value="1">Spain</option><option value="16">Sweden</option><option value="17">Switzerland</option><option value="3">Uruguay</option></select>
-                                                <br>
-                                                <span id="box1Counter" class="count">Showing 19 of 19</span>
-                                                <div class="dn"><select id="box1Storage" name="box1Storage" class="nostyle" style="display: none;"></select></div>
-                                            </div>
-
-                                            <div class="dualBtn">
-
-                                                <button id="to2" type="button" class="btn"><span class="icon12 minia-icon-arrow-right-3"></span></button>
-                                                <button id="allTo2" type="button" class="btn"><span class="icon12 iconic-icon-last"></span></button>
-                                                <button id="to1" type="button" class="btn marginT5"><span class="icon12 minia-icon-arrow-left-3"></span></button>
-                                                <button id="allTo1" type="button" class="btn marginT5"><span class="icon12 iconic-icon-first"></span></button>
-
-                                            </div>
-
-                                            <div class="rightBox">
-                                                <div class="searchBox">
-                                                    <input type="text" id="box2Filter" class="searchField form-control uniform-input text" placeholder="filter ...">
-                                                    <button id="box2Clear" type="button" class="btn">
-                                                        <span class="icon12  icomoon-icon-cancel-circle"></span>
-                                                    </button>
+                                                <div class="panel-body">
+                                                    <div class="todo">
+                                                        <h3 class="blue">Ingredientes</h3>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12">
+                                                                <select multiple="multiple" name="duallistbox_demo1[]">
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <select id="box2View" multiple="multiple" class="multiple nostyle form-control" style="height:300px;"></select>
-                                                <br>
-                                                <span id="box2Counter" class="count">Showing 0 of 0</span>
-
-                                                <div class="dn"><select id="box2Storage" class="nostyle" style="display: none;"></select></div>
-                                            </div>
+                                            </div><!-- End .panel -->
                                         </div>
                                     </div>
+                                </div>
+                                <div class="step" id="recepy-quantities">
+                                    <span class="step-info" data-num="4" data-text="Cantidades Espec&iacute;ficas"></span>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4><span>Especifica la cantidad de cada Ingrediente en este Producto</span></h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="todo">
+                                                        <h4>Ingredientes Seleccionados</h4>
+                                                        <ul id="ingredient_quantities">
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- End .panel -->
+                                        </div><!-- End .span12 -->
+                                    </div><!-- End .form-group  -->
                                 </div>
                                 <div class="step" id="order-details">
-                                    <span class="step-info" data-num="3" data-text="Detalles de Costo"></span>
+                                    <span class="step-info" data-num="5" data-text="Detalles de Costo y Precio"></span>
                                     <div class="form-group">
-                                        <label class="col-lg-1 control-label" for="cost">Costo:</label>
-                                        <div class="col-lg-2">
-                                            <input class="form-control mask uniform-input text" name="cost" id="cost"  />
+                                        <div class="col-lg-5">
+                                            <h4 class="blue">Detalles de Costo</h4>
+                                            <label class="col-lg-5 control-label left" for="cost">Costo:</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control mask uniform-input text" name="cost" id="cost"  />
+                                            </div>
                                         </div>
-                                        <label class="col-lg-1 control-label" for="quantity">Cantidad:</label>
-                                        <div class="col-lg-2">
-                                            <input class="form-control" id="quantity" name="quantity" type="number" step="any" />
+                                        <div class="col-lg-5">
+                                            <h4 class="blue">Detalles de Precio</h4>
+                                            <label class="col-lg-5 control-label left" for="cost">Precio:</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control mask uniform-input text" name="price" id="price"  />
+                                            </div>
                                         </div>
-                                        <label class="col-lg-1 control-label" for="units">Unidad:</label>
-                                        <div class="col-lg-2">
-                                            <select name="units" id="units" class="nostyle form-control" placeholder="Selecciona una Medida">
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                        <label class="col-lg-1 control-label" for="multipliers">Sub-Medida:</label>
-                                        <div class="col-lg-2">
-                                            <select name="multipliers" id="multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                    </div><!-- End .form-group  -->
-                                </div>
-                                <div class="step" id="price-details">   %{--Este era submit_step--}%
-                                    <span class="step-info" data-num="4" data-text="Detalles de Venta"></span>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="checkboxes">&iquest;Est&aacute; este Ingrediente disponible a la venta?</label>
-                                        <div class="col-lg-2">
-                                            <input type="checkbox" class="nostyle"  id="is_sellable" checked data-on-text="SI" data-off-text="NO"/>
-                                        </div>
-                                    </div> <!-- End .form-group  -->
-                                    <div class="form-group" id="sell_properties">
-                                        <label class="col-lg-1 control-label" for="price">Precio:</label>
-                                        <div class="col-lg-2">
-                                            <input class="form-control mask uniform-input text" name="price" id="price"  />
-                                        </div>
-                                        <label class="col-lg-1 control-label" for="sell_quantity">Cantidad:</label>
-                                        <div class="col-lg-2">
-                                            <input class="form-control" id="sell_quantity" name="sell_quantity" type="number" step="any" />
-                                        </div>
-                                        <label class="col-lg-1 control-label" for="sell_units">Unidad:</label>
-                                        <div class="col-lg-2">
-                                            <select name="sell_units" id="sell_units" class="nostyle form-control" placeholder="Selecciona una Medida">
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                        <label class="col-lg-1 control-label" for="sell_multipliers">Sub-Medida:</label>
-                                        <div class="col-lg-2">
-                                            <select name="sell_multipliers" id="sell_multipliers" class="nostyle form-control" placeholder="Selecciona una Medida y luego una sub-medida">
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                    </div><!-- End .form-group  -->
-                                </div>
-                                <div class="step submit_step" id="tax-details">   %{--Este era submit_step--}%
-                                    <span class="step-info" data-num="5" data-text="Detalles de Impuestos"></span>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="checkboxes">&iquest;Aplica algún Impuesto de venta para este Ingrediente?</label>
-                                        <div class="col-lg-2">
-                                            <input type="checkbox" class="nostyle"  id="is_taxable" data-on-text="SI" data-off-text="NO"/>
-                                        </div>
-                                    </div> <!-- End .form-group  -->
-                                    <div class="form-group invisible"  id="tax_properties">
-                                    <label class="col-lg-2 control-label" for="category">Impuesto que aplica: </label>
-                                    <div class="col-lg-8">
-                                        <select name="tax" id="tax" class="nostyle form-control" placeholder="Selecciona un Impuesto">
-                                            <option></option>
+                                        <div class="col-lg-10">
+                                            <h4 class="blue">Detalles de Impuestos</h4>
+                                            <div class="form-group">
+                                                <label class="col-lg-5 control-label" for="checkboxes">&iquest;Aplica algún Impuesto de venta para este Ingrediente?</label>
+                                                <div class="col-lg-2">
+                                                    <input type="checkbox" class="nostyle"  id="is_taxable" data-on-text="SI" data-off-text="NO"/>
+                                                </div>
+                                            </div> <!-- End .form-group  -->
+                                            <div class="form-group invisible"  id="tax_properties">
+                                                <label class="col-lg-4 control-label" for="category">Impuesto que aplica: </label>
+                                                <div class="col-lg-8">
+                                                    <select name="tax" id="tax" class="nostyle form-control" placeholder="Selecciona un Impuesto">
+                                                        <option></option>
 
-                                        </select>
-                                    </div>
+                                                    </select>
+                                                </div>
+                                            </div><!-- End .form-group  -->
+                                        </div>
                                     </div><!-- End .form-group  -->
                                 </div>
-                                <div class="wizard-actions">
+                                <div class="wizard2-actions">
                                     <button class="btn btn-default pull-left" type="reset"> Atr&aacute;s </button>
                                     <button class="btn btn-default pull-right" type="submit"> Siguiente </button>
                                 </div><!-- End .form-group  -->
-                                <input type="hidden" name="table" value="ingredient"/>
+                                <input type="hidden" name="table" value="product"/>
                                 <input type="hidden" name="row_id" value="0"/>
                                 <input type="hidden" name="sync_row_id" value="0"/>
                             </form>
@@ -248,7 +211,52 @@
 
     <r:script>
         var medidas = new Object();
+        var ing_medidas = new Object();
         $(document).ready(function(){
+
+        $("#wizard2").bind("before_step_shown", function(event, data){
+            if(data.currentStep == 'recepy-quantities'){
+            $("#ingredient_quantities").empty();
+               var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+              options.each(function(index){
+//                console.log($(this).val());
+                    var ingName = $(this).text();
+                    var ingId = $(this).val();
+                    var html = '<li class="clearfix">'
+                          +'<div class="row">'
+                                +'<h3>'+ingName+'</h3>'
+                              +'</div>'
+                             +'<div class="row">'
+                                +'<label class="col-lg-3" for="'+ingId+'_quantity">Cantidad: </label>'
+                                  +'<div class="col-lg-3">'
+                                      +'<input type="text" id="'+ingId+'_quantity"  name="'+ingId+'_quantity" value="0" >'
+                                      +'<span class="help-block blue">E.g. 250gr.</span>'
+                                  +'</div>'
+                                  +'<label  class="col-lg-3" for="'+ingId+'_unit">Unidad: </label>'
+                                  +'<div class="col-lg-3">'
+                                      +'<select name="'+ingId+'_unit" id="'+ingId+'_unit" class="nostyle form-control" placeholder="Selecciona una Medida">'
+                                                +'<option></option>'
+                                            +'</select>'
+                                  +'</div>'
+                              +'</div>'
+                                 +'</li>';
+            $("#ingredient_quantities").append(html);
+
+            /*Add medidas a cada ingrediente basandose en el objeto global que dice que medida usa (ing_medida) y tomando subledidas para ese del objeto global medidas*/
+            var submedidas = medidas[ing_medidas[ingId]];
+            if(!_.isUndefined(submedidas)){
+               if(_.size(submedidas) > 0){
+                    for(var k in submedidas) {
+                        $("#"+ingId+"_unit").append('<option value="'+submedidas[k]+'">'+k+'</option>');
+                    }
+                }
+            }
+             $("#"+ingId+"_unit").select2();
+
+              });
+            }
+        });
+
 
             $.when(fetchProperty('ingredient_category'))
             .then(function(response){
@@ -331,6 +339,31 @@
             })
             .fail(callError);
 
+            $.when(fetchProperty('ingredient'))
+            .then(function(response){
+                if(response.status == 200){
+                    var cantidad = response.elements.length;
+                    if(cantidad > 0) {
+                       for(var i = 0; i < cantidad; i++){
+                        $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+                        ing_medidas[response.elements[i].syncId] = response.elements[i].fields.unit_id;
+                       }
+                    }
+                    else{
+                        $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+
+                    }
+
+                }
+                else{
+                  $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                }
+                var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+            })
+            .fail(callError);
+
             $("form").on('change',"#units",function(){
             $("#multipliers").empty();
             var syncid =  $( "#units option:selected" ).val();
@@ -383,30 +416,46 @@
             var rowid = $("[name='row_id']").val();
             var syncrowid = $("[name='sync_row_id']").val();
             var quantity = parseFloat($("#quantity").val()) * parseFloat($("#multipliers option:selected").val());
-            var costperunit = parseFloat($("#cost").val()) / quantity;
-            var sellquantity = 0;
-            var priceperunit = 0;
-            if($('#is_sellable').bootstrapSwitch('state')){
-                 sellquantity = parseFloat($("#sell_quantity").val()) * parseFloat($("#sell_multipliers option:selected").val());
-                 priceperunit = parseFloat($("#price").val()) / sellquantity;
-            }
-            var unit = $("#units option:selected").val();
+            var cost = parseFloat($("#cost").val());
+            var price = parseFloat($("#price").val());
             var tax
             if($('#is_taxable').bootstrapSwitch('state'))
                 tax = $("#tax option:selected").val();
             else
                 tax = 0;
 
+                /*agregar ingredient_product*/
+
 
             var fields = "{" +
               "\"name\":"+$("[name='name']").val()+
               ",\"category_id\":"+$("#select-category option:selected").val()+
-              ",\"cost_per_unit\":"+costperunit+
-              ",\"quantity\":"+quantity+
-              ",\"unit_id\":"+unit+
-              ",\"price_measure\":"+sellquantity+
-              ",\"price_per_unit\":"+priceperunit+
+              ",\"cost\":"+cost+
+              ",\"price\":"+price+
               ",\"tax_id\":"+tax+
+              ",\"automatic_cost\":"+0+
+              "}";
+
+            return  $.ajax({
+                type: "POST",
+                url: url,
+                data:{table:table,row_id:rowid,sync_row_id:syncrowid,fields:fields},
+                dataType: 'json'
+            }).promise();
+        }
+        function saveMultiRow(ingredient, quantity, product){
+            var url = "${createLink(controller: 'company',action: 'saveRow')}";
+            var table = 'productingredient';
+            var rowid = '0';
+            var syncrowid = '0';
+
+                /*agregar ingredient_product*/
+
+
+            var fields = "{" +
+              "\"product_id\":"+product+
+              ",\"ingredient_id\":"+ingredient+
+              ",\"qty\":"+quantity+
               "}";
 
             return  $.ajax({

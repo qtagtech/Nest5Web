@@ -24,6 +24,9 @@ $(document).ready(function() {
     $('#is_sellable').bootstrapSwitch();
     $('#is_taxable').bootstrapSwitch();
 
+    /*Multiple Select Boxes*/
+//    $.configureBoxes();
+
     //------------- Form wizard with steps-------------//
     $("#wizard").formwizard({
      formPluginEnabled: true,
@@ -170,6 +173,296 @@ $(document).ready(function() {
          },
          sell_units: "Indica en que unidad se mide la cantidad que se vende de este ingrediente.",
          sell_multipliers: "Debes seleccionar una para indicar como medir la cantidad que has ingresado que se vende.",
+         tax: "Has indicado que este ingrediente al venderse se le aplica un impuesto. Selecciona cual."
+
+     }
+     }
+     });
+    $("#wizard2").formwizard({
+     formPluginEnabled: true,
+     validationEnabled: true,
+     focusFirstInput : true,
+     textSubmit: "Guardar",
+     formOptions :{
+     success: function(data){
+     //produce success message
+         var btn = $("body").find(":submit");
+         btn.hide(20);
+         var lElement = $('<div class="margin padding center"><img src="/dashboard/images/loaders/circular/070.gif" alt=""></div>');
+         $(".wizard-actions").append(lElement);
+         $.when(saveRow())
+             .then(function(response){
+                 if(response.status == 1){
+                     /*Save multiple productingredient relationships taking ingredients present in box2View*/
+                     var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+                     var total = options.length;
+                     options.each(function(index){
+                         var ingName = $(this).text();
+                         var ingId = $(this).val();
+                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
+                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
+                         var real_quantity = quantity * multiplier;
+                         $.when(saveMultiRow(ingId,real_quantity,response.syncId))
+                             .then(function(response2){
+                                 total --;
+                                 if(total == 0){
+                                     if(response2.status == 1){
+                                         $.pnotify({
+                                             type: 'success',
+                                             title: '&iexcl;&Eacute;xito!',
+                                             text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                                             icon: 'picon icon16 iconic-icon-check-alt white',
+                                             opacity: 0.95,
+                                             history: false,
+                                             sticker: false
+                                         });
+                                         $("#wizard2").formwizard("reset");
+                                         $("#wizard2").formwizard("update_steps");
+                                     }
+                                 }
+                                 if(response2.status != 1){
+                                     console.log("Se presentaron errores guardando el ingrediente en el producto.");
+                                 }
+
+
+
+                         })
+                         .fail(callError);
+
+                     });
+                 }else{
+                     $.pnotify({
+                         type: 'error',
+                         title: '&iexcl;Lo sentimos!',
+                         text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                         icon: 'picon icon24 typ-icon-cancel white',
+                         opacity: 0.95,
+                         hide:false,
+                         history: false,
+                         sticker: false
+                     });
+
+                 }
+                 $("body").find(":submit").show(20);
+                 $(lElement).remove();
+
+
+
+             })
+             .fail(callError);
+         return false;
+     createSuccessMsg($("#wizard .msg"), "&iexcl;Producto Guardado con éxito!");
+     },
+     resetForm: false
+     },
+     disableUIStyles: true,
+     showSteps: true, //show the step
+     validationOptions: {
+     errorPlacement: function(error, element) {
+     wrap = element.parent();
+     if(wrap.hasClass('selector')) {
+     error.insertAfter(wrap);
+     } else {
+     error.insertAfter(element);
+     }
+     },
+     rules: {
+         category: {
+         required: true
+         },
+         name: {
+             required: true,
+             minlength: 4
+         },
+         cost: {
+             required: true
+         },
+         price: {
+             required: true
+         },
+         tax: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_taxable').bootstrapSwitch('state');
+                 }
+             }
+         }
+
+     },
+     messages: {
+         category: "Debes seleccionar una categor&iacute;a",
+         name: {
+             required: "Debes poner un nombre para reconocer el ingrediente",
+             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+         },
+         cost: "Por favor indica un costo del ingrediente.",
+         quantity: {
+             required:"&iquest;Qu&eacute; cantidad de este ingrediente compraste?",
+             number: "No has puesto un n&uacute;mero v&aacute;lido."
+            },
+         price: "Has dicho que se puede vender este ingrediente, &iquest;A qu&eacute; precio?",
+         tax: "Has indicado que este ingrediente al venderse se le aplica un impuesto. Selecciona cual."
+
+     }
+     }
+     });
+    $("#wizard3").formwizard({
+     formPluginEnabled: true,
+     validationEnabled: true,
+     focusFirstInput : true,
+     textSubmit: "Guardar",
+     formOptions :{
+     success: function(data){
+     //produce success message
+         var btn = $("body").find(":submit");
+         btn.hide(20);
+         var lElement = $('<div class="margin padding center"><img src="/dashboard/images/loaders/circular/070.gif" alt=""></div>');
+         $(".wizard-actions").append(lElement);
+         $.when(saveRow())
+             .then(function(response){
+                 if(response.status == 1){
+                     /*Save multiple productingredient relationships taking ingredients present in box2View*/
+                     var options = $('[name="duallistbox_demo2[]"] option:selected') || [];
+                     var total = options.length;
+                     var combo =  response.syncId;
+                     options.each(function(index){
+                         var ingName = $(this).text();
+                         var ingId = $(this).val();
+                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
+                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
+                         var real_quantity = quantity * multiplier;
+                         $.when(saveMultiRow('comboingredient',ingId,real_quantity,combo))
+                             .then(function(response2){
+                                 total --;
+                                 if(total == 0){
+                                     if(response2.status == 1){
+                                         /*Save multiple productingredient relationships taking ingredients present in box2View*/
+                                         var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+                                         var total2 = options.length;
+                                         options.each(function(index){
+                                             var proName = $(this).text();
+                                             var proId = $(this).val();
+                                             var quantity2 = parseFloat($("#"+proId+"_quantity").val()) || 0.0;
+                                             $.when(saveMultiRow('comboproduct',proId,quantity2,combo))
+                                                 .then(function(response3){
+                                                     total2 --;
+                                                     if(total2 == 0){
+                                                         if(response3.status == 1){
+
+                                                              $.pnotify({
+                                                              type: 'success',
+                                                              title: '&iexcl;&Eacute;xito!',
+                                                              text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                                                              icon: 'picon icon16 iconic-icon-check-alt white',
+                                                              opacity: 0.95,
+                                                              history: false,
+                                                              sticker: false
+                                                              });
+                                                              $("#wizard2").formwizard("reset");
+                                                              $("#wizard2").formwizard("update_steps");
+                                                         }
+                                                     }
+                                                     if(response3.status != 1){
+                                                         console.log("Se presentaron errores guardando el ingrediente en el producto.");
+                                                     }
+
+
+
+                                                 })
+                                                 .fail(callError);
+
+                                         });
+                                        /* $.pnotify({
+                                             type: 'success',
+                                             title: '&iexcl;&Eacute;xito!',
+                                             text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                                             icon: 'picon icon16 iconic-icon-check-alt white',
+                                             opacity: 0.95,
+                                             history: false,
+                                             sticker: false
+                                         });
+                                         $("#wizard2").formwizard("reset");
+                                         $("#wizard2").formwizard("update_steps");*/
+                                     }
+                                 }
+                                 if(response2.status != 1){
+                                     console.log("Se presentaron errores guardando el ingrediente en el producto.");
+                                 }
+
+
+
+                         })
+                         .fail(callError);
+
+                     });
+                 }else{
+                     $.pnotify({
+                         type: 'error',
+                         title: '&iexcl;Lo sentimos!',
+                         text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                         icon: 'picon icon24 typ-icon-cancel white',
+                         opacity: 0.95,
+                         hide:false,
+                         history: false,
+                         sticker: false
+                     });
+
+                 }
+                 $("body").find(":submit").show(20);
+                 $(lElement).remove();
+
+
+
+             })
+             .fail(callError);
+         return false;
+     createSuccessMsg($("#wizard .msg"), "&iexcl;Producto Guardado con éxito!");
+     },
+     resetForm: false
+     },
+     disableUIStyles: true,
+     showSteps: true, //show the step
+     validationOptions: {
+     errorPlacement: function(error, element) {
+     wrap = element.parent();
+     if(wrap.hasClass('selector')) {
+     error.insertAfter(wrap);
+     } else {
+     error.insertAfter(element);
+     }
+     },
+     rules: {
+
+         name: {
+             required: true,
+             minlength: 4
+         },
+         cost: {
+             required: true
+         },
+         price: {
+             required: true
+         },
+         tax: {
+             required: {
+                 depends: function(element) {
+                     return $('#is_taxable').bootstrapSwitch('state');
+                 }
+             }
+         }
+
+     },
+     messages: {
+         name: {
+             required: "Debes poner un nombre para reconocer el ingrediente",
+             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+         },
+         cost: "Por favor indica un costo del ingrediente.",
+         quantity: {
+             required:"&iquest;Qu&eacute; cantidad de este ingrediente compraste?",
+             number: "No has puesto un n&uacute;mero v&aacute;lido."
+            },
+         price: "Has dicho que se puede vender este ingrediente, &iquest;A qu&eacute; precio?",
          tax: "Has indicado que este ingrediente al venderse se le aplica un impuesto. Selecciona cual."
 
      }

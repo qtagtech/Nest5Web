@@ -551,6 +551,14 @@ class CompanyController {
 
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
+    @Secured(["ROLE_COMPANY"])
+    def addCombo(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Agregar Combo"
+
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
 
     /*@Secured(["ROLE_COMPANY"])
     def fetchIngredientCategories(){
