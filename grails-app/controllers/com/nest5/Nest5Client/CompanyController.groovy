@@ -507,7 +507,7 @@ class CompanyController {
         if(jsonData?.status != 1){
 
         }
-        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,sales: jsonData?.payload]
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,sales: jsonData?.payload ?: []]
 
     }
 

@@ -258,7 +258,7 @@
         });
 
 
-            $.when(fetchProperty('ingredient_category'))
+            $.when(fetchProperty('product_category'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;
@@ -269,14 +269,14 @@
                     }
                     else{
                         $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addIngredientCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                        after('<a href="${createLink(controller: 'company',action: 'addProductCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
                     }
 
                 }
                 else{
                   $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addIngredientCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                        after('<a href="${createLink(controller: 'company',action: 'addProductCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                 }
                 $("#select-category").select2();
             })
