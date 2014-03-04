@@ -17,7 +17,7 @@
     <link href="${resource(dir: 'js/dashboard/plugins/tables/dataTables',file: 'TableTools.css')}" type="text/css" rel="stylesheet" />
 
 
-    <r:require modules="jquerydatatables,tabletools,zeroclipboard,responsivetables,datatables"/>
+    <r:require modules="jquerydatatables,tabletools,zeroclipboard,responsivetables,uniform,datatables"/>
 
 </head>
       
