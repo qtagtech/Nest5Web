@@ -22,7 +22,7 @@
 
 
 
-    <r:require modules="elastic,inputlimiter,maskedinput,bootstrapswitch,uniform,globalize,colorpicker,timentry,select2,duallistboxnew,duallistbox,bbq,formwizard,formvalidation"/>
+    <r:require modules="elastic,inputlimiter,maskedinput,bootstrapswitch,uniform,globalize,colorpicker,timentry,select2,duallistboxnew,bbq,formwizard,formvalidation"/>
 
 </head>
       
@@ -76,31 +76,16 @@
 
                         </div>
                         <div class="panel-body noPad clearfix">
-                            <form id="wizard2" class="form-horizontal" role="form">
+                            <form id="wizard3" class="form-horizontal" role="form">
                                 <div class="msg"></div>
                                 <div class="wizard-steps clearfix"></div>
-
-                                <div class="step" id="category-details">
-                                    <span class="step-info" data-num="1" data-text="Clasificaci&oacute;n"></span>
-                                    <div class="form-group">
-                                        <label class="col-lg-2 control-label" for="category">Categor&iacute;a de Producto: </label>
-                                        <div class="col-lg-8">
-                                            <select name="category" id="select-category" class="nostyle form-control" placeholder="Selecciona una Categor&iacute;a">
-                                                <option></option>
-
-                                            </select>
-                                        </div>
-                                    </div><!-- End .form-group  -->
-
-
-                                </div>
                                 <div class="step" id="ingredient-details">
-                                    <span class="step-info" data-num="2" data-text="Detalles de Ingrediente"></span>
+                                    <span class="step-info" data-num="1" data-text="Detalles de Combo"></span>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label" for="name">Nombre</label>
                                         <div class="col-lg-10">
                                             <input class="form-control" id="name" name="name" type="text" />
-                                            <span class="help-block blue">E.g. Pastas Carbonara.</span>
+                                            <span class="help-block blue">E.g. Combo 1.</span>
                                         </div>
                                     </div><!-- End .form-group  -->
                                     <div class="form-group">
@@ -112,36 +97,57 @@
                                     </div><!-- End .form-group  -->
                                 </div>
                                 <div class="step" id="recepy-details">   %{--Este era submit_step--}%
-                                    <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
+                                    <span class="step-info" data-num="3" data-text="Receta de Combo"></span>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4><span>&iquest;De qu&eacute; se compone este Combo?</span></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="todo">
+                                                <h3 class="blue">Productos</h3>
+                                                <div class="form-group">
+                                                    <div class="col-lg-12">
+                                                        <select multiple="multiple" name="duallistbox_demo1[]">
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <h3 class="blue">Ingredientes</h3>
+                                                <div class="form-group">
+                                                    <div class="col-lg-12">
+                                                        <select multiple="multiple" name="duallistbox_demo2[]">
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End .panel -->
+
+
+                                </div>
+                                <div class="step" id="recepy-quantities">
+                                    <span class="step-info" data-num="3" data-text="Cantidades Espec&iacute;ficas"></span>
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                    <h4><span>&iquest;De qu&eacute; Ingredientes se compone este Producto?</span></h4>
+                                                    <h4><span>Especifica la cantidad de cada Producto en este Combo</span></h4>
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="todo">
-                                                        <h3 class="blue">Ingredientes</h3>
-                                                        <div class="form-group">
-                                                            <div class="col-lg-12">
-                                                                <select multiple="multiple" name="duallistbox_demo1[]">
-                                                                </select>
-                                                            </div>
-                                                        </div>
+                                                        <h4>Productos Seleccionados</h4>
+                                                        <ul id="product_quantities">
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div><!-- End .panel -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="step" id="recepy-quantities">
-                                    <span class="step-info" data-num="4" data-text="Cantidades Espec&iacute;ficas"></span>
+                                        </div><!-- End .span12 -->
+                                    </div><!-- End .form-group  -->
                                     <div class="form-group">
                                         <div class="col-lg-12">
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                    <h4><span>Especifica la cantidad de cada Ingrediente en este Producto</span></h4>
+                                                    <h4><span>Especifica la cantidad de cada Ingrediente en este Combo</span></h4>
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="todo">
@@ -155,7 +161,7 @@
                                     </div><!-- End .form-group  -->
                                 </div>
                                 <div class="step" id="order-details">
-                                    <span class="step-info" data-num="5" data-text="Detalles de Costo y Precio"></span>
+                                    <span class="step-info" data-num="4" data-text="Detalles de Costo y Precio"></span>
                                     <div class="form-group">
                                         <div class="col-lg-5">
                                             <h4 class="blue">Detalles de Costo</h4>
@@ -191,11 +197,11 @@
                                         </div>
                                     </div><!-- End .form-group  -->
                                 </div>
-                                <div class="wizard2-actions">
+                                <div class="wizard3-actions">
                                     <button class="btn btn-default pull-left" type="reset"> Atr&aacute;s </button>
                                     <button class="btn btn-default pull-right" type="submit"> Siguiente </button>
                                 </div><!-- End .form-group  -->
-                                <input type="hidden" name="table" value="product"/>
+                                <input type="hidden" name="table" value="combo"/>
                                 <input type="hidden" name="row_id" value="0"/>
                                 <input type="hidden" name="sync_row_id" value="0"/>
                             </form>
@@ -214,10 +220,31 @@
         var ing_medidas = new Object();
         $(document).ready(function(){
 
-        $("#wizard2").bind("before_step_shown", function(event, data){
+        $("#wizard3").bind("before_step_shown", function(event, data){
             if(data.currentStep == 'recepy-quantities'){
             $("#ingredient_quantities").empty();
+            $("#product_quantities").empty();
                var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+              options.each(function(index){
+//                console.log($(this).val());
+                    var proName = $(this).text();
+                    var proId = $(this).val();
+                    var html = '<li class="clearfix">'
+                          +'<div class="row">'
+                                +'<h3>'+proName+'</h3>'
+                              +'</div>'
+                             +'<div class="row">'
+                                +'<label class="col-lg-3" for="'+proId+'_quantity">Cantidad: </label>'
+                                  +'<div class="col-lg-3">'
+                                      +'<input type="number" step="1" id="'+proId+'_quantity"  name="'+proId+'_quantity" value="0" >'
+                                      +'<span class="help-block blue">E.g. 3.</span>'
+                                  +'</div>'
+                              +'</div>'
+                                 +'</li>';
+            $("#product_quantities").append(html);
+
+              });
+              var options = $('[name="duallistbox_demo2[]"] option:selected') || [];
               options.each(function(index){
 //                console.log($(this).val());
                     var ingName = $(this).text();
@@ -229,7 +256,7 @@
                              +'<div class="row">'
                                 +'<label class="col-lg-3" for="'+ingId+'_quantity">Cantidad: </label>'
                                   +'<div class="col-lg-3">'
-                                      +'<input type="text" id="'+ingId+'_quantity"  name="'+ingId+'_quantity" value="0" >'
+                                      +'<input type="number" stype="any" id="'+ingId+'_quantity"  name="'+ingId+'_quantity" value="0" >'
                                       +'<span class="help-block blue">E.g. 250gr.</span>'
                                   +'</div>'
                                   +'<label  class="col-lg-3" for="'+ingId+'_unit">Unidad: </label>'
@@ -258,29 +285,7 @@
         });
 
 
-            $.when(fetchProperty('ingredient_category'))
-            .then(function(response){
-                if(response.status == 200){
-                    var cantidad = response.elements.length;
-                    if(cantidad > 0) {
-                       for(var i = 0; i < cantidad; i++){
-                        $("#select-category").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
-                       }
-                    }
-                    else{
-                        $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addIngredientCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
-                    }
-
-                }
-                else{
-                  $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addIngredientCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
-                }
-                $("#select-category").select2();
-            })
-            .fail(callError);
 
             $.when(fetchProperty('measurament_unit'))
             .then(function(response){
@@ -339,28 +344,53 @@
             })
             .fail(callError);
 
-            $.when(fetchProperty('ingredient'))
+            $.when(fetchProperty('product'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;
                     if(cantidad > 0) {
                        for(var i = 0; i < cantidad; i++){
                         $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+
+                       }
+                    }
+                    else{
+                        $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes productos creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addProduct')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+
+                    }
+
+                }
+                else{
+                  $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes productos creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addProduct')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                }
+//                $.configureBoxes();
+                var demo1 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+            })
+            .fail(callError);
+            $.when(fetchProperty('ingredient'))
+            .then(function(response){
+                if(response.status == 200){
+                    var cantidad = response.elements.length;
+                    if(cantidad > 0) {
+                       for(var i = 0; i < cantidad; i++){
+                        $('[name="duallistbox_demo2[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
                         ing_medidas[response.elements[i].syncId] = response.elements[i].fields.unit_id;
                        }
                     }
                     else{
-                        $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                        $('[name="duallistbox_demo2[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
                         after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
                     }
 
                 }
                 else{
-                  $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                  $('[name="duallistbox_demo2[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
                         after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                 }
-                var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+                var demo2 = $('[name="duallistbox_demo2[]"]').bootstrapDualListbox();
             })
             .fail(callError);
 
@@ -429,7 +459,6 @@
 
             var fields = "{" +
               "\"name\":"+$("[name='name']").val()+
-              ",\"category_id\":"+$("#select-category option:selected").val()+
               ",\"cost\":"+cost+
               ",\"price\":"+price+
               ",\"tax_id\":"+tax+
@@ -443,9 +472,9 @@
                 dataType: 'json'
             }).promise();
         }
-        function saveMultiRow(ingredient, quantity, product){
+        function saveMultiRow(table,ingredient, quantity, product){
             var url = "${createLink(controller: 'company',action: 'saveRow')}";
-            var table = 'productingredient';
+            var table = table;
             var rowid = '0';
             var syncrowid = '0';
 

@@ -248,6 +248,11 @@ modules = {
         dependsOn('select2')
         resource id: 'duallistbox',url: 'js/dashboard/plugins/forms/dualselect/jquery.dualListBox-1.3.min.js'
     }
+    duallistboxnew{
+        dependsOn('select2')
+        resource id: 'duallistboxnew',url: 'js/dashboard/plugins/forms/duallistbox/jquery.bootstrap-duallistbox.js'
+        resource id: 'select2css', url: 'js/dashboard/plugins/forms/duallistbox/bootstrap-duallistbox.css', disposition: 'head'
+    }
     uitimepicker{
         dependsOn('duallistbox')
         resource id: 'uitimepicker',url: 'js/dashboard/supr-theme/jquery-ui-timepicker-addon.js'
