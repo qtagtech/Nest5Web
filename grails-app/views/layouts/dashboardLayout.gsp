@@ -85,23 +85,23 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
     <div id="header">
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="dashboard.html">Nest5<span class="slogan">.dashboard</span></a>
+                <a class="navbar-brand" href="${createLink(controller: 'company', action:'panel')}">Nest5<span class="slogan">.dashboard</span></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Mostrar/Esconder Men&uacute;</span>
                     <span class="icon16 icomoon-icon-arrow-4"></span>
                 </button>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="dashboard.html"><span class="icon16 icomoon-icon-screen-2"></span> <span class="txt">Dashboard</span></a>
+                        <a href="${createLink(controller: 'company', action:'panel')}"><span class="icon16 icomoon-icon-screen-2"></span> <span class="txt">Dashboard</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="icon16 icomoon-icon-cog"></span><span class="txt"> Configuraci&oacute;n</span>
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                       %{-- <ul class="dropdown-menu">
                             <li class="menu">
                                 <ul>
                                     <li><a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Site config</a></li>
@@ -109,9 +109,9 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                                     <li><a href="#"><span class="icon16 icomoon-icon-image-2"></span>Themes</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul>--}%
                     </li>
-                    <li class="dropdown">
+                    %{--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="icon16 icomoon-icon-envelop"></span><span class="txt">Mensajes</span><span class="notification"></span>
                         </a>
@@ -138,11 +138,11 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}%
                 </ul>
 
                 <ul class="nav navbar-right usernav">
-                    <li class="dropdown">
+                    %{--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="icon16 icomoon-icon-bell"></span><span class="notification"></span>
                         </a>
@@ -172,7 +172,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}%
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
                             <img src="${picture}" alt="" class="image" />
@@ -184,7 +184,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                                 <ul>
                                     <li><a href="#" class="avatar_change"><span class="icon16 icomoon-icon-image-4"></span>Editar Imagen</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-user-plus"></span>Editar Perfil</a></li>
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus"></span>Add user</a></li>
+                                    %{--<li><a href="#"><span class="icon16 icomoon-icon-plus"></span>Add user</a></li>--}%
                                 </ul>
                             </li>
                         </ul>
@@ -215,10 +215,24 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
 
         <div class="shortcuts">
             <ul>
-                <li><a href="support.html" title="Soporte Nest5" class="tip"><span class="icon24 icomoon-icon-support"></span></a></li>
-                <li><a href="#" title="Exportar Base de Datos" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>
-                <li><a href="charts.html" title="Sales statistics" class="tip"><span class="icon24 icomoon-icon-pie-2"></span></a></li>
-                <li><a href="#" title="Nuevo" class="tip"><span class="icon24 icomoon-icon-pencil"></span></a></li>
+                <li><a href="http://soporte.nest5.com" target="_blank" title="Soporte Nest5" class="tip"><span class="icon24 icomoon-icon-support"></span></a></li>
+                %{--<li><a href="#" title="Exportar Base de Datos" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>--}%
+                <li><a href="#" title="Estad&iacute;sticas" class="tip"><span class="icon24 icomoon-icon-pie-2"></span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="icon16 icomoon-icon-cog"></span><span class="txt"> Settings</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="menu">
+                            <ul>
+                                <li><a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Site config</a></li>
+                                <li><a href="#"><span class="icon16 icomoon-icon-wrench"></span>Plugins</a></li>
+                                <li><a href="#"><span class="icon16 icomoon-icon-image-2"></span>Themes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- End search -->
 
