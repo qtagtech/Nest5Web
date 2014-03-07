@@ -235,13 +235,13 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                         <ul class="sub">
                             <li><a href="#"><span class="icon16  brocco-icon-basket"></span>Ingredientes</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nueva</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addIngredientCategory')}"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nueva</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><span class="icon16  brocco-icon-coffee"></span>Productos</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addProductCategory')}"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
                                 </ul>
                             </li>
@@ -252,19 +252,19 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                         <ul class="sub">
                             <li><a href="#"><span class="icon16  brocco-icon-basket"></span>Ingredientes</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nuevo</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addIngredient')}"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nuevo</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><span class="icon16  brocco-icon-coffee"></span>Productos</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addProduct')}"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><span class="icon16  iconic-icon-layers"></span>Combos</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addCombo')}"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
                                 </ul>
                             </li>
@@ -275,13 +275,13 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                         <ul class="sub">
                             <li><a href="#"><span class="icon16  icomoon-icon-balance"></span>Unidades</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addMeasuramentUnit')}"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><span class="icon16  icomoon-icon-coin"></span>Impuestos</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="${createLink(controller: 'company',action:'addTax')}"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
                                     <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todos</a></li>
                                 </ul>
                             </li>
