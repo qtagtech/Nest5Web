@@ -218,96 +218,73 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                 <li><a href="http://soporte.nest5.com" target="_blank" title="Soporte Nest5" class="tip"><span class="icon24 icomoon-icon-support"></span></a></li>
                 %{--<li><a href="#" title="Exportar Base de Datos" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>--}%
                 <li><a href="#" title="Estad&iacute;sticas" class="tip"><span class="icon24 icomoon-icon-pie-2"></span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="icon16 icomoon-icon-cog"></span><span class="txt"> Settings</span>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="menu">
-                            <ul>
-                                <li><a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Site config</a></li>
-                                <li><a href="#"><span class="icon16 icomoon-icon-wrench"></span>Plugins</a></li>
-                                <li><a href="#"><span class="icon16 icomoon-icon-image-2"></span>Themes</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="#" title="Agregar Elemento" class="tip"><span class="icon24 icomoon-icon-pencil"></span></a></li>
             </ul>
         </div><!-- End search -->
 
         <div class="sidenav">
 
             <div class="sidebar-widget" style="margin: -1px 0 0 0;">
-                <h5 class="title" style="margin-bottom:0">Navigation</h5>
+                <h5 class="title" style="margin-bottom:0">Men&uacute; Nest5</h5>
             </div><!-- End .sidenav-widget -->
 
             <div class="mainnav">
                 <ul>
-                    <li><a href="charts.html"><span class="icon16 icomoon-icon-stats-up"></span>Charts</a></li>
-                    <li>
-                        <a href="#"><span class="icon16 icomoon-icon-list"></span>Forms<span class="notification red">sub2</span></a>
+                    <li><a href="${createLink(controller: 'company',action: 'dashboard')}"><span class="icon16 icomoon-icon-stats-up"></span>Panel Principal</a></li>
+                    <li><a href="#"><span class="icon16 icomoon-icon-file"></span>Categor&iacute;as</a>
                         <ul class="sub">
-                            <li><a href="forms.html"><span class="icon16 icomoon-icon-file"></span>Forms Stuff</a></li>
-                            <li><a href="forms-validation.html"><span class="icon16 icomoon-icon-file"></span>Validation</a></li>
-                            <li>
-                                <a href="#"><span class="icon16 icomoon-icon-file"></span>Sub Level 2<span class="notification red">new</span></a>
+                            <li><a href="#"><span class="icon16  brocco-icon-basket"></span>Ingredientes</a>
                                 <ul class="sub">
-                                    <li><a href="#"><span class="icon16 icomoon-icon-arrow-right-3"></span>Item</a></li>
-                                    <li><a href="#"><span class="icon16 icomoon-icon-arrow-right-3"></span>Item</a></li>
-                                    <li><a href="#"><span class="icon16 icomoon-icon-arrow-right-3"></span>Item</a></li>
-                                    <li><a href="#"><span class="icon16 icomoon-icon-arrow-right-3"></span>Item</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nueva</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span class="icon16  brocco-icon-coffee"></span>Productos</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><span class="icon16 icomoon-icon-table-2"></span>Tables</a>
+                        <a href="#"><span class="icon16  entypo-icon-shopping"></span>Inventario</a>
                         <ul class="sub">
-                            <li><a href="tables.html"><span class="icon16 icomoon-icon-arrow-right-3"></span>Static</a></li>
-                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-arrow-right-3"></span>Data table</a></li>
+                            <li><a href="#"><span class="icon16  brocco-icon-basket"></span>Ingredientes</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle"></span>Agregar Nuevo</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span class="icon16  brocco-icon-coffee"></span>Productos</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span class="icon16  iconic-icon-layers"></span>Combos</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Inventario</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><span class="icon16 icomoon-icon-equalizer-2"></span>UI Elements</a>
+                        <a href="#"><span class="icon16 icomoon-icon-settings"></span>Configuraci&oacute;nes</a>
                         <ul class="sub">
-                            <li><a href="icons.html"><span class="icon16 icomoon-icon-rocket"></span>Icons</a></li>
-                            <li><a href="buttons.html"><span class="icon16 icomoon-icon-file"></span>Buttons</a></li>
-                            <li><a href="elements.html"><span class="icon16 icomoon-icon-cogs"></span>Elements</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="typo.html"><span class="icon16 icomoon-icon-font"></span>Typography</a></li>
-                    <li><a href="grid.html"><span class="icon16 icomoon-icon-grid"></span>Grid</a></li>
-                    <li><a href="calendar.html"><span class="icon16 icomoon-icon-calendar"></span>Calendar</a></li>
-                    <li>
-                        <a href="widgets.html"><span class="icon16 icomoon-icon-cube"></span>Widgets<span class="notification green">35</span></a>
-                    </li>
-                    <li><a href="file.html"><span class="icon16 icomoon-icon-upload"></span>File Manager</a></li>
-                    <li>
-                        <a href="#"><span class="icon16 icomoon-icon-file"></span>Error pages<span class="notification">6</span></a>
-                        <ul class="sub">
-                            <li><a href="403.html"><span class="icon16 icomoon-icon-file"></span>Error 403</a></li>
-                            <li><a href="404.html"><span class="icon16 icomoon-icon-file"></span>Error 404</a></li>
-                            <li><a href="405.html"><span class="icon16 icomoon-icon-file"></span>Error 405</a></li>
-                            <li><a href="500.html"><span class="icon16 icomoon-icon-file"></span>Error 500</a></li>
-                            <li><a href="503.html"><span class="icon16 icomoon-icon-file"></span>Error 503</a></li>
-                            <li><a href="offline.html"><span class="icon16 icomoon-icon-file"></span>Offline page</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="icon16 icomoon-icon-folder"></span>Other pages<span class="notification blue">11</span></a>
-                        <ul class="sub">
-                            <li><a href="invoice.html"><span class="icon16 icomoon-icon-file"></span>Invoice page</a></li>
-                            <li><a href="profile.html"><span class="icon16 icomoon-icon-file"></span>User profile</a></li>
-                            <li><a href="search.html"><span class="icon16 icomoon-icon-search-3"></span>Search page</a></li>
-                            <li><a href="email.html"><span class="icon16 icomoon-icon-envelop"></span>Email page</a></li>
-                            <li><a href="support.html"><span class="icon16  icomoon-icon-support"></span>Support page</a></li>
-                            <li><a href="faq.html"><span class="icon16 icomoon-icon-attachment"></span>FAQ page</a></li>
-                            <li><a href="structure.html"><span class="icon16 icomoon-icon-file"></span>Blank page</a></li>
-                            <li><a href="fixed-topbar.html"><span class="icon16 icomoon-icon-file"></span>Fixed topbar</a></li>
-                            <li><a href="right-sidebar.html"><span class="icon16 icomoon-icon-file"></span>Right sidebar</a></li>
-                            <li><a href="two-sidebars.html"><span class="icon16 icomoon-icon-file"></span>Two sidebars</a></li>
-                            <li><a href="drag.html"><span class="icon16 icomoon-icon-move"></span>Drag &amp; Drop <span class="notification red">new</span></a></li>
+                            <li><a href="#"><span class="icon16  icomoon-icon-balance"></span>Unidades</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nueva</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todas</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span class="icon16  icomoon-icon-coin"></span>Impuestos</a>
+                                <ul class="sub">
+                                    <li><a href="#"><span class="icon16 icomoon-icon-plus-circle-2"></span>Agregar Nuevo</a></li>
+                                    <li><a href="#"><span class="icon16 icomoon-icon-folder-open"></span>Ver Todos</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -315,7 +292,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
         </div><!-- End sidenav -->
 
         <div class="sidebar-widget">
-            <h5 class="title">Monthly Bandwidth Transfer</h5>
+            <h5 class="title">Meta de Ventas</h5>
             <div class="content">
                 <span class="icon16 icomoon-icon-loop left"></span>
                 <div class="progress progress-mini left tip" title="87%">
@@ -328,7 +305,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
         </div><!-- End .sidenav-widget -->
 
         <div class="sidebar-widget">
-            <h5 class="title">Disk Space Usage</h5>
+            <h5 class="title">Meta de Nuevos Clientes</h5>
             <div class="content">
                 <span class="icon16  icomoon-icon-storage-2 left"></span>
                 <div class="progress progress-mini left tip" title="16%">
@@ -341,13 +318,13 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
         </div><!-- End .sidenav-widget -->
 
         <div class="sidebar-widget">
-            <h5 class="title">Ad sense stats</h5>
+            <h5 class="title">Datos Divertidos</h5>
             <div class="content">
 
                 <div class="stats">
                     <div class="item">
                         <div class="head clearfix">
-                            <div class="txt">Advert View</div>
+                            <div class="txt">Clientes Únicos</div>
                         </div>
                         <span class="icon16 icomoon-icon-eye left"></span>
                         <div class="number">21,501</div>
@@ -359,7 +336,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                     </div>
                     <div class="item">
                         <div class="head clearfix">
-                            <div class="txt">Clicks</div>
+                            <div class="txt">Ventas</div>
                         </div>
                         <span class="icon16 icomoon-icon-thumbs-up left"></span>
                         <div class="number">308</div>
@@ -371,7 +348,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                     </div>
                     <div class="item">
                         <div class="head clearfix">
-                            <div class="txt">Page CTR</div>
+                            <div class="txt">Me Gusta</div>
                         </div>
                         <span class="icon16 icomoon-icon-heart left"></span>
                         <div class="number">4%</div>
@@ -383,7 +360,7 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                     </div>
                     <div class="item">
                         <div class="head clearfix">
-                            <div class="txt">Earn money</div>
+                            <div class="txt">Ventas Totales</div>
                         </div>
                         <span class="icon16 icomoon-icon-coin left"></span>
                         <div class="number">$376</div>
@@ -400,14 +377,15 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
         </div><!-- End .sidenav-widget -->
 
         <div class="sidebar-widget">
-            <h5 class="title">Right now</h5>
+            <h5 class="title">Resumen de Inventario</h5>
             <div class="content">
                 <div class="rightnow">
                     <ul class="list-unstyled">
-                        <li><span class="number">34</span><span class="icon16 icomoon-icon-new"></span>Posts</li>
-                        <li><span class="number">7</span><span class="icon16 icomoon-icon-file"></span>Pages</li>
-                        <li><span class="number">14</span><span class="icon16 icomoon-icon-list-2"></span>Categories</li>
-                        <li><span class="number">201</span><span class="icon16 icomoon-icon-tag"></span>Tags</li>
+                        <li><span class="number">34</span><span class="icon16 icomoon-icon-new"></span>Agotándose</li>
+                        <li><span class="number">7</span><span class="icon16 icomoon-icon-file"></span>En Exceso</li>
+                        <li><span class="number">14</span><span class="icon16 icomoon-icon-list-2"></span>Ingredientes</li>
+                        <li><span class="number">14</span><span class="icon16 icomoon-icon-list-2"></span>Productos</li>
+                        <li><span class="number">201</span><span class="icon16 icomoon-icon-tag"></span>Combos</li>
                     </ul>
                 </div>
             </div>
