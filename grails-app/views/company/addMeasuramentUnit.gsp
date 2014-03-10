@@ -90,7 +90,7 @@
                                                 <span class="help-block blue">E.g. ml</span>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="table" value="measurament_unit"/>
+                                        <input type="hidden" name="table" value="measurement_unit"/>
                                         <input type="hidden" name="row_id" value="0"/>
                                         <input type="hidden" name="sync_row_id" value="0"/>
                                         <div class="form-group">

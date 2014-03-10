@@ -282,7 +282,7 @@
             })
             .fail(callError);
 
-            $.when(fetchProperty('measurament_unit'))
+            $.when(fetchProperty('measurement_unit'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;
@@ -424,7 +424,23 @@
             else
                 tax = 0;
 
-                /*agregar ingredient_product*/
+            var ingredients = [];
+
+              /*Save multiple productingredient relationships taking ingredients present in box2View*/
+                     var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+                     var total = options.length;
+                     options.each(function(index){
+                         var ingName = $(this).text();
+                         var ingId = $(this).val();
+                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
+                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
+                         var real_quantity = quantity * multiplier;
+                         var productingredient = new Object();
+                         productingredient['sync_id'] = ingId;
+                         productingredient['qty'] = real_quantity;
+                         ingredients.push(productingredient);
+                         //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
+                     });
 
 
             var fields = "{" +
@@ -434,6 +450,7 @@
               ",\"price\":"+price+
               ",\"tax_id\":"+tax+
               ",\"automatic_cost\":"+0+
+              ",\"ingredients\":"+JSON.stringify(ingredients)+
               "}";
 
             return  $.ajax({
