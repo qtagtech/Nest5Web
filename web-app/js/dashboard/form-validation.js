@@ -193,43 +193,17 @@ $(document).ready(function() {
          $.when(saveRow())
              .then(function(response){
                  if(response.status == 1){
-                     /*Save multiple productingredient relationships taking ingredients present in box2View*/
-                     var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
-                     var total = options.length;
-                     options.each(function(index){
-                         var ingName = $(this).text();
-                         var ingId = $(this).val();
-                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
-                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
-                         var real_quantity = quantity * multiplier;
-                         $.when(saveMultiRow(ingId,real_quantity,response.syncId))
-                             .then(function(response2){
-                                 total --;
-                                 if(total == 0){
-                                     if(response2.status == 1){
-                                         $.pnotify({
-                                             type: 'success',
-                                             title: '&iexcl;&Eacute;xito!',
-                                             text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                                             icon: 'picon icon16 iconic-icon-check-alt white',
-                                             opacity: 0.95,
-                                             history: false,
-                                             sticker: false
-                                         });
-                                         $("#wizard2").formwizard("reset");
-                                         $("#wizard2").formwizard("update_steps");
-                                     }
-                                 }
-                                 if(response2.status != 1){
-                                     console.log("Se presentaron errores guardando el ingrediente en el producto.");
-                                 }
-
-
-
-                         })
-                         .fail(callError);
-
+                     $.pnotify({
+                         type: 'success',
+                         title: '&iexcl;&Eacute;xito!',
+                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                         icon: 'picon icon16 iconic-icon-check-alt white',
+                         opacity: 0.95,
+                         history: false,
+                         sticker: false
                      });
+                     $("#wizard2").formwizard("reset");
+                     $("#wizard2").formwizard("update_steps");
                  }else{
                      $.pnotify({
                          type: 'error',
@@ -251,7 +225,7 @@ $(document).ready(function() {
              })
              .fail(callError);
          return false;
-     createSuccessMsg($("#wizard .msg"), "&iexcl;Producto Guardado con éxito!");
+     createSuccessMsg($("#wizard2 .msg"), "&iexcl;Producto Guardado con éxito!");
      },
      resetForm: false
      },
@@ -321,80 +295,18 @@ $(document).ready(function() {
          $.when(saveRow())
              .then(function(response){
                  if(response.status == 1){
-                     /*Save multiple productingredient relationships taking ingredients present in box2View*/
-                     var options = $('[name="duallistbox_demo2[]"] option:selected') || [];
-                     var total = options.length;
-                     var combo =  response.syncId;
-                     options.each(function(index){
-                         var ingName = $(this).text();
-                         var ingId = $(this).val();
-                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
-                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
-                         var real_quantity = quantity * multiplier;
-                         $.when(saveMultiRow('comboingredient',ingId,real_quantity,combo))
-                             .then(function(response2){
-                                 total --;
-                                 if(total == 0){
-                                     if(response2.status == 1){
-                                         /*Save multiple productingredient relationships taking ingredients present in box2View*/
-                                         var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
-                                         var total2 = options.length;
-                                         options.each(function(index){
-                                             var proName = $(this).text();
-                                             var proId = $(this).val();
-                                             var quantity2 = parseFloat($("#"+proId+"_quantity").val()) || 0.0;
-                                             $.when(saveMultiRow('comboproduct',proId,quantity2,combo))
-                                                 .then(function(response3){
-                                                     total2 --;
-                                                     if(total2 == 0){
-                                                         if(response3.status == 1){
-
-                                                              $.pnotify({
-                                                              type: 'success',
-                                                              title: '&iexcl;&Eacute;xito!',
-                                                              text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                                                              icon: 'picon icon16 iconic-icon-check-alt white',
-                                                              opacity: 0.95,
-                                                              history: false,
-                                                              sticker: false
-                                                              });
-                                                              $("#wizard2").formwizard("reset");
-                                                              $("#wizard2").formwizard("update_steps");
-                                                         }
-                                                     }
-                                                     if(response3.status != 1){
-                                                         console.log("Se presentaron errores guardando el ingrediente en el producto.");
-                                                     }
-
-
-
-                                                 })
-                                                 .fail(callError);
-
-                                         });
-                                        /* $.pnotify({
-                                             type: 'success',
-                                             title: '&iexcl;&Eacute;xito!',
-                                             text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                                             icon: 'picon icon16 iconic-icon-check-alt white',
-                                             opacity: 0.95,
-                                             history: false,
-                                             sticker: false
-                                         });
-                                         $("#wizard2").formwizard("reset");
-                                         $("#wizard2").formwizard("update_steps");*/
-                                     }
-                                 }
-                                 if(response2.status != 1){
-                                     console.log("Se presentaron errores guardando el ingrediente en el producto.");
-                                 }
-
-
-
-                         })
-                         .fail(callError);
-
+                     $.pnotify({
+                         type: 'success',
+                         title: '&iexcl;&Eacute;xito!',
+                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                         icon: 'picon icon16 iconic-icon-check-alt white',
+                         opacity: 0.95,
+                         history: false,
+                         sticker: false
                      });
+                     $("#wizard3").formwizard("reset");
+                     $("#wizard3").formwizard("update_steps");
+
                  }else{
                      $.pnotify({
                          type: 'error',
@@ -410,13 +322,10 @@ $(document).ready(function() {
                  }
                  $("body").find(":submit").show(20);
                  $(lElement).remove();
-
-
-
              })
              .fail(callError);
          return false;
-     createSuccessMsg($("#wizard .msg"), "&iexcl;Producto Guardado con éxito!");
+     createSuccessMsg($("#wizard3 .msg"), "&iexcl;Producto Guardado con éxito!");
      },
      resetForm: false
      },

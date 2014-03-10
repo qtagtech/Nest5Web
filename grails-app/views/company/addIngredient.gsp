@@ -231,7 +231,7 @@
             })
             .fail(callError);
 
-            $.when(fetchProperty('measurament_unit'))
+            $.when(fetchProperty('measurement_unit'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;

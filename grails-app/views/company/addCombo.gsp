@@ -287,7 +287,7 @@
 
 
 
-            $.when(fetchProperty('measurament_unit'))
+            $.when(fetchProperty('measurement_unit'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;
@@ -454,15 +454,45 @@
             else
                 tax = 0;
 
-                /*agregar ingredient_product*/
+            var products = [];
+            var ingredients = [];
 
+                /*Save multiple comboproduct relationships taking prodcuts present in box2View*/
+                                         var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+                                         var total2 = options.length;
+                                         options.each(function(index){
+                                             var proName = $(this).text();
+                                             var proId = $(this).val();
+                                             var quantity2 = parseFloat($("#"+proId+"_quantity").val()) || 0.0;
+                                             var product = new Object();
+                                             product['sync_id'] = proId;
+                                             product['qty'] = quantity2;
+                                             products.push(product);
 
+                                         });
+
+            /*Save multiple comboingredient relationships taking ingredients present in box2View*/
+                     var options2 = $('[name="duallistbox_demo2[]"] option:selected') || [];
+                     var total = options2.length;
+                     options2.each(function(index){
+                         var ingName = $(this).text();
+                         var ingId = $(this).val();
+                         var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
+                         var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
+                         var real_quantity = quantity * multiplier;
+                         var ingredient = new Object();
+                         ingredient['sync_id'] = ingId;
+                         ingredient['qty'] = real_quantity;
+                         ingredients.push(ingredient);
+                     });
             var fields = "{" +
               "\"name\":"+$("[name='name']").val()+
               ",\"cost\":"+cost+
               ",\"price\":"+price+
               ",\"tax_id\":"+tax+
               ",\"automatic_cost\":"+0+
+              ",\"ingredients\":"+JSON.stringify(ingredients)+
+              ",\"products\":"+JSON.stringify(products)+
               "}";
 
             return  $.ajax({
