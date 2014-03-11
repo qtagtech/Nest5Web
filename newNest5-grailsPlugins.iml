@@ -107,18 +107,6 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy.modules.http-builder/http-builder/jars/http-builder-0.5.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/ajax-proxy/zips/ajax-proxy-0.1.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/qrcode/zips/qrcode-0.3.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/mail/zips/mail-1.0.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/spring-security-facebook/zips/spring-security-facebook-0.14.5.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/spring-security-core/zips/spring-security-core-1.2.7.3.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/webxml/zips/webxml-1.4.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/cache/zips/cache-1.0.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/database-migration/zips/database-migration-1.2.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/resources/zips/resources-1.2.1.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.8.3.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.2.0.zip!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.2.0.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

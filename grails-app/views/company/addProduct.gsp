@@ -189,6 +189,24 @@
                                                 </div>
                                             </div><!-- End .form-group  -->
                                         </div>
+                                        <div class="col-lg-10">
+                                            <h4 class="blue">Opciones Adicionales</h4>
+                                            <div class="form-group">
+                                                <label class="col-lg-5 control-label" for="checkboxes">&iquest;Este producto puede ser ingrediente de otro producto?</label>
+                                                <div class="col-lg-2">
+                                                    <input type="checkbox" class="nostyle"  id="is_ingredient" data-on-text="SI" data-off-text="NO"/>
+                                                </div>
+                                            </div> <!-- End .form-group  -->
+                                            <div class="form-group invisible"  id="ingredientable_properties">
+                                                <label class="col-lg-4 control-label" for="category">Unidad de Mededia: </label>
+                                                <div class="col-lg-8">
+                                                    <select name="ing_units" id="ing_units" class="nostyle form-control" placeholder="Selecciona una Unidad">
+                                                        <option></option>
+
+                                                    </select>
+                                                </div>
+                                            </div><!-- End .form-group  -->
+                                        </div>
                                     </div><!-- End .form-group  -->
                                 </div>
                                 <div class="wizard2-actions">
@@ -291,6 +309,7 @@
                        for(var i = 0; i < cantidad; i++){
                         $("#units").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.initials+'</option>');
                         $("#sell_units").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.initials+'</option>');
+                        $("#ing_units").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.initials+'</option>');
                         medidas[response.elements[i].syncId] = response.elements[i].fields.multipliers;
                        }
                     }
@@ -298,6 +317,8 @@
                         $("#units").attr("placeholder","Aún no tienes unidades de medida creadas.").
                         after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                         $("#sell_units").attr("placeholder","Aún no tienes unidades de medida creadas.").
+                        after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                        $("#ing_units").attr("placeholder","Aún no tienes unidades de medida creadas.").
                         after('<a href="${createLink(controller: 'company',action: 'addMeasuramentUnit')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
                     }
@@ -360,7 +381,33 @@
                   $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
                         after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                 }
-                var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+                //var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+            })
+            .fail(callError);
+
+            $.when(fetchProperty('special_product'))
+            .then(function(response){
+                if(response.status == 200){
+                    var cantidad = response.elements.length;
+                    if(cantidad > 0) {
+                       for(var i = 0; i < cantidad; i++){
+                        $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+
+                       }
+                    }
+                    else{
+                        $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes productos creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addProduct')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+
+                    }
+
+                }
+                else{
+                  $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes productos creados.</span>").
+                        after('<a href="${createLink(controller: 'company',action: 'addProduct')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
+                }
+//                $.configureBoxes();
+                var demo1 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
             })
             .fail(callError);
 
@@ -403,6 +450,12 @@
               var $element = $(data.el),
                   value = data.value;
                   $("#tax_properties").toggleClass('invisible');
+              //console.log(e, $element, value);
+            });
+            $('#is_ingredient').on('switchChange', function (e, data) {
+              var $element = $(data.el),
+                  value = data.value;
+                  $("#ingredientable_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });
 
@@ -460,19 +513,19 @@
                 dataType: 'json'
             }).promise();
         }
-        function saveMultiRow(ingredient, quantity, product){
+        function saveSpecialRow(product){
             var url = "${createLink(controller: 'company',action: 'saveRow')}";
-            var table = 'productingredient';
+            var table = 'special_product';
             var rowid = '0';
             var syncrowid = '0';
+            var unit = $( "#ing_units option:selected" ).val();
 
-                /*agregar ingredient_product*/
+
 
 
             var fields = "{" +
               "\"product_id\":"+product+
-              ",\"ingredient_id\":"+ingredient+
-              ",\"qty\":"+quantity+
+              ",\"unit_id\":"+unit+
               "}";
 
             return  $.ajax({

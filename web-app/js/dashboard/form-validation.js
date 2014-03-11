@@ -23,6 +23,7 @@ $(document).ready(function() {
 
     $('#is_sellable').bootstrapSwitch();
     $('#is_taxable').bootstrapSwitch();
+    $('#is_ingredient').bootstrapSwitch();
 
     /*Multiple Select Boxes*/
 //    $.configureBoxes();
@@ -192,18 +193,43 @@ $(document).ready(function() {
          $(".wizard-actions").append(lElement);
          $.when(saveRow())
              .then(function(response){
+
                  if(response.status == 1){
-                     $.pnotify({
-                         type: 'success',
-                         title: '&iexcl;&Eacute;xito!',
-                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                         icon: 'picon icon16 iconic-icon-check-alt white',
-                         opacity: 0.95,
-                         history: false,
-                         sticker: false
-                     });
-                     $("#wizard2").formwizard("reset");
-                     $("#wizard2").formwizard("update_steps");
+                     $.when(saveSpecialRow(response.syncId))
+                         .then(function(response){
+
+                             if(response.status == 1){
+                                 $.pnotify({
+                                     type: 'success',
+                                     title: '&iexcl;&Eacute;xito!',
+                                     text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                                     icon: 'picon icon16 iconic-icon-check-alt white',
+                                     opacity: 0.95,
+                                     history: false,
+                                     sticker: false
+                                 });
+                                 $("#wizard2").formwizard("reset");
+                                 $("#wizard2").formwizard("update_steps");
+                             }else{
+                                 $.pnotify({
+                                     type: 'error',
+                                     title: '&iexcl;Lo sentimos!',
+                                     text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                                     icon: 'picon icon24 typ-icon-cancel white',
+                                     opacity: 0.95,
+                                     hide:false,
+                                     history: false,
+                                     sticker: false
+                                 });
+
+                             }
+                             $("body").find(":submit").show(20);
+                             $(lElement).remove();
+
+
+
+                         })
+                         .fail(callError);
                  }else{
                      $.pnotify({
                          type: 'error',
