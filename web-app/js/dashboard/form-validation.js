@@ -23,7 +23,10 @@ $(document).ready(function() {
 
     $('#is_sellable').bootstrapSwitch();
     $('#is_taxable').bootstrapSwitch();
+<<<<<<< HEAD
     $('#is_ingredient').bootstrapSwitch();
+=======
+>>>>>>> e60b27611bd7dcd82492489847aeabd84fb42457
 
     /*Multiple Select Boxes*/
 //    $.configureBoxes();
@@ -193,6 +196,7 @@ $(document).ready(function() {
          $(".wizard-actions").append(lElement);
          $.when(saveRow())
              .then(function(response){
+<<<<<<< HEAD
 
                  if(response.status == 1){
                      $.when(saveSpecialRow(response.syncId))
@@ -230,6 +234,20 @@ $(document).ready(function() {
 
                          })
                          .fail(callError);
+=======
+                 if(response.status == 1){
+                     $.pnotify({
+                         type: 'success',
+                         title: '&iexcl;&Eacute;xito!',
+                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                         icon: 'picon icon16 iconic-icon-check-alt white',
+                         opacity: 0.95,
+                         history: false,
+                         sticker: false
+                     });
+                     $("#wizard2").formwizard("reset");
+                     $("#wizard2").formwizard("update_steps");
+>>>>>>> e60b27611bd7dcd82492489847aeabd84fb42457
                  }else{
                      $.pnotify({
                          type: 'error',
