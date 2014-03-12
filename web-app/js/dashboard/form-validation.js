@@ -23,10 +23,9 @@ $(document).ready(function() {
 
     $('#is_sellable').bootstrapSwitch();
     $('#is_taxable').bootstrapSwitch();
-<<<<<<< HEAD
+
     $('#is_ingredient').bootstrapSwitch();
-=======
->>>>>>> e60b27611bd7dcd82492489847aeabd84fb42457
+
 
     /*Multiple Select Boxes*/
 //    $.configureBoxes();
@@ -100,7 +99,7 @@ $(document).ready(function() {
          },
          name: {
              required: true,
-             minlength: 4
+             minlength: 2
          },
          cost: {
              required: true
@@ -161,7 +160,7 @@ $(document).ready(function() {
          category: "Debes seleccionar una categor&iacute;a",
          name: {
              required: "Debes poner un nombre para reconocer el ingrediente",
-             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+             minlength: "El nombre debe tener al menos 2 caract&eacute;res."
          },
          cost: "Por favor indica un costo del ingrediente.",
          quantity: {
@@ -196,58 +195,62 @@ $(document).ready(function() {
          $(".wizard-actions").append(lElement);
          $.when(saveRow())
              .then(function(response){
-<<<<<<< HEAD
+
 
                  if(response.status == 1){
-                     $.when(saveSpecialRow(response.syncId))
-                         .then(function(response){
+                     //si puede ser parte de otro producto se guarda como special
+                     if($('#is_ingredient').bootstrapSwitch('state')){
+                         $.when(saveSpecialRow(response.syncId))
+                             .then(function(response){
 
-                             if(response.status == 1){
-                                 $.pnotify({
-                                     type: 'success',
-                                     title: '&iexcl;&Eacute;xito!',
-                                     text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                                     icon: 'picon icon16 iconic-icon-check-alt white',
-                                     opacity: 0.95,
-                                     history: false,
-                                     sticker: false
-                                 });
-                                 $("#wizard2").formwizard("reset");
-                                 $("#wizard2").formwizard("update_steps");
-                             }else{
-                                 $.pnotify({
-                                     type: 'error',
-                                     title: '&iexcl;Lo sentimos!',
-                                     text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
-                                     icon: 'picon icon24 typ-icon-cancel white',
-                                     opacity: 0.95,
-                                     hide:false,
-                                     history: false,
-                                     sticker: false
-                                 });
+                                 if(response.status == 1){
+                                     $.pnotify({
+                                         type: 'success',
+                                         title: '&iexcl;&Eacute;xito!',
+                                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                                         icon: 'picon icon16 iconic-icon-check-alt white',
+                                         opacity: 0.95,
+                                         history: false,
+                                         sticker: false
+                                     });
+                                     $("#wizard2").formwizard("reset");
+                                     $("#wizard2").formwizard("update_steps");
+                                 }else{
+                                     $.pnotify({
+                                         type: 'error',
+                                         title: '&iexcl;Lo sentimos!',
+                                         text: 'Ha pasado algo inesperado. Int&eacute;ntalo de nuevo por favor.',
+                                         icon: 'picon icon24 typ-icon-cancel white',
+                                         opacity: 0.95,
+                                         hide:false,
+                                         history: false,
+                                         sticker: false
+                                     });
 
-                             }
-                             $("body").find(":submit").show(20);
-                             $(lElement).remove();
+                                 }
+                                 $("body").find(":submit").show(20);
+                                 $(lElement).remove();
 
 
 
-                         })
-                         .fail(callError);
-=======
-                 if(response.status == 1){
-                     $.pnotify({
-                         type: 'success',
-                         title: '&iexcl;&Eacute;xito!',
-                         text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
-                         icon: 'picon icon16 iconic-icon-check-alt white',
-                         opacity: 0.95,
-                         history: false,
-                         sticker: false
-                     });
-                     $("#wizard2").formwizard("reset");
-                     $("#wizard2").formwizard("update_steps");
->>>>>>> e60b27611bd7dcd82492489847aeabd84fb42457
+                             })
+                             .fail(callError);
+                     }
+                     else{
+                         $.pnotify({
+                             type: 'success',
+                             title: '&iexcl;&Eacute;xito!',
+                             text: 'Se ha guardado el Producto con &eacute;xito. Actualiza tus dispositivos.',
+                             icon: 'picon icon16 iconic-icon-check-alt white',
+                             opacity: 0.95,
+                             history: false,
+                             sticker: false
+                         });
+                         $("#wizard2").formwizard("reset");
+                         $("#wizard2").formwizard("update_steps");
+                     }
+
+
                  }else{
                      $.pnotify({
                          type: 'error',
@@ -290,7 +293,7 @@ $(document).ready(function() {
          },
          name: {
              required: true,
-             minlength: 4
+             minlength: 2
          },
          cost: {
              required: true
@@ -311,7 +314,7 @@ $(document).ready(function() {
          category: "Debes seleccionar una categor&iacute;a",
          name: {
              required: "Debes poner un nombre para reconocer el ingrediente",
-             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+             minlength: "El nombre debe tener al menos 2 caract&eacute;res."
          },
          cost: "Por favor indica un costo del ingrediente.",
          quantity: {
@@ -388,7 +391,7 @@ $(document).ready(function() {
 
          name: {
              required: true,
-             minlength: 4
+             minlength: 2
          },
          cost: {
              required: true
@@ -408,7 +411,7 @@ $(document).ready(function() {
      messages: {
          name: {
              required: "Debes poner un nombre para reconocer el ingrediente",
-             minlength: "El nombre debe tener al menos 4 caract&eacute;res."
+             minlength: "El nombre debe tener al menos 2 caract&eacute;res."
          },
          cost: "Por favor indica un costo del ingrediente.",
          quantity: {
@@ -433,14 +436,14 @@ $(document).ready(function() {
 
             name: {
                 required: true,
-                minlength: 4
+                minlength: 2
             }
         },
         messages: {
 
             name: {
                 required: "Este campo es obligatorio.",
-                minlength: "Este campo debe tener al menos 4 caract&eacute;res."
+                minlength: "Este campo debe tener al menos 2 caract&eacute;res."
             }
         },
         submitHandler: function(form) {

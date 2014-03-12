@@ -76,6 +76,15 @@
         typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
     b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
+<!--Start of Zopim Live Chat Script-->
+    <script type="text/javascript">
+        window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+                d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+                _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+            $.src='//v2.zopim.com/?1xsHnKf4laKP8M2R0DSQGfFgOD7y2NLK';z.t=+new Date;$.
+                    type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+    </script>
+    <!--End of Zopim Live Chat Script-->
 </head>
 	<body>
     <!-- loading animation -->
@@ -271,7 +280,13 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><span class="icon16 icomoon-icon-settings"></span>Configuraci&oacute;nes</a>
+                        <a href="#"><span class="icon16 icomoon-icon-table-2"></span>Reportes</a>
+                        <ul class="sub">
+                            <li><a href="${createLink(controller: 'company',action:'history')}"><span class="icon16  icomoon-icon-coin"></span>Historial de Ventas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16 icomoon-icon-settings"></span>Configuraciones</a>
                         <ul class="sub">
                             <li><a href="#"><span class="icon16  icomoon-icon-balance"></span>Unidades</a>
                                 <ul class="sub">
@@ -418,14 +433,14 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
     <script type="text/javascript" src="${resource(dir:'dashboard/js/libs',file: 'jRespond.min.js')}"></script>
 
     <!-- Charts plugins -->
-    %{--<script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.js')}"></script>
+    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.grow.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.pie.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.resize.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.tooltip_0.4.4.js')}"></script>
-    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.orderBars.js')}"></script>--}%
+    <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/flot',file: 'jquery.flot.orderBars.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/charts/sparkline',file:'jquery.sparkline.js')}"></script><!-- Sparkline plugin -->
-    %{--<script type="text/javascript" src="${resource(dir: 'dashboard/plugins/charts/knob',file: 'jquery.knob.js')}"></script><!-- Circular sliders and stats -->--}%
+    <script type="text/javascript" src="${resource(dir: 'dashboard/plugins/charts/knob',file: 'jquery.knob.js')}"></script><!-- Circular sliders and stats -->
 
     <!-- Misc plugins -->
     <script type="text/javascript" src="${resource(dir: 'dashboard/plugins/misc/nicescroll',file:'jquery.nicescroll.min.js')}"></script>
@@ -439,6 +454,9 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/search',file:'tipuesearch_set.js')}"></script>
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/search',file:'tipuesearch_data.js')}"></script><!-- JSON for searched results -->
     <script type="text/javascript" src="${resource(dir:'dashboard/plugins/misc/search',file:'tipuesearch.js')}"></script>
+
+
+    <script src="${resource(dir: 'js/libs/vague',file:'Vague.js')}"></script>
 
     <!-- Form plugins -->
     %{--<script type="text/javascript" src="${resource(dir:'dashboard/plugins/forms/uniform',file:'jquery.uniform.min.js')}"></script>--}%

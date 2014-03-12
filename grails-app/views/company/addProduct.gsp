@@ -115,7 +115,6 @@
                                     <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <span class="step-info" data-num="3" data-text="Receta de Producto"></span>
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <h4><span>&iquest;De qu&eacute; Ingredientes se compone este Producto?</span></h4>
@@ -244,15 +243,19 @@
 //                console.log($(this).val());
                     var ingName = $(this).text();
                     var ingId = $(this).val();
+                    var isproduct = $(this).attr("data-as-ingredient") ? true : false;
                     var html = '<li class="clearfix">'
                           +'<div class="row">'
                                 +'<h3>'+ingName+'</h3>'
                               +'</div>'
                              +'<div class="row">'
                                 +'<label class="col-lg-3" for="'+ingId+'_quantity">Cantidad: </label>'
-                                  +'<div class="col-lg-3">'
-                                      +'<input type="text" id="'+ingId+'_quantity"  name="'+ingId+'_quantity" value="0" >'
-                                      +'<span class="help-block blue">E.g. 250gr.</span>'
+                                  +'<div class="col-lg-3">';
+                                  if(isproduct)
+                                      html+='<input type="text" id="'+ingId+'_quantity" data-product="true"  name="'+ingId+'_quantity" value="0" >';
+                                  else
+                                      html+='<input type="text" id="'+ingId+'_quantity" data-product="false"  name="'+ingId+'_quantity" value="0" >';
+                                  html+='<span class="help-block blue">E.g. 250gr.</span>'
                                   +'</div>'
                                   +'<label  class="col-lg-3" for="'+ingId+'_unit">Unidad: </label>'
                                   +'<div class="col-lg-3">'
@@ -264,7 +267,7 @@
                                  +'</li>';
             $("#ingredient_quantities").append(html);
 
-            /*Add medidas a cada ingrediente basandose en el objeto global que dice que medida usa (ing_medida) y tomando subledidas para ese del objeto global medidas*/
+            /*Add medidas a cada ingrediente basandose en el objeto global que dice que medida usa (ing_medida) y tomando submedidas para ese del objeto global medidas*/
             var submedidas = medidas[ing_medidas[ingId]];
             if(!_.isUndefined(submedidas)){
                if(_.size(submedidas) > 0){
@@ -342,6 +345,7 @@
                 }
                 $("#units").select2();
                 $("#sell_units").select2();
+                $("#ing_units").select2();
 //                console.log(medidas);
             })
             .fail(callError);
@@ -402,8 +406,8 @@
                     var cantidad = response.elements.length;
                     if(cantidad > 0) {
                        for(var i = 0; i < cantidad; i++){
-                        $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
-
+                        $('[name="duallistbox_demo1[]"]').append('<option data-as-ingredient="true" value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+                        ing_medidas[response.elements[i].syncId] = response.elements[i].fields.unit_id;
                        }
                     }
                     else{
@@ -495,6 +499,7 @@
                 tax = 0;
 
             var ingredients = [];
+            var otherproducts= [];
 
               /*Save multiple productingredient relationships taking ingredients present in box2View*/
                      var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
@@ -505,11 +510,22 @@
                          var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
                          var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
                          var real_quantity = quantity * multiplier;
-                         var productingredient = new Object();
-                         productingredient['sync_id'] = ingId;
-                         productingredient['qty'] = real_quantity;
-                         ingredients.push(productingredient);
-                         //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
+                         var isproduct = $(this).attr('data-as-ingredient') ? true : false;
+                         if(!isproduct){
+                             var productingredient = new Object();
+                             productingredient['sync_id'] = ingId;
+                             productingredient['qty'] = real_quantity;
+                             ingredients.push(productingredient);
+                             //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
+                         }
+                         else{
+                             var productproduct = new Object();
+                             productproduct['sync_id'] = ingId;
+                             productproduct['qty'] = real_quantity;
+                             otherproducts.push(productproduct);
+                             //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
+                         }
+
                      });
 
 
@@ -521,6 +537,7 @@
               ",\"tax_id\":"+tax+
               ",\"automatic_cost\":"+0+
               ",\"ingredients\":"+JSON.stringify(ingredients)+
+              ",\"products\":"+JSON.stringify(otherproducts)+
               "}";
 
             return  $.ajax({
@@ -537,16 +554,11 @@
             var rowid = '0';
             var syncrowid = '0';
             var unit = $( "#ing_units option:selected" ).val();
-
-
-
-
-
             var fields = "{" +
-              "\"product_id\":"+product+
+             "\"name\":"+$("[name='name']").val()+
+              ",\"product_id\":"+product+
               ",\"unit_id\":"+unit+
               "}";
-
             return  $.ajax({
                 type: "POST",
                 url: url,

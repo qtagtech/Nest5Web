@@ -464,8 +464,54 @@ class CompanyController {
         def youarehere = "Tablas Generales"
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
-    @Secured(['ROLE_COMPANY'])
+    /*@Secured(['ROLE_COMPANY'])
     def datatable(){
+        def user = springSecurityService.currentUser as Company
+        def youarehere = "Tablas Generales"
+        *//*try{
+            registerDevice(user)
+        }catch(Exception e){}*//*
+        //check nest5 server since it hasn't synced
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/allSales'
+            uri.query = [company: user.id]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status != 1){
+
+        }
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,sales: jsonData?.payload ?: []]
+
+    }*/
+    @Secured(['ROLE_COMPANY'])
+    def history(){
         def user = springSecurityService.currentUser as Company
         def youarehere = "Tablas Generales"
         /*try{

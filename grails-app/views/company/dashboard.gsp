@@ -13,7 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Force IE9 to render in normal mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <r:require modules="dashboard"/>
+
+
+        <r:require modules="dashboard,uniform"/>
     </head>
       
     <body>
@@ -54,7 +56,7 @@
                     </ul>
 
                 </div><!-- End .heading-->
-
+                <div id="mainDashboard" >
                 <!-- Build page from here: -->
                 <div class="row">
 
@@ -492,9 +494,15 @@
                     </div><!-- End .span4 -->
 
                 </div><!-- End .row -->
-                
+                </div>
             </div><!-- End contentwrapper -->
         </div><!-- End #content -->
+    <r:script>
+    $(document).ready(function(){
+        var vague = $("#mainDashboard").Vague({intensity:7});
+        vague.blur();
+    });
+    </r:script>
 
 
 
