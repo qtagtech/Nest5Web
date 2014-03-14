@@ -4,7 +4,11 @@ import grails.converters.JSON
 import grails.plugins.springsecurity.Secured
 import groovy.time.TimeCategory
 import groovyx.net.http.*
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormatter
 import org.springframework.web.servlet.support.RequestContextUtils
+
 
 import static groovyx.net.http.ContentType.*
 import static groovyx.net.http.Method.*
@@ -558,6 +562,178 @@ class CompanyController {
     }
 
     @Secured(["ROLE_COMPANY"])
+    def ingredientCategories(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Categor&iacute;as de Ingrediente"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: 'ingredient_category']
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.timeCreated =   dtf.parseDateTime(it.timeCreated).toDate();
+            it.timeReceived =   dtf.parseDateTime(it.timeReceived).toDate();
+        }
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+    @Secured(["ROLE_COMPANY"])
+    def productCategories(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Categor&iacute;as de Producto"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: 'product_category']
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.timeCreated =   dtf.parseDateTime(it.timeCreated).toDate();
+            it.timeReceived =   dtf.parseDateTime(it.timeReceived).toDate();
+        }
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+    @Secured(["ROLE_COMPANY"])
+    def ingredients(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Todos los Ingredients"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: 'ingredient']
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.timeCreated =   dtf.parseDateTime(it.timeCreated).toDate();
+            it.timeReceived =   dtf.parseDateTime(it.timeReceived).toDate();
+        }
+        //println result
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+    @Secured(["ROLE_COMPANY"])
+    def products(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Todos los Ingredients"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: 'product']
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.timeCreated =   dtf.parseDateTime(it.timeCreated).toDate();
+            it.timeReceived =   dtf.parseDateTime(it.timeReceived).toDate();
+        }
+        //println result
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+
+    @Secured(["ROLE_COMPANY"])
+    def devices(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Dispositivos P.O.S Registrados"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'deviceOps/fetchDevices'
+            uri.query = [company:user.id]
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.registeredOn =   dtf.parseDateTime(it.registeredOn).toDate();
+        }
+        println result
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+    //
+
+    @Secured(["ROLE_COMPANY"])
     def addIngredientCategory(){
         def user = springSecurityService.currentUser
         def youarehere = "Agregar Categor&iacute;a de Ingrediente"
@@ -606,53 +782,15 @@ class CompanyController {
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
 
-    /*@Secured(["ROLE_COMPANY"])
-    def fetchIngredientCategories(){
-        def user = springSecurityService.currentUser as Company
-        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
-        def jsonData
-        // perform a GET request, expecting JSON response data
-        http.request( GET, TEXT ) {
+    @Secured(["ROLE_COMPANY"])
+    def information(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Información de Empresa"
 
-            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/allIngredientCategories'
-            uri.query = [company:user.id]
-            //println uri
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
 
-            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
 
-            // response handler for a success response code:
-            response.success = { resp, json ->
-                println resp.statusLine
-                println resp.contentType
-
-                // parse the JSON response object:
-                jsonData = JSON.parse(json)
-                println jsonData
-            }
-
-            // handler for any failure status code:
-            response.failure = { resp,json ->
-                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
-                //resp.setStatus(400)
-
-                println JSON.parse(json)
-
-                return
-            }
-        }
-        def result
-        //println jsonData
-        if(jsonData?.status != 200){
-            result = [status: jsonData?.status, message: jsonData.message]
-            render result as JSON
-            return
-
-        }
-        result = [status: jsonData.status, categories: jsonData.payload]
-        render result as JSON
-        return
-
-    }*/
     @Secured(["ROLE_COMPANY"])
     def fetchProperty(){
         def user = springSecurityService.currentUser as Company
@@ -700,6 +838,9 @@ class CompanyController {
         return
 
     }
+
+
+
 
     /****************************
     *****************************

@@ -48,6 +48,7 @@ grails.project.dependency.resolution = {
         compile 'com.amazonaws:aws-java-sdk:1.5.0'
         compile 'org.apache.commons.codec:commons-codec:1.4'
         compile 'org.apache.commons.codec:commons-logging:1.1.1'
+        compile 'org.joda-time:joda-time:2.3'
         compile('org.codehaus.groovy.modules.http-builder:http-builder:0.5.2') {
             excludes "commons-logging", "xml-apis", "groovy","httpclient","httpcore"
         }
