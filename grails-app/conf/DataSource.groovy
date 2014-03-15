@@ -18,7 +18,9 @@ environments {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
-            url = "jdbc:postgresql://localhost:5432/newNest5DB2"
+           // url = "jdbc:postgresql://localhost:5432/newNest5DB2"
+           // url = "jdbc:postgresql://192.168.1.76:5432/newNest5DB2" //oficina
+            url = "jdbc:postgresql://192.168.11.102:5432/newNest5DB2" //casa
             username = "postgres"
             password = "qtagtech"
         }

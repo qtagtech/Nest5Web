@@ -4,7 +4,7 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-//grails.project.war.file = "target/${appName}-${appVersion}.war"
+grails.project.war.file = "target/ROOT.war"
 
 // uncomment (and adjust settings) to fork the JVM to isolate classpaths
 //grails.project.fork = [
@@ -17,7 +17,7 @@ grails.project.dependency.resolution = {
         // specify dependency exclusions here; for example, uncomment this to disable ehcache:
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
@@ -25,11 +25,13 @@ grails.project.dependency.resolution = {
         inherits true // Whether to inherit repository definitions from plugins
 
         grailsPlugins()
-        //grailsHome()
-        //grailsCentral()
+        grailsHome()
+        grailsCentral()
         mavenRepo "http://repo.grails.org/grails/plugins"
         mavenLocal()
         mavenCentral()
+        mavenRepo "http://repository.springsource.com/maven/bundles/release"
+        mavenRepo "http://repository.springsource.com/maven/bundles/external"
 
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
@@ -41,14 +43,14 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         runtime: 'postgresql:postgresql:9.1-902.jdbc4'
-        compile 'org.apache.http:httpcore:4.2'
-        compile 'org.apache.http:httpclient:4.2.3'
+        compile 'org.apache.httpcomponents:httpcore:4.3.2'
+        compile 'org.apache.httpcomponents:httpclient:4.3.3'
         compile 'org.codehaus.jackson:jackson-core-asl:1.8.7'
         compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.1'
         compile 'com.amazonaws:aws-java-sdk:1.5.0'
         compile 'org.apache.commons.codec:commons-codec:1.4'
+        compile 'joda-time:joda-time:2.3'
         compile 'org.apache.commons.codec:commons-logging:1.1.1'
-        compile 'org.joda-time:joda-time:2.3'
         compile('org.codehaus.groovy.modules.http-builder:http-builder:0.5.2') {
             excludes "commons-logging", "xml-apis", "groovy","httpclient","httpcore"
         }
@@ -74,9 +76,11 @@ grails.project.dependency.resolution = {
         compile ':cloud-support:1.0.8'*/
         compile ':spring-security-core:1.2.7.3'
         compile ":spring-security-facebook:0.14.5"
-        compile ":mail:1.0.1"
+        compile ":mail:1.0.1", {
+            excludes 'spring-test'
+        }
         compile ":qrcode:0.3"
-        compile ":ajax-proxy:0.1.1"
+
 
     }
 }
