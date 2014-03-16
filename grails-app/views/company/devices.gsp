@@ -31,7 +31,7 @@
 
                 <div class="heading">
 
-                    <h3>Data tables</h3>                    
+                    <h3>Tus Dispositivos</h3>
 
                     <div class="resBtnSearch">
                         <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
@@ -91,7 +91,7 @@
                                                 <td>${element?.currentSale}</td>
                                                 <td>
                                                     <div class="controls center">
-                                                        <a href="#" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
+                                                        <a href="${createLink(controller: 'company',action: 'editDevice',params: [id: element?.uid])}" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
                                                         <a href="#" class="tip" oldtitle="Borrar" title="" data-hasqtip="true" aria-describedby="qtip-14"><span class="icon12 icomoon-icon-remove"></span></a>
                                                     </div>
                                                 </td>

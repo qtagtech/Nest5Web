@@ -87,7 +87,7 @@
                                                 <td><g:formatDate date="${element?.timeReceived}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
                                                 <td>
                                                     <div class="controls center">
-                                                        <a href="#" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
+                                                        <a href="${createLink(controller: 'company',action: 'editIngredientCategory',params: [id: element?.syncId])}" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
                                                         <a href="#" class="tip" oldtitle="Borrar" title="" data-hasqtip="true" aria-describedby="qtip-14"><span class="icon12 icomoon-icon-remove"></span></a>
                                                     </div>
                                                 </td>

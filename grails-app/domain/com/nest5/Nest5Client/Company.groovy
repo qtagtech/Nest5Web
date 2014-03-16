@@ -16,9 +16,11 @@ class Company extends SecUser {
     Date registerDate
     Boolean active = true
     String invoiceMessage = ""
+    String tipMessage = ""
 
     static mapping = {
         invoiceMessage type: 'text'
+        tipMessage type: 'text'
     }
 
 

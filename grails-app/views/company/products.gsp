@@ -84,16 +84,17 @@
                                         </thead>
                                         <tbody>
                                         <g:each in="${elements}" status="i" var="element">
-                                            <tr class="<g:if test="${i % 2 == 0}">even</g:if><g:else>odd</g:else> gradeX <g:if test="${element?.fields?.cost / element?.fields?.price >=1}">success</g:if>">
+                                            <tr class="<g:if test="${i % 2 == 0}">even</g:if><g:else>odd</g:else> gradeX <g:if test="${element?.fields?.cost / (element?.fields?.price != "NaN" ? element?.fields?.price : 1) >=1}">success</g:if>">
                                                 <td>${element?.fields?.name}</td>
                                                 <td><g:formatDate date="${element?.timeCreated}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
                                                 <td><g:formatDate date="${element?.timeReceived}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
-                                                <td class="center"><g:formatNumber number="${element?.fields?.cost}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                                <td class="center"><g:formatNumber number="${element?.fields?.price}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                                <td class="center"><g:formatNumber number="${element?.fields?.cost / element?.fields?.price}" type="number" maxFractionDigits="2" /></td>
+                                                <td class="center"><g:formatNumber number="${(element?.fields?.cost != "NaN" ? element?.fields?.cost : 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
+                                                <td class="center"><g:formatNumber number="${(element?.fields?.price != "NaN" ? element?.fields?.price : 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
+
+                                                <td class="center"><g:formatNumber number="${element?.fields?.cost / (element?.fields?.price != "NaN" ? element?.fields?.price : 1)}" type="number" maxFractionDigits="2" /></td>
                                                 <td>
                                                     <div class="controls center">
-                                                        <a href="#" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
+                                                        <a href="${createLink(controller: 'company',action: 'editProduct',params: [id: element?.syncId])}" class="tip" oldtitle="Editar" title="" data-hasqtip="true" aria-describedby="qtip-13"><span class="icon12 icomoon-icon-pencil"></span></a>
                                                         <a href="#" class="tip" oldtitle="Borrar" title="" data-hasqtip="true" aria-describedby="qtip-14"><span class="icon12 icomoon-icon-remove"></span></a>
                                                     </div>
                                                 </td>
