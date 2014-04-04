@@ -1097,7 +1097,7 @@ class CompanyController {
         // perform a GET request, expecting JSON response data
         http.request( POST, TEXT ) {
             uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'deviceOps/updateDevice'
-            uri.query = [row: params?.uid,company: user?.id, name: params?.name, prefix: params?.prefix, maxSale: params?.maxSale,currentSale: params?.currentSale]
+            uri.query = [row: params?.uid,company: user?.id, name: params?.name, prefix: params?.prefix, maxSale: params?.maxSale,currentSale: params?.currentSale,resolution: params?.resolution]
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
             response.success = { resp, json ->
                 println resp.statusLine

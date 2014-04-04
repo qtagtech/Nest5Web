@@ -8,7 +8,7 @@ class UrlMappings {
 		}
 
 //		"/"(view:"/index")
-        "/"(view:"/download")
+        "/"(view:"/comingsoon")
         "/download"(view:"/download")
         "/invitationmail"(view:"/emails/invite")
         "/foursquare"(controller: 'foursquare', action: 'authorize')
