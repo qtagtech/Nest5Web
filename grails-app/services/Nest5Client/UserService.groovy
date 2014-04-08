@@ -86,6 +86,22 @@ class UserService {
 
     }
 
+    def sendNewContactMail(email)
+    {
+
+        mailService.sendMail {
+            to 'comercial@nest5.com'
+            from "multimedia@nest5.com"
+            subject "¡Alguien te necesita en Nest5!"
+            body email
+        }
+
+
+
+
+
+    }
+
     def sendCompanyInitMail(email,name,address,telephone,contact)
     {
 
