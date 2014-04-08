@@ -8,11 +8,11 @@ class UrlMappings {
 		}
 
 //		"/"(view:"/index")
-        "/"(view:"/comingsoon")
+        "/"(view:"/posindex")
         "/download"(view:"/download")
         "/invitationmail"(view:"/emails/invite")
+        "/fba"(view:"/user/landingfba")
         "/foursquare"(controller: 'foursquare', action: 'authorize')
-        "/gimmedata"(controller: 'adminTask',action: 'dashboard')
         "/mu-1232cc93-baa48bbc-6ae58c5a-bc9723bb" (view: '/test')
         "/privacy"(view: "/privacy")
 //        "/regalo"(controller: 'user',action: 'putChallengeSession')
