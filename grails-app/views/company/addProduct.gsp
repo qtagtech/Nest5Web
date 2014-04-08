@@ -192,13 +192,13 @@
                                         <div class="col-lg-10">
                                             <h4 class="blue">Opciones Adicionales</h4>
                                             <div class="form-group">
-                                                <label class="col-lg-5 control-label" for="checkboxes">&iquest;Este producto puede ser ingrediente de otro producto?</label>
+                                                <label class="col-lg-5 control-label" for="checkboxesss">&iquest;Este producto puede ser ingrediente de otro producto?</label>
                                                 <div class="col-lg-2">
                                                     <input type="checkbox" class="nostyle"  id="is_ingredient" data-on-text="SI" data-off-text="NO"/>
                                                 </div>
                                             </div> <!-- End .form-group  -->
                                             <div class="form-group invisible"  id="ingredientable_properties">
-                                                <label class="col-lg-4 control-label" for="category">Unidad de Mededia: </label>
+                                                <label class="col-lg-4 control-label" for="ing_units">Unidad de Mededia: </label>
                                                 <div class="col-lg-8">
                                                     <select name="ing_units" id="ing_units" class="nostyle form-control" placeholder="Selecciona una Unidad">
                                                         <option></option>
@@ -459,21 +459,21 @@
             });
 
             $('#is_sellable').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
+              //var $element = $(data.el),
+                 // value = data.value;
                   $("#sell_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });
-            $('#is_taxable').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
+            $('#is_taxable').on('switchChange.bootstrapSwitch', function (e, data) {
+             // var $element = $(data.el),
+               //   value = data.value;
                   $("#tax_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });
 
-            $('#is_ingredient').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
+            $('#is_ingredient').on('switchChange.bootstrapSwitch', function (e, data) {
+              //var $element = $(data.el),
+                  //value = data.value;
                   $("#ingredientable_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });

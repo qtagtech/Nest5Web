@@ -217,8 +217,8 @@ modules = {
     }
     bootstrapswitch{
         dependsOn('maskedinput')
-        resource id: 'bootstrapswitch',url: 'js/dashboard/libs/bootstrapswitch/js/bootstrap-switch.min.js'
-        resource id: 'bootstrapswitchcss', url: 'js/dashboard/libs/bootstrapswitch/css/bootstrap3/bootstrap-switch.min.css', disposition: 'head'
+        resource id: 'bootstrapswitch',url: 'js/dashboard/libs/bootstrapswitch3/js/bootstrap-switch.min.js'
+        resource id: 'bootstrapswitchcss', url: 'js/dashboard/libs/bootstrapswitch3/css/bootstrap3/bootstrap-switch.min.css', disposition: 'head'
     }
     uniform{
         dependsOn('bootstrapswitch')

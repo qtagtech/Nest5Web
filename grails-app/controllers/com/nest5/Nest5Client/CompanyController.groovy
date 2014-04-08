@@ -7,6 +7,7 @@ import groovyx.net.http.*
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormatter
+import org.omg.CORBA.DATA_CONVERSION
 import org.springframework.web.servlet.support.RequestContextUtils
 
 
@@ -585,7 +586,7 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        result = [status: jsonData.status, elements: jsonData.payload]
+        result = [status: jsonData?.status, elements: jsonData?.payload]
         //println result
         DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         result.elements.each{
@@ -619,7 +620,7 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        result = [status: jsonData.status, elements: jsonData.payload]
+        result = [status: jsonData?.status, elements: jsonData?.payload]
         //println result
         DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         result.elements.each{
@@ -653,7 +654,7 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        result = [status: jsonData.status, elements: jsonData.payload]
+        result = [status: jsonData?.status, elements: jsonData?.payload]
         //println result
         DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         result.elements.each{
@@ -666,7 +667,7 @@ class CompanyController {
     @Secured(["ROLE_COMPANY"])
     def products(){
         def user = springSecurityService.currentUser
-        def youarehere = "Todos los Ingredients"
+        def youarehere = "Todos los Productos"
         def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
         def jsonData
         def result
@@ -687,7 +688,7 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        result = [status: jsonData.status, elements: jsonData.payload]
+        result = [status: jsonData?.status, elements: jsonData?.payload]
         //println result
         DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         result.elements.each{
@@ -722,7 +723,7 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        result = [status: jsonData.status, elements: jsonData.payload]
+        result = [status: jsonData?.status, elements: jsonData?.payload]
         //println result
         DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         result.elements.each{
@@ -788,6 +789,58 @@ class CompanyController {
         def youarehere = "Información de Empresa"
 
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+
+    @Secured(["ROLE_COMPANY"])
+    def security(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Opciones de Seguridad"
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
+    }
+    @Secured(["ROLE_COMPANY"])
+    def newpass(String token, String code){
+        def user = springSecurityService.currentUser as Company
+        def youarehere = "Seguridad - Cambio de Clave"
+        def email = new String(code.decodeBase64())
+        if(email != user.email)
+            redirect(controller: 'logout',action: 'index')
+
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,token: token, code: code]
+    }
+
+
+    def reportpass(String token, String code){
+        def email = new String(code.decodeBase64())
+        def existing = Token.findByCodeAndAnnulled(token,false)
+        if(existing){
+            existing.annulled = true
+            existing.save(flush: true)
+            def report = new Report(
+                    reportedBy: email,
+                    rating: 10,
+                    description: "Request falsa para cambio de clave en la cuenta de "+email+" con el token: "+existing?.id+" creado el "+existing?.dateCreated+".",
+                    type: "PASS_REQUEST"
+            )
+            if(!report.save(flush: true)){
+                println report.errors.allErrors
+            }
+            userService.sendSecurityReportEmail(report)
+        }
+        def today = new Date()
+        def firstDayCal =  Calendar.instance
+        firstDayCal.set Calendar.DATE, 1
+        def firstDay = firstDayCal.time
+        def rc = Report.createCriteria()
+        def repcou = rc.get {
+            between("dateCreated",firstDay,today)
+            projections{
+                countDistinct("id")
+            }
+        }
+        def percentage = ( repcou / 10 ) //Basado en un margen aceptable de 1000 reportes al mes (a / 1000) * 100 es el porcentaje
+        render view: '/report',model: [token: token, code: code,reports: percentage]
+
     }
 
 
@@ -1151,6 +1204,94 @@ class CompanyController {
         return
 
 
+
+
+    }
+
+    @Secured(["ROLE_COMPANY"])
+    def changePass(){
+        def company = springSecurityService.currentUser as Company
+        def existing = Token.findAllByCompanyAndAnnulled(company,false)
+        if(existing){
+            existing*.annulled = true
+            existing*.save(flush:true)
+        }
+        def token = new Token()
+        token.company = company
+        if(!token.save(flush:true)){
+            println token.errors.allErrors
+            def result = [status: 0]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+        else{
+            userService.sendCompanyPassEmail(company?.email,token?.code, token?.companyCode,token?.dateCreated)
+            def result = [status: 1]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+
+    }
+    @Secured(["ROLE_COMPANY"])
+    def updatePass(){
+        def company = springSecurityService.currentUser as Company
+        def token = Token.findByCodeAndAnnulled(params?.token ?: "asdf",false)
+        if(!token){
+            def result = [status: 0,message: "El link que usaste para cambiar tu clave no es v&aacute;lido."]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+        def hoy = new Date()
+        if(token.dateCreated < (hoy - 2)){
+            def result = [status: 0,message: "El link que usas para cambiar tu clave ya expir&oacute;. Solicita otro en tu panel de seguridad Nest5."]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+        def pass1 = params?.newpass?.trim()
+        def pass2 = params?.newpasscon?.trim()
+        if(!pass1){
+            def result = [status: 0,message: "Revisa los datos que introdujiste e int&eacute;ntalo de nuevo."]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+        if(pass1 != pass2){
+            def result = [status: 0,message: "Las claves no coinciden. Int&eacute;ntalo de nuevo por favor."]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+        company.password = pass1
+        company.active = true
+        company.invoiceMessage = company.invoiceMessage ?: ""
+        company.tipMessage = company.tipMessage ?: ""
+        if(!company.save(flush:true)){
+            println company.errors.allErrors
+            def result = [status: 0,message: "Hubo alg&uacute;n error actualizando la clave."]
+            response.setStatus(200)
+            render result as JSON
+            return
+        }
+
+        def existing = Token.findAllByCompanyAndAnnulled(company,false)
+        if(existing){
+            existing*.annulled = true
+            existing*.save(flush:true)
+        }
+
+        token.annulled = true
+        token.dateUsed = hoy
+        if(!token.save(flush:true)){
+            println token.errors.allErrors
+        }
+        def result = [status: 1]
+        response.setStatus(200)
+        render result as JSON
+        return
 
 
     }

@@ -20,11 +20,10 @@ $(document).ready(function() {
 
 
     /*TOGGLE BUTTONS*/
-
+    $('#is_ingredient').bootstrapSwitch();
     $('#is_sellable').bootstrapSwitch();
     $('#is_taxable').bootstrapSwitch();
 
-    $('#is_ingredient').bootstrapSwitch();
 
 
     /*Multiple Select Boxes*/

@@ -317,15 +317,11 @@
             $("#sell_multipliers").select2();
             });
 
-            $('#is_sellable').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
+            $('#is_sellable').on('switchChange.bootstrapSwitch', function (e, status) {
                   $("#sell_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });
-            $('#is_taxable').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
+            $('#is_taxable').on('switchChange.bootstrapSwitch', function (e, status) {
                   $("#tax_properties").toggleClass('invisible');
               //console.log(e, $element, value);
             });
