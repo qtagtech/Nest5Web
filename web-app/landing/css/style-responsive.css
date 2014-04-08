@@ -235,6 +235,10 @@
 
 }
 
+h2#interlineado.espacio {
+    line-height: 80%;
+}
+
 /* iPhone (landscape) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 #quote_wrap {
@@ -243,6 +247,9 @@
 #quotes blockquote p {
   font-size: 24px!important;
 }
+    .espacio {
+        margin-top: 120px;
+    }
 	
 	#twitter_wrap {
    padding: 0 10px;
@@ -333,6 +340,10 @@
 		font-size: 60px;
 		line-height: 50px
 	}
+
+    .espacio {
+        margin-top: 50px;
+    }
 
 	#teaser h3 {
 		line-height: 29px
@@ -448,6 +459,11 @@
 		height: 630px;
 		margin-left: -75px
 	}
+
+    .espacio {
+        margin-top: 50px;
+    }
+
 	.flexslider-carousel img {
 		width: 210px;
 		border: 3px solid white;
@@ -483,6 +499,11 @@
 		height: 629px;
 		margin-left: -75px
 	}
+
+    .espacio {
+        margin-top: 50px;
+    }
+
 	.flexslider-carousel img {
 		width: 210px;
 		border: 3px solid white;
