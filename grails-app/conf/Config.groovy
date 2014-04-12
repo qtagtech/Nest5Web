@@ -76,7 +76,8 @@ environments {
         /*grails.plugins.springsecurity.facebook.appId='550109801691585'//Production
         grails.plugins.springsecurity.facebook.secret='513001ad6358dbb1cadedc820bd56b07'*/
        // com.nest5.Nest5Client.bigDataServerURL = "http://192.168.11.101:8090"
-        com.nest5.Nest5Client.bigDataServerURL = "http://localhost:8090"
+        //com.nest5.Nest5Client.bigDataServerURL = "http://localhost:8090"
+        com.nest5.Nest5Client.bigDataServerURL = "http://192.168.1.189:8090"
 
         com.nest5.Nest5Client.bigDataPath = "/Nest5BusinessData/"
         plugins {

@@ -468,6 +468,7 @@ class CompanyController {
         def youarehere = "Tablas Generales"
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere]
     }
+
     /*@Secured(['ROLE_COMPANY'])
     def datatable(){
         def user = springSecurityService.currentUser as Company
@@ -558,6 +559,200 @@ class CompanyController {
 
         }
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,sales: jsonData?.payload ?: []]
+
+    }
+    @Secured(['ROLE_COMPANY'])
+    def report(){
+        def user = springSecurityService.currentUser as Company
+        def youarehere = "Tablas Generales"
+        /*try{
+            registerDevice(user)
+        }catch(Exception e){}*/
+        //check nest5 server since it hasn't synced
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+                 http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/zReport'
+            uri.query = [company: user.id]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status != 1){
+
+        }
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,data: jsonData?.pay ?: []]
+
+    }
+    @Secured(['ROLE_COMPANY'])
+    def invoices(){
+        def user = springSecurityService.currentUser as Company
+        def youarehere = "Detalle de Ventas"
+        /*try{
+            registerDevice(user)
+        }catch(Exception e){}*/
+        //check nest5 server since it hasn't synced
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/saleDetails'
+            uri.query = [company: user.id]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                println resp.statusLine
+                println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status != 1){
+
+        }
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,data: jsonData?.payload ?: []]
+
+    }
+    @Secured(['ROLE_COMPANY'])
+    def reportRequest(){
+        def user = springSecurityService.currentUser as Company
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/zReport'
+            uri.query = [company: user.id,reportDate: params?.reportDate]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                //println resp.statusLine
+                //println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                //println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status == 416){
+            //empty result set
+            def result = [status: 1,code: 0, message: "No hay registros en las fechas seleccionadas"]
+            render result as JSON
+            return
+        }
+        if(jsonData?.status != 200){
+            def result = [status: 0,code: 0, message: "There was an error with the request"]
+            render result as JSON
+            return
+        }
+        def result = [status : 1,code: 1, data: jsonData?.pay ?: []]
+        render result as JSON
+        return
+
+    }
+    @Secured(['ROLE_COMPANY'])
+    def invoiceRequest(){
+        def user = springSecurityService.currentUser as Company
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/saleDetails'
+            uri.query = [company: user.id,reportDate: params?.reportDate]
+            println uri
+
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+
+            // response handler for a success response code:
+            response.success = { resp, json ->
+                //println resp.statusLine
+                //println resp.contentType
+
+                // parse the JSON response object:
+                jsonData = JSON.parse(json)
+                //println jsonData
+            }
+
+            // handler for any failure status code:
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                //resp.setStatus(400)
+
+                println JSON.parse(json)
+
+                return
+            }
+        }
+        //println jsonData
+        if(jsonData?.status == 416){
+            //empty result set
+            def result = [status: 1,code: 0, message: "No hay registros en las fechas seleccionadas"]
+            render result as JSON
+            return
+        }
+        if(jsonData?.status != 200){
+            def result = [status: 0,code: 0, message: "There was an error with the request"]
+            render result as JSON
+            return
+        }
+        def result = [status : 1,code: 1, data: jsonData?.payload ?: []]
+        render result as JSON
+        return
 
     }
 

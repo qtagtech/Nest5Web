@@ -282,7 +282,8 @@ mixpanel.init("161340edaf1056341a0d09e6ddf6dbc3");</script><!-- end Mixpanel -->
                     <li>
                         <a href="#"><span class="icon16 icomoon-icon-table-2"></span>Reportes</a>
                         <ul class="sub">
-                            <li><a href="${createLink(controller: 'company',action:'history')}"><span class="icon16  icomoon-icon-coin"></span>Historial de Ventas</a></li>
+                            <li><a href="${createLink(controller: 'company',action:'report')}"><span class="icon16  icomoon-icon-coin"></span>Cierre Diario</a></li>
+                            <li><a href="${createLink(controller: 'company',action:'invoices')}"><span class="icon16  icomoon-icon-coin"></span>Detalle de Ventas</a></li>
                         </ul>
                     </li>
                     <li>

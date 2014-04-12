@@ -309,6 +309,12 @@ modules = {
 
         resource id: 'jquerydatatables', url:'js/dashboard/plugins/tables/dataTables/jquery.dataTables.min.js'
     }
+    datepicker{
+
+        dependsOn("mainscript")
+        resource id: 'datepicker', url:'dashboard/js/libs/datepicker/js/bootstrap-datepicker.js'
+        resource id: 'datepickercss', url:'dashboard/js/libs/datepicker/css/datepicker3.css'
+    }
     tabletools{
 
         dependsOn('jquerydatatables')
@@ -327,6 +333,15 @@ modules = {
     datatables{
         dependsOn("mainscript")
         resource id: 'datatables', url:'js/dashboard/datatable.js'
+    }
+
+    accounting{
+        resource id: 'accounting',url: 'js/libs/accounting.min.js'
+    }
+
+    printing{
+        dependsOn('jquerydatatables')
+        resource id: 'printing',url: 'js/libs/jQuery.print.js'
     }
 
 
