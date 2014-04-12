@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129c2330-f71d-47ea-a6be-b7208e14d64b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/company/editDevice.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/company/editIngredient.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/company/editIngredientCategory.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/company/editProduct.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/company/editProductCategory.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Company.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Company.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/CompanyController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/CompanyController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/addIngredientCategory.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/addIngredientCategory.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/dashboardLayout.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/dashboardLayout.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/devices.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/devices.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/information.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/information.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/ingredientCategories.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/ingredientCategories.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/ingredients.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/ingredients.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" afterPath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5.iml" afterPath="$PROJECT_DIR$/newNest5.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/productCategories.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/productCategories.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/products.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/products.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394894868601" ignored="false" />
+    <file path="/Dummy.txt" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1397102262900" ignored="false" />
     <file path="/CompanyController.groovy" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394994932036" ignored="false" />
     <file path="/ingredientCategories.gsp" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394849684036" ignored="false" />
     <file path="/editIngredientCategory.gsp" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394851373715" ignored="false" />
@@ -39,6 +19,8 @@
     <file path="/Company.groovy" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394984889964" ignored="false" />
     <file path="/devices.gsp" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394991267314" ignored="false" />
     <file path="/editDevice.gsp" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1394994152848" ignored="false" />
+    <file path="$PROJECT_DIR$/../QtagSite/grails-app/conf/DataSource.groovy" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1397102252677" ignored="false" />
+    <file path="/a.dummy" changelist="129c2330-f71d-47ea-a6be-b7208e14d64b" time="1397102256148" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +84,7 @@
       <file leaf-file-name="CompanyController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/CompanyController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1099" column="162" selection-start="44306" selection-end="44306" vertical-scroll-proportion="-7.695652">
+            <state line="1099" column="162" selection-start="44306" selection-end="44306" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,7 +93,7 @@
       <file leaf-file-name="devices.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/devices.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="52" selection-start="4549" selection-end="4632" vertical-scroll-proportion="-2.7755103">
+            <state line="89" column="52" selection-start="4549" selection-end="4632" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,7 +102,7 @@
       <file leaf-file-name="editDevice.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/editDevice.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="24" selection-start="8949" selection-end="8949" vertical-scroll-proportion="-3.4693878">
+            <state line="180" column="24" selection-start="8949" selection-end="8949" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1394994193230" expanded="true" signature="6841:8648" placeholder="{...}" />
                 <marker date="1394994193230" expanded="true" signature="6888:6963" placeholder="{...}" />
@@ -147,13 +129,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Company.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Company.groovy">
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="30" selection-start="632" selection-end="632" vertical-scroll-proportion="0.92285717">
+            <state line="41" column="36" selection-start="989" selection-end="989" vertical-scroll-proportion="-14.782609">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSource.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="67" selection-start="2075" selection-end="2656" vertical-scroll-proportion="0.6642729">
               <folding />
             </state>
           </provider>
@@ -597,272 +585,51 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/views/company/editProductCategory.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="108" selection-start="4148" selection-end="4148" vertical-scroll-proportion="0.41223404">
-          <folding>
-            <marker date="1394896030218" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394896030218" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394896030218" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/dashboard/js/form-validation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-6.12">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-6.12" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/editProduct.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="524" column="46" selection-start="30319" selection-end="30319" vertical-scroll-proportion="0.6283784">
-          <folding>
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;GET&quot;...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-            <marker date="1394929321728" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
+        <state line="524" column="46" selection-start="30319" selection-end="30319" vertical-scroll-proportion="0.6283784" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/editIngredient.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="405" column="86" selection-start="22736" selection-end="22775" vertical-scroll-proportion="0.972973">
-          <folding>
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;GET&quot;...}" />
-            <marker date="1394901746668" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="405" column="86" selection-start="22736" selection-end="22775" vertical-scroll-proportion="0.972973" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/editIngredientCategory.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="87" selection-start="6293" selection-end="6333" vertical-scroll-proportion="0.9155405">
-          <folding>
-            <marker date="1394896735913" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394896735913" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1394896735913" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394896735913" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394896735913" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="131" column="87" selection-start="6293" selection-end="6333" vertical-scroll-proportion="0.9155405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/products.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="152" selection-start="4925" selection-end="4925" vertical-scroll-proportion="0.45945945">
-          <folding />
-        </state>
+        <state line="90" column="152" selection-start="4925" selection-end="4925" vertical-scroll-proportion="0.45945945" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/ingredientCategories.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="164" selection-start="4640" selection-end="4739" vertical-scroll-proportion="2.2822385">
-          <folding />
-        </state>
+        <state line="89" column="164" selection-start="4640" selection-end="4739" vertical-scroll-proportion="2.2822385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/information.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="199" column="24" selection-start="10027" selection-end="10027" vertical-scroll-proportion="0.49514562">
-          <folding>
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: 'success'...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: 'error'...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394988724242" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/addIngredientCategory.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="4" selection-start="5212" selection-end="5940" vertical-scroll-proportion="0.64">
-          <folding>
-            <marker date="1394984721692" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394984721692" expanded="true" signature="-1:-1" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1394984721692" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="102" column="4" selection-start="5212" selection-end="5940" vertical-scroll-proportion="0.64" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/dashboardLayout.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="4" selection-start="5876" selection-end="6460" vertical-scroll-proportion="0.23448277">
-          <folding>
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{&quot;lines&quot;: 9...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: ' fpwmx8th2p8v2 '...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1394895837888" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
-        </state>
+        <state line="78" column="4" selection-start="5876" selection-end="6460" vertical-scroll-proportion="0.23448277" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/dashboard/form-validation.js">
@@ -874,21 +641,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/ingredients.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="156" selection-start="6036" selection-end="6127" vertical-scroll-proportion="0.24514563">
-          <folding />
-        </state>
+        <state line="99" column="156" selection-start="6036" selection-end="6127" vertical-scroll-proportion="0.24514563" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/devices.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="52" selection-start="4549" selection-end="4632" vertical-scroll-proportion="-2.7755103">
+        <state line="89" column="52" selection-start="4549" selection-end="4632" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/editDevice.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="24" selection-start="8949" selection-end="8949" vertical-scroll-proportion="-3.4693878">
+        <state line="180" column="24" selection-start="8949" selection-end="8949" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1394994193230" expanded="true" signature="6841:8648" placeholder="{...}" />
             <marker date="1394994193230" expanded="true" signature="6888:6963" placeholder="{...}" />
@@ -907,7 +672,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/CompanyController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1099" column="162" selection-start="44306" selection-end="44306" vertical-scroll-proportion="-7.695652">
+        <state line="1099" column="162" selection-start="44306" selection-end="44306" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -917,7 +682,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="632" selection-end="632" vertical-scroll-proportion="0.92285717">
+        <state line="41" column="36" selection-start="989" selection-end="989" vertical-scroll-proportion="-14.782609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="67" selection-start="2075" selection-end="2656" vertical-scroll-proportion="0.6642729">
           <folding />
         </state>
       </provider>
