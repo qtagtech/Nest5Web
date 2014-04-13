@@ -154,7 +154,7 @@
                             </tbody>
                         </table>
                         <div class="total">
-                            <h4>Subtotal Ventas:<span class="red" id="subtotalVentas"> <g:formatNumber number="${(data?.ventas ?: 0) - (data?.descuentos ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></span></h4>
+                            <h4>Subtotal Ventas:<span class="red" id="subtotalVentas"> <g:formatNumber number="${(data?.ventas ?: 0) - (data?.descuentos ?: 0) + (data?.impuestos ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></span></h4>
                         </div>
 
 

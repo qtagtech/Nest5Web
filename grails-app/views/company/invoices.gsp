@@ -155,8 +155,8 @@
                                             <td><g:formatNumber number="${(item?.cantidad ?: 0)}" type="number" maxFractionDigits="0"/></td>
                                             <td><g:formatNumber number="${(item?.precio ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                             <td><g:formatNumber number="${(item?.precio ?: 0) * (item?.cantidad ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                            <td><g:formatNumber number="${(item?.impuestos ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                            <td><g:formatNumber number="${(item?.precio ?: 0) * (item?.cantidad ?: 0) + (item?.impuestos ?: 0)}" type="currency" currencyCode="COP" locale="es_CO" /></td>
+                                            <td><g:formatNumber number="${(item?.impuestos ?: 0) * ((item?.cantidad ?: 0)*(item?.precio ?: 0))}" type="currency" currencyCode="COP" locale="es_CO" /></td>
+                                            <td><g:formatNumber number="${(item?.precio ?: 0) * (item?.cantidad ?: 0) + ((item?.impuestos ?: 0) * ((item?.cantidad ?: 0)*(item?.precio ?: 0)))}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                         </tr>
                                     </g:each>
                                     </tbody>

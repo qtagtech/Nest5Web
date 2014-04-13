@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/report.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357870337" ignored="false" />
+    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397363291905" ignored="false" />
     <file path="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/SpecialController.groovy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397349176799" ignored="false" />
-    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357861647" ignored="false" />
+    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397363290337" ignored="false" />
     <file path="/main.js" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357858618" ignored="false" />
+    <file path="/report.gsp" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397362312932" ignored="false" />
+    <file path="/invoices.gsp" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397362711598" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,20 +131,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="27" selection-start="8127" selection-end="8127" vertical-scroll-proportion="0.7060519">
+            <state line="167" column="136" selection-start="7815" selection-end="7815" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="invoices.gsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="invoices.gsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="40" selection-start="8608" selection-end="8608" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="168" column="187" selection-start="9290" selection-end="9290" vertical-scroll-proportion="0.5416667">
+              <folding>
+                <marker date="1397362755367" expanded="true" signature="10265:11056" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="10323:11046" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="10405:11022" placeholder="{&quot;globalStyles&quot;: true...}" />
+                <marker date="1397362755367" expanded="true" signature="11085:15895" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="11307:15889" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="11460:15848" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="11550:15320" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="11590:14877" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="11797:14774" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="14912:15279" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+                <marker date="1397362755367" expanded="true" signature="15324:15834" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="15355:15814" placeholder="{&quot;type&quot;: 'error'...}" />
+                <marker date="1397362755367" expanded="true" signature="15927:16182" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="16037:16164" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1397362755367" expanded="true" signature="16211:16315" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,8 +170,24 @@
       <file leaf-file-name="report.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="349" column="84" selection-start="19347" selection-end="19390" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="1.0408163">
+              <folding>
+                <marker date="1397362313727" expanded="true" signature="14625:15416" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="14683:15406" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="14765:15382" placeholder="{&quot;globalStyles&quot;: true...}" />
+                <marker date="1397362313727" expanded="true" signature="15445:21943" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="15667:21937" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="15788:21896" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="15878:21368" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="15918:18779" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="18783:21348" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="18814:19181" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+                <marker date="1397362313727" expanded="true" signature="21372:21882" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="21403:21862" placeholder="{&quot;type&quot;: 'error'...}" />
+                <marker date="1397362313727" expanded="true" signature="21975:22229" placeholder="{...}" />
+                <marker date="1397362313727" expanded="true" signature="22084:22211" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1397362313727" expanded="true" signature="22258:22362" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +213,7 @@
       <file leaf-file-name="workspace.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="37" selection-start="15682" selection-end="15682" vertical-scroll-proportion="0.0">
+            <state line="325" column="37" selection-start="19731" selection-end="19731" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,14 +245,14 @@
         <option value="$PROJECT_DIR$/grails-app/services/Nest5Client/UserService.groovy" />
         <option value="$PROJECT_DIR$/web-app/js/dashboard/datatable.js" />
         <option value="$PROJECT_DIR$/grails-app/conf/ApplicationResources.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/CompanyController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/dashboardLayout.gsp" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/web-app/dashboard/js/main.js" />
         <option value="$PROJECT_DIR$/web-app/js/dashboard/main.js" />
         <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
       </list>
     </option>
   </component>
@@ -509,8 +546,8 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15686275" sideWeight="0.11178248" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2974359" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18292683" sideWeight="0.7025641" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10940171" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18292683" sideWeight="0.8905983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -623,20 +660,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="84" selection-start="19347" selection-end="19390" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="40" selection-start="8608" selection-end="8608" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/dashboard.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -663,7 +686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="37" selection-start="15682" selection-end="15682" vertical-scroll-proportion="0.0">
+        <state line="325" column="37" selection-start="19731" selection-end="19731" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -718,8 +741,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="27" selection-start="8127" selection-end="8127" vertical-scroll-proportion="0.7060519">
+        <state line="167" column="136" selection-start="7815" selection-end="7815" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="1.0408163">
+          <folding>
+            <marker date="1397362313727" expanded="true" signature="14625:15416" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="14683:15406" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="14765:15382" placeholder="{&quot;globalStyles&quot;: true...}" />
+            <marker date="1397362313727" expanded="true" signature="15445:21943" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="15667:21937" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="15788:21896" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="15878:21368" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="15918:18779" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="18783:21348" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="18814:19181" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+            <marker date="1397362313727" expanded="true" signature="21372:21882" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="21403:21862" placeholder="{&quot;type&quot;: 'error'...}" />
+            <marker date="1397362313727" expanded="true" signature="21975:22229" placeholder="{...}" />
+            <marker date="1397362313727" expanded="true" signature="22084:22211" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1397362313727" expanded="true" signature="22258:22362" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="187" selection-start="9290" selection-end="9290" vertical-scroll-proportion="0.5416667">
+          <folding>
+            <marker date="1397362755367" expanded="true" signature="10265:11056" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="10323:11046" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="10405:11022" placeholder="{&quot;globalStyles&quot;: true...}" />
+            <marker date="1397362755367" expanded="true" signature="11085:15895" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="11307:15889" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="11460:15848" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="11550:15320" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="11590:14877" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="11797:14774" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="14912:15279" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+            <marker date="1397362755367" expanded="true" signature="15324:15834" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="15355:15814" placeholder="{&quot;type&quot;: 'error'...}" />
+            <marker date="1397362755367" expanded="true" signature="15927:16182" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="16037:16164" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1397362755367" expanded="true" signature="16211:16315" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
