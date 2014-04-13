@@ -75,6 +75,20 @@ $(document).ready(function() {
 	} );
 
 
+    //------------- Datepicker -------------//
+    $('.input-daterange').datepicker({
+        todayBtn: "linked",
+        language: "es",
+        autoclose: true,
+        todayHighlight: true
+    }).on('changeDate', function(e){
+       checkDates();
+    });;
+
+
+
+
+
 });//End document ready functions
 
 //sparkline in sidebar area

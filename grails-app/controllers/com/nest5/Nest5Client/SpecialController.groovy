@@ -80,4 +80,10 @@ class SpecialController {
         render data  as JSON
         return
     }
+    def newcontact(){
+            userService.sendNewContactMail(params.dataString)
+        def data =  [errors: "0", errorType: "0", messages: [ ] ]
+        render data  as JSON
+        return
+    }
 }
