@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/dashboard/main.js" afterPath="$PROJECT_DIR$/web-app/js/dashboard/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397356419289" ignored="false" />
+    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357870337" ignored="false" />
     <file path="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/SpecialController.groovy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397349176799" ignored="false" />
-    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397356394002" ignored="false" />
+    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357861647" ignored="false" />
+    <file path="/main.js" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357858618" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +119,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/js/dashboard/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="7" selection-start="674" selection-end="674" vertical-scroll-proportion="0.56666666">
+            <state line="21" column="16" selection-start="683" selection-end="683" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="171" column="27" selection-start="8127" selection-end="8127" vertical-scroll-proportion="0.7060519">
               <folding />
             </state>
           </provider>
@@ -139,15 +150,6 @@
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="349" column="84" selection-start="19347" selection-end="19390" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/company/history.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="171" selection-start="4705" selection-end="4809" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,7 +176,7 @@
       <file leaf-file-name="workspace.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="287" column="37" selection-start="15439" selection-end="15439" vertical-scroll-proportion="0.0">
+            <state line="289" column="37" selection-start="15682" selection-end="15682" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -204,7 +206,6 @@
         <option value="$PROJECT_DIR$/web-app/posfiles/js/main.js" />
         <option value="$PROJECT_DIR$/grails-app/views/posindex.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/Nest5Client/UserService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/web-app/js/dashboard/datatable.js" />
         <option value="$PROJECT_DIR$/grails-app/conf/ApplicationResources.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
@@ -214,6 +215,7 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/web-app/dashboard/js/main.js" />
         <option value="$PROJECT_DIR$/web-app/js/dashboard/main.js" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
       </list>
     </option>
   </component>
@@ -599,13 +601,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web-app/js/dashboard/datatable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="91" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/libs/jQuery.print.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -668,7 +663,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="37" selection-start="15439" selection-end="15439" vertical-scroll-proportion="0.0">
+        <state line="289" column="37" selection-start="15682" selection-end="15682" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -716,7 +711,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/dashboard/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="674" selection-end="674" vertical-scroll-proportion="0.56666666">
+        <state line="21" column="16" selection-start="683" selection-end="683" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="27" selection-start="8127" selection-end="8127" vertical-scroll-proportion="0.7060519">
           <folding />
         </state>
       </provider>

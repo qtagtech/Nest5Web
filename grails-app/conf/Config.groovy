@@ -169,3 +169,4 @@ grails.nest5.foursquare.redirectUri="http://hookthemapp.localhost.com:8080/fours
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.nest5.Nest5Client.SecUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.nest5.Nest5Client.SecUserSecRole'
 grails.plugins.springsecurity.authority.className = 'com.nest5.Nest5Client.SecRole'
+grails.resources.debug=true
