@@ -245,12 +245,41 @@ ul.dropdown-menu li a {
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 }
+<<<<<<< HEAD
+=======
+
+.btnpanel {
+    text-decoration: none;
+    padding:15px 50px 15px 50px;
+    background:#f59343;
+    color:#000000;
+    text-transform:capitalize;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:2px;
+    position:relative;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+>>>>>>> pr/1
 .btn:hover{
 	background:#44a7f6;
 	color:#fff;
 	border-bottom:3px solid #2c74af;
 }
 
+<<<<<<< HEAD
+=======
+.btnpanel:hover{
+    background:#44a7f6;
+    color:#000000;
+
+}
+
+>>>>>>> pr/1
 .navbar-default .navbar-brand{
 	font-size:30px;
 	color:#2d3538;

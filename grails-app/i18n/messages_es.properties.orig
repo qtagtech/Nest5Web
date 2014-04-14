@@ -99,7 +99,11 @@ store.create.success =¡Estás Listo!, Ahora solo falta que vayas a tu Panel de 
 #------------------------------------- POS ---------------------------------------------
 #---------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+pos.intro.title = BIENVENIDO A NEST5,
+=======
 pos.intro.title = BIENVENIDO A NEST<sup>5</sup>,
+>>>>>>> pr/1
 pos.intro.text = LA PLATAFORMA CON LA QUE PODR&AacuteS MANEJAR<br>TU NEGOCIO DESDE LA NUBE
 
 pos.menu.inicio = INICIO
@@ -108,7 +112,10 @@ pos.menu.servicios = SERVICIOS
 pos.menu.precio = PRECIO
 pos.menu.equipo = EQUIPO
 pos.menu.contacto = CONTACTO
+<<<<<<< HEAD
+=======
 pos.menu.panel = &nbsp;&nbsp;MI PANEL&nbsp;&nbsp;
+>>>>>>> pr/1
 
 pos.about.title = DE QU&Eacute SE TRATA
 pos.about.text = Somos una sencilla aplicaci&oacuten m&oacutevil y web de manejo de punto de venta (POS) con la que podr&aacutes por un costo y esfuerzo m&iacutenimo, organizar y llevar tu negocio a lo m&aacutes alto.
@@ -154,12 +161,20 @@ pos.clientes.perumix = Una herramienta f&aacute;cil, amigable y econ&oacute;mica
 pos.clientes.dueamici = Con Nest5 he podido simplificar, organizar y unificar muchos procesos que antes ten&iacute;a por varios medios. &iexcl;100% Recomendada!
 pos.clientes.espacio = Una aplicaci&oacute;n sencilla y usable que responde a las necesidades b&aacute;sicas del mercado de las peque&ntilde;as y medianas empresas.
 
+<<<<<<< HEAD
+pos.banner.text = <span>NEST5</span> CUESTA TAN SOLO <span>$40.000 (COP) MENSUALES</span>,<br>UN PRECIO MUY BAJO PARA TANTOS BENEFICIOS,<br><span> &iexcl;NO LO PIENSES M&AacuteS!</span>
+=======
 pos.banner.text = <span>NEST<sup>5</sup></span> CUESTA TAN SOLO <span>$40.000 (COP) MENSUALES</span>,<br>UN PRECIO MUY BAJO PARA TANTOS BENEFICIOS,<br><span> &iexcl;NO LO PIENSES M&AacuteS!</span>
+>>>>>>> pr/1
 pos.banner.button =&iexcl;P&iacutedelo ya!
 
 pos.contacto.nosotrostitle = Ponte en contacto
 pos.contacto.nosotrostext = Nuestras oficinas siempre estar&aacuten de puertas abiertas para lo que necesites. <br>Tel&eacutefono: 018007001991 <br>Direcci&oacuten: Ed. Rose Street Cra 37A &#35 8 - 43 Of. 802
+<<<<<<< HEAD
+pos.contacto.social = Socializa con Nest5
+=======
 pos.contacto.social = Socializa con Nest<sup>5</sup>
+>>>>>>> pr/1
 pos.contacto.map = Encu&eacutentranos<br>en el mapa
 pos.contacto.hello = Sal&uacutedanos
 pos.contacto.nombre = Nombre

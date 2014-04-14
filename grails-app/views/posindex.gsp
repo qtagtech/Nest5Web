@@ -43,7 +43,7 @@ header
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="#">Nest5</a> </div>
+        <a class="navbar-brand" href="#">Nest<sup>5</sup></a> </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown active"><a href="#home">${message(code:'pos.menu.inicio', default:"Translating please change your browser language")}</a></li>
@@ -52,6 +52,7 @@ header
           <li><a href="#portfolio">${message(code:'pos.menu.precio', default:"Translating please change your browser language")}</a></li>
           <li><a href="#team">${message(code:'pos.menu.equipo', default:"Translating please change your browser language")}</a></li>
           <li><a href="#contact">${message(code:'pos.menu.contacto', default:"Translating please change your browser language")}</a></li>
+          <li><a class="btnpanel" style="color:#ffffff; background-color:#f59343" href="http://nest5.com/company/dashboard">${message(code:'pos.menu.panel', default:"Translating please change your browser language")}</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -409,8 +410,7 @@ Services
 <!--=================================
 Script Source
 =================================--> 
-<script src="${resource(dir:'js/libs',file:'jquery-1.9.1.min.js')}"></script>
-<script src="${resource(dir:'js/libs',file:'jquery-migrate-1.2.1.min.js')}"></script>
+<script src="${resource(dir:'posfiles/js',file:'jquery-1.9.js')}"></script>
 <script src="${resource(dir:'posfiles/js',file:'bootstrap.min.js')}"></script>
 <script src="${resource(dir:'posfiles/js',file:'jquery.easing-1.3.pack.js')}"></script>
 <script src="${resource(dir:'posfiles/js',file:'jquery.sticky.js')}"></script>
@@ -422,64 +422,6 @@ Script Source
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script> 
 <script src="${resource(dir:'posfiles/js',file:'jquery.prettyPhoto.js')}"></script>
 <script src="${resource(dir:'posfiles/js',file:'main.js')}"></script>
-<script>
-    $(document).ready(function(){
-        $("#contactform").submit(function(e){
-            e.preventDefault();
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var subject = $("#subject").val();
-            var message = $("#message").val();
-            var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
 
-            if (name === '' || !IsEmail(email) || subject === '' || message === '') {
-                $('#valid-issue').html('Revisa los campos del contacto por favor.').show();
-            }
-            else{
-                $("#submit").hide(1500);
-                $.when(contact(dataString))
-                        .then(function(response){
-                            if(response.errors == "0")
-                            {
-                                var html = '<div class="alert alert-success"><p class="lead">&iexcl;Gracias! Alguien de nuestro equipo te escribir&aacute; y te contar&aacute; todos los detalles de Nest5.</p></div> ';
-                                $('#valid-issue').html(html).show(1000);
-                            }
-                            else
-                            {
-
-                                $("#submit").show("1500");
-                                $("#valid-issue").html("&iexcl;Oops! Parece que hubo alg&uacute;n error. &iquest;Podr&iacute;s intentarlo de nuevo por favor? &iexcl; Gracias!").show(1000);
-                            }
-                        })
-                        .fail(callError)
-            }
-
-        });
-    });
-
-    function contact(dataString){
-        var url = "${createLink(controller: 'special', action: 'newcontact')}";
-
-        return  $.ajax({
-            type: "POST",
-            url: url,
-            data: {dataString: dataString},
-            dataType: "json"
-        }).promise();
-    }
-
-    function callError(data){
-        console.log("Error");
-        console.log(data);
-    }
-    /*===================
-     5 - Contact
-     ===================*/
-
-    function IsEmail(email) {
-        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        return regex.test(email);
-    }
-</script>
 </body>
 </html>
