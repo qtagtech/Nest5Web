@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/report.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397363291905" ignored="false" />
+    <file path="/Dummy.txt" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397366700097" ignored="false" />
     <file path="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/SpecialController.groovy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397349176799" ignored="false" />
-    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397363290337" ignored="false" />
+    <file path="/a.dummy" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397365199446" ignored="false" />
     <file path="/main.js" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397357858618" ignored="false" />
     <file path="/report.gsp" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397362312932" ignored="false" />
     <file path="/invoices.gsp" changelist="010728a4-c4fd-422e-a0b2-50803e64c4e1" time="1397362711598" ignored="false" />
@@ -143,7 +141,7 @@
       <file leaf-file-name="invoices.gsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="187" selection-start="9290" selection-end="9290" vertical-scroll-proportion="0.5416667">
+            <state line="155" column="146" selection-start="7885" selection-end="7885" vertical-scroll-proportion="0.03601695">
               <folding>
                 <marker date="1397362755367" expanded="true" signature="10265:11056" placeholder="{...}" />
                 <marker date="1397362755367" expanded="true" signature="10323:11046" placeholder="{...}" />
@@ -155,6 +153,8 @@
                 <marker date="1397362755367" expanded="true" signature="11590:14877" placeholder="{...}" />
                 <marker date="1397362755367" expanded="true" signature="11797:14774" placeholder="{...}" />
                 <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+                <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
                 <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
                 <marker date="1397362755367" expanded="true" signature="14912:15279" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
                 <marker date="1397362755367" expanded="true" signature="15324:15834" placeholder="{...}" />
@@ -170,7 +170,7 @@
       <file leaf-file-name="report.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="1.0408163">
+            <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1397362313727" expanded="true" signature="14625:15416" placeholder="{...}" />
                 <marker date="1397362313727" expanded="true" signature="14683:15406" placeholder="{...}" />
@@ -213,7 +213,7 @@
       <file leaf-file-name="workspace.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="325" column="37" selection-start="19731" selection-end="19731" vertical-scroll-proportion="0.0">
+            <state line="326" column="37" selection-start="19744" selection-end="19744" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -533,8 +533,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -546,8 +546,7 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15686275" sideWeight="0.11178248" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10940171" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18292683" sideWeight="0.8905983" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18292683" sideWeight="0.74017096" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -558,10 +557,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.7941586" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22027439" sideWeight="0.7382892" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18774703" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18632479" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25982907" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -650,9 +650,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/history.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="171" selection-start="4705" selection-end="4809" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="91" column="171" selection-start="4705" selection-end="4809" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/libs/underscore-min.map">
@@ -686,19 +684,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="325" column="37" selection-start="19731" selection-end="19731" vertical-scroll-proportion="0.0">
+        <state line="326" column="37" selection-start="19744" selection-end="19744" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Company.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="36" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/dashboardLayout.gsp">
@@ -748,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="1.0408163">
+        <state line="156" column="177" selection-start="7785" selection-end="7785" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1397362313727" expanded="true" signature="14625:15416" placeholder="{...}" />
             <marker date="1397362313727" expanded="true" signature="14683:15406" placeholder="{...}" />
@@ -771,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="187" selection-start="9290" selection-end="9290" vertical-scroll-proportion="0.5416667">
+        <state line="155" column="146" selection-start="7885" selection-end="7885" vertical-scroll-proportion="0.03601695">
           <folding>
             <marker date="1397362755367" expanded="true" signature="10265:11056" placeholder="{...}" />
             <marker date="1397362755367" expanded="true" signature="10323:11046" placeholder="{...}" />
@@ -783,6 +781,8 @@
             <marker date="1397362755367" expanded="true" signature="11590:14877" placeholder="{...}" />
             <marker date="1397362755367" expanded="true" signature="11797:14774" placeholder="{...}" />
             <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="12565:13592" placeholder="{...}" />
+            <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
             <marker date="1397362755367" expanded="true" signature="14881:15300" placeholder="{...}" />
             <marker date="1397362755367" expanded="true" signature="14912:15279" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
             <marker date="1397362755367" expanded="true" signature="15324:15834" placeholder="{...}" />
