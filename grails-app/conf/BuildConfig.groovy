@@ -48,7 +48,7 @@ grails.project.dependency.resolution = {
         compile 'org.codehaus.jackson:jackson-core-asl:1.8.7'
         compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.1'
         compile 'com.amazonaws:aws-java-sdk:1.5.0'
-        compile 'org.apache.commons.codec:commons-codec:1.4'
+        compile 'commons-codec:commons-codec:1.6'
         compile 'joda-time:joda-time:2.3'
         compile 'commons-logging:commons-logging:1.1.3'
         compile('org.codehaus.groovy.modules.http-builder:http-builder:0.5.2') {
