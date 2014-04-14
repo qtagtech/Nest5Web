@@ -43,7 +43,7 @@ header
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="#">Nest5</a> </div>
+        <a class="navbar-brand" href="#">Nest<sup>5</sup></a> </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown active"><a href="#home">${message(code:'pos.menu.inicio', default:"Translating please change your browser language")}</a></li>
@@ -52,6 +52,7 @@ header
           <li><a href="#portfolio">${message(code:'pos.menu.precio', default:"Translating please change your browser language")}</a></li>
           <li><a href="#team">${message(code:'pos.menu.equipo', default:"Translating please change your browser language")}</a></li>
           <li><a href="#contact">${message(code:'pos.menu.contacto', default:"Translating please change your browser language")}</a></li>
+          <li><a class="btnpanel" style="color:#ffffff; background-color:#f59343" href="http://nest5.com/company/dashboard">${message(code:'pos.menu.panel', default:"Translating please change your browser language")}</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
