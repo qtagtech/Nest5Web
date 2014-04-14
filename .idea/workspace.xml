@@ -4,7 +4,13 @@
     <bookmark url="file://$PROJECT_DIR$/grails-app/views/user/feed.gsp" line="940" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="" />
+    <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" afterPath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5.iml" afterPath="$PROJECT_DIR$/newNest5.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/report.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -74,7 +80,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="49" selection-start="7224" selection-end="7224" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="3791">
+            <state line="137" column="49" selection-start="7224" selection-end="7224" vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="3345">
               <folding />
             </state>
           </provider>
@@ -86,17 +92,69 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="49" selection-start="7030" selection-end="7030" vertical-scroll-proportion="0.0" vertical-offset="1686" max-vertical-offset="3009">
+            <state line="110" column="49" selection-start="7030" selection-end="7030" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="2655">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posindex.gsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="posindex.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/posindex.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="80" selection-start="3225" selection-end="3225" vertical-scroll-proportion="0.61904764" vertical-offset="710" max-vertical-offset="7361">
+            <state line="61" column="46" selection-start="3458" selection-end="3458" vertical-scroll-proportion="-10.625" vertical-offset="660" max-vertical-offset="6495">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invoices.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="249" column="316" selection-start="12883" selection-end="12883" vertical-scroll-proportion="-9.085107" vertical-offset="3308" max-vertical-offset="5025">
+              <folding>
+                <marker date="1397494617000" expanded="true" signature="10265:11056" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="10323:11046" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="10405:11022" placeholder="{&quot;globalStyles&quot;: true...}" />
+                <marker date="1397494617000" expanded="true" signature="11085:16138" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="11307:16132" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="11460:16091" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="11550:15563" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="11590:15120" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="11797:15017" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="12565:13835" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="15124:15543" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="15155:15522" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+                <marker date="1397494617000" expanded="true" signature="15567:16077" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="15598:16057" placeholder="{&quot;type&quot;: 'error'...}" />
+                <marker date="1397494617000" expanded="true" signature="16170:16425" placeholder="{...}" />
+                <marker date="1397494617000" expanded="true" signature="16280:16407" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1397494617000" expanded="true" signature="16454:16558" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.gsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="312" column="91" selection-start="16468" selection-end="16468" vertical-scroll-proportion="0.18655097" vertical-offset="4508" max-vertical-offset="6300">
+              <folding>
+                <marker date="1397494740000" expanded="true" signature="14625:15416" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="14683:15406" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="14765:15382" placeholder="{&quot;globalStyles&quot;: true...}" />
+                <marker date="1397494740000" expanded="true" signature="15445:21969" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="15667:21963" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="15788:21922" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="15878:21394" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="15918:18805" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="18809:21374" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="18840:19207" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+                <marker date="1397494740000" expanded="true" signature="21398:21908" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="21429:21888" placeholder="{&quot;type&quot;: 'error'...}" />
+                <marker date="1397494740000" expanded="true" signature="22001:22255" placeholder="{...}" />
+                <marker date="1397494740000" expanded="true" signature="22110:22237" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1397494740000" expanded="true" signature="22284:22388" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +162,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/posfiles/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="254" column="4" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0" vertical-offset="4318" max-vertical-offset="36584">
+            <state line="261" column="4" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.0" vertical-offset="3915" max-vertical-offset="32370">
               <folding />
             </state>
           </provider>
@@ -132,7 +190,6 @@
         <option value="$PROJECT_DIR$/newNest5.iml" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/nest5/Nest5Client/SpecialController.groovy" />
         <option value="$PROJECT_DIR$/web-app/posfiles/js/main.js" />
-        <option value="$PROJECT_DIR$/grails-app/views/posindex.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/Nest5Client/UserService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/welcomeCapture.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/Nest5Client/FacebookAuthService.groovy" />
@@ -148,14 +205,15 @@
         <option value="$PROJECT_DIR$/grails-app/i18n/messages_es.properties" />
         <option value="$PROJECT_DIR$/grails-app/views/posindex.gsp" />
         <option value="$PROJECT_DIR$/web-app/posfiles/css/main.css" />
+        <option value="$PROJECT_DIR$/grails-app/views/posindex.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/company/invoices.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/company/report.gsp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -203,7 +261,6 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="SearchEverywhereHistory" value="" />
-    <property name="LayoutCode.rearrangeEntriesGSP" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -215,10 +272,14 @@
     </key>
   </component>
   <component name="RunManager" selected="Grails.Grails:newNest5">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -230,14 +291,10 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -249,6 +306,38 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -279,17 +368,19 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -311,128 +402,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="Grails:newNest5" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -489,11 +458,12 @@
       <workItem from="1396624686113" duration="42815000" />
       <workItem from="1397144339218" duration="7996000" />
       <workItem from="1397485819496" duration="194000" />
+      <workItem from="1397493910551" duration="751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95157000" />
+    <option name="totallyTimeSpent" value="95908000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -516,8 +486,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -529,23 +499,23 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15686275" sideWeight="0.11178248" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2990196" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2205438" sideWeight="0.7382892" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36850393" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3678606" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22401172" sideWeight="0.5885559" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1687966" sideWeight="0.5885559" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14652568" sideWeight="0.41144413" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.7941586" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2990196" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -558,14 +528,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28346458" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28346458" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2992126" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -586,13 +556,13 @@
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2939453" sideWeight="0.71588594" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.7941586" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.7941586" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -608,16 +578,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Store.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/nest5/Nest5Client/Invitation.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="459" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/invite.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="153" column="39" selection-start="9852" selection-end="9852" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="8296" />
@@ -645,12 +605,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/style10.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="6" selection-start="3369" selection-end="3371" vertical-scroll-proportion="-5.08" vertical-offset="2389" max-vertical-offset="11203" />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="36" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1245">
-          <folding />
-        </state>
+        <state line="41" column="36" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/style_new.css">
@@ -875,17 +830,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/posindex.gsp">
+    <entry file="file://$PROJECT_DIR$/web-app/posfiles/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="80" selection-start="3225" selection-end="3225" vertical-scroll-proportion="0.61904764" vertical-offset="710" max-vertical-offset="7361">
+        <state line="261" column="4" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.0" vertical-offset="3915" max-vertical-offset="32370">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/posfiles/css/main.css">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/posindex.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="4" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0" vertical-offset="4318" max-vertical-offset="36584">
+        <state line="61" column="46" selection-start="3458" selection-end="3458" vertical-scroll-proportion="-10.625" vertical-offset="660" max-vertical-offset="6495">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/company/invoices.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="316" selection-start="12883" selection-end="12883" vertical-scroll-proportion="-9.085107" vertical-offset="3308" max-vertical-offset="5025">
+          <folding>
+            <marker date="1397494617000" expanded="true" signature="10265:11056" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="10323:11046" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="10405:11022" placeholder="{&quot;globalStyles&quot;: true...}" />
+            <marker date="1397494617000" expanded="true" signature="11085:16138" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="11307:16132" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="11460:16091" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="11550:15563" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="11590:15120" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="11797:15017" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="12565:13835" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="15124:15543" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="15155:15522" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+            <marker date="1397494617000" expanded="true" signature="15567:16077" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="15598:16057" placeholder="{&quot;type&quot;: 'error'...}" />
+            <marker date="1397494617000" expanded="true" signature="16170:16425" placeholder="{...}" />
+            <marker date="1397494617000" expanded="true" signature="16280:16407" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1397494617000" expanded="true" signature="16454:16558" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/company/report.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="312" column="91" selection-start="16468" selection-end="16468" vertical-scroll-proportion="0.18655097" vertical-offset="4508" max-vertical-offset="6300">
+          <folding>
+            <marker date="1397494740000" expanded="true" signature="14625:15416" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="14683:15406" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="14765:15382" placeholder="{&quot;globalStyles&quot;: true...}" />
+            <marker date="1397494740000" expanded="true" signature="15445:21969" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="15667:21963" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="15788:21922" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="15878:21394" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="15918:18805" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="18809:21374" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="18840:19207" placeholder="{&quot;title&quot;: 'No hay registros'...}" />
+            <marker date="1397494740000" expanded="true" signature="21398:21908" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="21429:21888" placeholder="{&quot;type&quot;: 'error'...}" />
+            <marker date="1397494740000" expanded="true" signature="22001:22255" placeholder="{...}" />
+            <marker date="1397494740000" expanded="true" signature="22110:22237" placeholder="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1397494740000" expanded="true" signature="22284:22388" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -900,10 +903,10 @@
               <option name="pluginDependenciesCrc" value="1737200493" />
               <option name="properties">
                 <map>
-                  <entry key="grails.global.plugins.dir" value="C:\Users\putav_000\.grails\2.2.0\global-plugins" />
-                  <entry key="grails.project.plugins.dir" value="C:\Users\putav_000\.grails\2.2.0\projects\newNest5\plugins" />
-                  <entry key="grails.project.work.dir" value="C:\Users\putav_000\.grails\2.2.0\projects\newNest5" />
-                  <entry key="grails.work.dir" value="C:\Users\putav_000\.grails\2.2.0" />
+                  <entry key="grails.global.plugins.dir" value="$USER_HOME$/.grails/2.2.0/global-plugins" />
+                  <entry key="grails.project.plugins.dir" value="$USER_HOME$/.grails/2.2.0/projects/newNest5/plugins" />
+                  <entry key="grails.project.work.dir" value="$USER_HOME$/.grails/2.2.0/projects/newNest5" />
+                  <entry key="grails.work.dir" value="$USER_HOME$/.grails/2.2.0" />
                 </map>
               </option>
             </GrailsSettings>

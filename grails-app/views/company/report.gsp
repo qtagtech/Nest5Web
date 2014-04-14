@@ -310,7 +310,7 @@
                    $("#ventas").html(accounting.formatMoney(response.data.ventas, "$", 2, ".", ","));
                    $("#descuentos").html(accounting.formatMoney(response.data.descuentos, "$", 2, ".", ","));
                    $("#impuestos").html(accounting.formatMoney(response.data.impuestos, "$", 2, ".", ","));
-                   $("#subtotalVentas").html(accounting.formatMoney(response.data.ventas - response.data.descuentos, "$", 2, ".", ","));
+                   $("#subtotalVentas").html(accounting.formatMoney(response.data.ventas - response.data.descuentos + response.data.impuestos, "$", 2, ".", ","));
                    $("#devoluciones").html(accounting.formatMoney(0, "$", 2, ".", ","));
                    $("#impDevoluciones").html(accounting.formatMoney(0, "$", 2, ".", ","));
                    $("#ventasNetas").html(accounting.formatMoney(response.data.ventas + response.data.impuestos - response.data.descuentos, "$", 2, ".", ","));

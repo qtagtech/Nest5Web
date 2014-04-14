@@ -247,13 +247,13 @@
                               '<tbody>';
                    var itema = _.size(response.data[factura].items);
                     for (var item = 0; item < itema; item ++){
-                    var total = parseFloat(response.data[factura].items[item].precio) * parseFloat(response.data[factura].items[item].cantidad) + parseFloat(response.data[factura].items[item].impuesto);
+                    var total = parseFloat(response.data[factura].items[item].precio) * parseFloat(response.data[factura].items[item].cantidad) + (parseFloat(response.data[factura].items[item].impuesto) * parseFloat(response.data[factura].items[item].precio) * parseFloat(response.data[factura].items[item].cantidad));
                         html += '<tr>' +
                          '<td>'+response.data[factura].items[item].item+'</td>' +
                           '<td>'+response.data[factura].items[item].cantidad+'</td>' +
                            '<td>'+accounting.formatMoney(response.data[factura].items[item].precio, "$", 2, ".", ",")+'</td>' +
                             '<td>'+accounting.formatMoney(parseFloat(response.data[factura].items[item].precio) * parseFloat(response.data[factura].items[item].cantidad), "$", 2, ".", ",")+'</td>' +
-                             '<td>'+accounting.formatMoney(response.data[factura].items[item].impuesto, "$", 2, ".", ",")+'</td>' +
+                             '<td>'+accounting.formatMoney(parseFloat(response.data[factura].items[item].impuesto) * parseFloat(response.data[factura].items[item].precio) * parseFloat(response.data[factura].items[item].cantidad) , "$", 2, ".", ",")+'</td>' +
                               '<td>'+accounting.formatMoney(total, "$", 2, ".", ",")+'</td>' +
                             '</tr>';
                     }
