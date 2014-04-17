@@ -386,7 +386,7 @@ Services
         <h2>${message(code:'pos.contacto.hello', default:"Translating please change your browser language")}</h2>
         <a href="#">comercial@nest5.com</a>
         <div class="contactus">
-            <form id="contactform" action="http://nest5.com/submit.php" method="post">
+            <form id="contactform" action="#" method="post">
               <input type="text" name="name" id="name" placeholder="${message(code:'pos.contacto.nombre', default:"Translating please change your browser language")}">
               <input type="text" name="email" id="email" placeholder="${message(code:'pos.contacto.correo', default:"Translating please change your browser language")}">
               <input type="text" name="subject" id="subject" placeholder="${message(code:'pos.contacto.asunto', default:"Translating please change your browser language")}">

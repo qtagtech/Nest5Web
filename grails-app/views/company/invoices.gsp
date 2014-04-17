@@ -47,7 +47,7 @@
             </div><!-- End search -->
 
             <ul class="breadcrumb">
-                <li>You are here:</li>
+                <li>Te encuentras en:</li>
                 <li>
                     <a href="#" class="tip" title="back to dashboard">
                         <span class="icon16 icomoon-icon-screen-2"></span>
@@ -135,7 +135,7 @@
                             <h3>${data.size()}</h3>
                             <g:each in="${data}" status="i" var="factura">
 
-                                <h4>FACTURA DE VENTA #:<span class="red" id=""> <g:formatNumber number="${(factura?.key ?: 0)}" type="number" maxFractionDigits="0" minIntegerDigits="9" /></span></h4>
+                                <h4>FACTURA DE VENTA #:<a href="${createLink(controller: 'company',action: 'invoice',params: [id: factura?.key ?: 0])}"><span class="red" id=""> <g:formatNumber number="${(factura?.key ?: 0)}" type="number" maxFractionDigits="0" minIntegerDigits="9" /></span></a></h4>
 
                                 <table class="responsive table table-bordered">
                                     <thead>
@@ -206,9 +206,9 @@
                         //Don't print this
                         noPrintSelector : ".avoid-this",
                         //Add this on top
-                        append : "Free jQuery Plugins!!!<br/>",
+                        append : "",
                         //Add this at bottom
-                        prepend : "<br/>jQueryScript.net!"
+                        prepend : "<br/>Administra tu Negocio e la Nube: Facturación, Inventario, Clientes. Nest5.com"
                     });
                     });
 

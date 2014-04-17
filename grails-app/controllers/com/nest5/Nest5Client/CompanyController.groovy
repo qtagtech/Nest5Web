@@ -654,6 +654,35 @@ class CompanyController {
 
     }
     @Secured(['ROLE_COMPANY'])
+    def invoice(){
+        def user = springSecurityService.currentUser as Company
+        def youarehere = "Factura de Ventas"
+        def numb =  (params?.id ?: "0") as Integer
+
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        // perform a GET request, expecting JSON response data
+        http.request( GET, TEXT ) {
+
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'databaseOps/fetchInvoice'
+            uri.query = [company: user.id, invoice: numb]
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                return
+            }
+        }
+        println jsonData
+        if(jsonData?.status != 1){
+        }
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,data: jsonData?.payload ?: []]
+
+    }
+    @Secured(['ROLE_COMPANY'])
     def reportRequest(){
         def user = springSecurityService.currentUser as Company
         def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )

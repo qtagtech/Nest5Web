@@ -196,45 +196,7 @@
         return false;
     });
 
-<<<<<<< HEAD
 
-
-
-
-=======
-    /*===================
-    5 - Contact
-    ===================*/
-
-    function IsEmail(email) {
-        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        return regex.test(email);
-    }
-
-
-    $("#contactform").submit(function () {
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var subject = $("#subject").val();
-        var message = $("#message").val();
-        var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
-
-        if (name === '' || !IsEmail(email) || subject === '' || message === '') {
-            $('#valid-issue').html('Please Provide Valid Information').show();
-        } else {
-            $.ajax({
-                type: "POST",
-                url: "assets/php/submit.php",
-                data: dataString,
-                success: function () {
-                    $('#contactform').hide();
-                    $('#valid-issue').html('Your message has been sent,<BR> We will contact you back with in next 24 hours.').show();
-                }
-            });
-        }
-        return false;
-    });
->>>>>>> pr/1
 
 
     /*===================
