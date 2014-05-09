@@ -92,7 +92,7 @@
                                                 <td><g:formatDate date="${element?.timeReceived}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.price_per_unit}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                                <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit / element?.fields?.price_per_unit}" type="number" maxFractionDigits="2" /></td>
+                                                <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit / ((element?.fields?.price_per_unit != "NaN") && (elemen?.fields?.price_per_unit != 0))}" type="number" maxFractionDigits="2" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.quantity}" type="number" maxFractionDigits="2" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.price_per_unit * element?.fields?.quantity}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                                 <td>

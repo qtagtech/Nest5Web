@@ -1156,6 +1156,56 @@ class CompanyController {
         [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,element: result.element,special: jsonData2?.payload?.syncId]
     }
     @Secured(["ROLE_COMPANY"])
+    def editCombo(Long id){
+        //
+        def user = springSecurityService.currentUser
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchRow'
+            uri.query = [company:user.id,row: id]
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+                println jsonData
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        //check if it is a special_product and bring the syncId
+
+        def jsonData2
+        def result2
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchSpecialRow'
+            uri.query = [company:user.id,row: id]
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData2 = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+
+        result = [status: jsonData.status, element: jsonData.payload]
+
+        //println result
+        def youarehere = "Editando Combo: "+result?.element?.fields?.name
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,element: result.element,special: jsonData2?.payload?.syncId]
+    }
+    @Secured(["ROLE_COMPANY"])
     def editDevice(String id){
         //
         def user = springSecurityService.currentUser
