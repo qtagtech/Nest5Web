@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="3829602724">
-    <data-source source="LOCAL" name="newNest5 dev" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="03ab0929-e2de-4d63-ae53-7af10632b6d0">
+    <data-source source="LOCAL" name="newNest5 dev" uuid="03ab0929-e2de-4d63-ae53-7af10632b6d0">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/newNest5DB2</jdbc-url>
       <user-name>postgres</user-name>
