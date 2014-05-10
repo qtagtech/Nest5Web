@@ -43,6 +43,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         runtime: 'postgresql:postgresql:9.1-902.jdbc4'
+        compile: 'javax.mail:mail:1.4'
         compile 'org.apache.httpcomponents:httpcore:4.3.2'
         compile 'org.apache.httpcomponents:httpclient:4.3.3'
         compile 'org.codehaus.jackson:jackson-core-asl:1.8.7'

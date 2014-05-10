@@ -890,13 +890,48 @@ class CompanyController {
     @Secured(["ROLE_COMPANY"])
     def products(){
         def user = springSecurityService.currentUser
-        def youarehere = "Todos los Ingredients"
+        def youarehere = "Todos los Productos"
         def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
         def jsonData
         def result
         http.request( GET, TEXT ) {
             uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
             uri.query = [company:user.id,table: 'product']
+            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
+            response.success = { resp, json ->
+                jsonData = JSON.parse(json)
+            }
+            response.failure = { resp,json ->
+                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
+                println JSON.parse(json)
+                result = [status: 404, message: json]
+            }
+        }
+
+        if(jsonData?.status != 200){
+            result = [status: jsonData?.status, message: jsonData?.message]
+        }
+        result = [status: jsonData.status, elements: jsonData.payload]
+        //println result
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        result.elements.each{
+            it.timeCreated =   dtf.parseDateTime(it.timeCreated).toDate();
+            it.timeReceived =   dtf.parseDateTime(it.timeReceived).toDate();
+        }
+        //println result
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,elements: result.elements]
+    }
+
+    @Secured(["ROLE_COMPANY"])
+    def combos(){
+        def user = springSecurityService.currentUser
+        def youarehere = "Todos los Combos"
+        def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
+        def jsonData
+        def result
+        http.request( GET, TEXT ) {
+            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchProperty'
+            uri.query = [company:user.id,table: 'combo']
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
             response.success = { resp, json ->
                 jsonData = JSON.parse(json)
@@ -1118,11 +1153,8 @@ class CompanyController {
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
             response.success = { resp, json ->
                 jsonData = JSON.parse(json)
-                println jsonData
             }
             response.failure = { resp,json ->
-                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
-                println JSON.parse(json)
                 result = [status: 404, message: json]
             }
         }
@@ -1157,7 +1189,6 @@ class CompanyController {
     }
     @Secured(["ROLE_COMPANY"])
     def editCombo(Long id){
-        //
         def user = springSecurityService.currentUser
         def http = new HTTPBuilder( grailsApplication.config.com.nest5.Nest5Client.bigDataServerURL )
         def jsonData
@@ -1168,7 +1199,6 @@ class CompanyController {
             headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
             response.success = { resp, json ->
                 jsonData = JSON.parse(json)
-                println jsonData
             }
             response.failure = { resp,json ->
                 println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
@@ -1180,30 +1210,14 @@ class CompanyController {
         if(jsonData?.status != 200){
             result = [status: jsonData?.status, message: jsonData?.message]
         }
-        //check if it is a special_product and bring the syncId
 
-        def jsonData2
-        def result2
-        http.request( GET, TEXT ) {
-            uri.path = grailsApplication.config.com.nest5.Nest5Client.bigDataPath+'rowOps/fetchSpecialRow'
-            uri.query = [company:user.id,row: id]
-            headers.'User-Agent' = 'Mozilla/5.0 Ubuntu/8.10 Firefox/3.0.4'
-            response.success = { resp, json ->
-                jsonData2 = JSON.parse(json)
-            }
-            response.failure = { resp,json ->
-                println "Unexpected error: ${resp.statusLine.statusCode} : ${resp.statusLine.reasonPhrase}"
-                println JSON.parse(json)
-                result = [status: 404, message: json]
-            }
-        }
 
 
         result = [status: jsonData.status, element: jsonData.payload]
 
         //println result
         def youarehere = "Editando Combo: "+result?.element?.fields?.name
-        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,element: result.element,special: jsonData2?.payload?.syncId]
+        [user: user,picture: companyService.companyImageUrl(user),youarehere: youarehere,element: result.element]
     }
     @Secured(["ROLE_COMPANY"])
     def editDevice(String id){

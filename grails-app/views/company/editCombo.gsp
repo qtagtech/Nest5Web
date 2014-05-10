@@ -170,14 +170,14 @@
                                             <h4 class="blue">Detalles de Costo</h4>
                                             <label class="col-lg-5 control-label left" for="cost">Costo:</label>
                                             <div class="col-lg-4">
-                                                <input class="form-control mask uniform-input text" name="cost" id="cost"  />
+                                                <input class="form-control mask uniform-input text" name="cost_edit" id="cost"  />
                                             </div>
                                         </div>
                                         <div class="col-lg-5">
                                             <h4 class="blue">Detalles de Precio</h4>
                                             <label class="col-lg-5 control-label left" for="cost">Precio:</label>
                                             <div class="col-lg-4">
-                                                <input class="form-control mask uniform-input text" name="price" id="price"  />
+                                                <input class="form-control mask uniform-input text" name="price_edit" id="price"  />
                                             </div>
                                         </div>
                                         <div class="col-lg-10">
@@ -222,30 +222,47 @@
         var medidas = new Object();
         var ing_medidas = new Object();
         var ingredients = new Object();   //ingId:name
-        var specialproducts = new Object();  // sppId: pId
+        var products = new Object();  // sppId: pId
         $(document).ready(function(){
 
-        $("#wizard2").bind("before_step_shown", function(event, data){
+        $("#wizard3").bind("before_step_shown", function(event, data){
             if(data.currentStep == 'recepy-quantities'){
             $("#ingredient_quantities").empty();
+            $("#product_quantities").empty();
                var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+              options.each(function(index){
+//                console.log($(this).val());
+                    var proName = $(this).text();
+                    var proId = $(this).val();
+                    var html = '<li class="clearfix">'
+                          +'<div class="row">'
+                                +'<h3>'+proName+'</h3>'
+                              +'</div>'
+                             +'<div class="row">'
+                                +'<label class="col-lg-3" for="'+proId+'_quantity">Cantidad: </label>'
+                                  +'<div class="col-lg-3">'
+                                      +'<input type="number" step="1" id="'+proId+'_quantity"  name="'+proId+'_quantity" value="0" >'
+                                      +'<span class="help-block blue">E.g. 3.</span>'
+                                  +'</div>'
+                              +'</div>'
+                                 +'</li>';
+            $("#product_quantities").append(html);
+
+              });
+              var options = $('[name="duallistbox_demo2[]"] option:selected') || [];
               options.each(function(index){
 //                console.log($(this).val());
                     var ingName = $(this).text();
                     var ingId = $(this).val();
-                    var isproduct = $(this).attr("data-as-ingredient") ? true : false;
                     var html = '<li class="clearfix">'
                           +'<div class="row">'
                                 +'<h3>'+ingName+'</h3>'
                               +'</div>'
                              +'<div class="row">'
                                 +'<label class="col-lg-3" for="'+ingId+'_quantity">Cantidad: </label>'
-                                  +'<div class="col-lg-3">';
-                                  if(isproduct)
-                                      html+='<input type="text" id="'+ingId+'_quantity" data-product="true"  name="'+ingId+'_quantity" value="0" >';
-                                  else
-                                      html+='<input type="text" id="'+ingId+'_quantity" data-product="false"  name="'+ingId+'_quantity" value="0" >';
-                                  html+='<span class="help-block blue">E.g. 250gr.</span>'
+                                  +'<div class="col-lg-3">'
+                                      +'<input type="number" stype="any" id="'+ingId+'_quantity"  name="'+ingId+'_quantity" value="0" >'
+                                      +'<span class="help-block blue">E.g. 250gr.</span>'
                                   +'</div>'
                                   +'<label  class="col-lg-3" for="'+ingId+'_unit">Unidad: </label>'
                                   +'<div class="col-lg-3">'
@@ -257,10 +274,7 @@
                                  +'</li>';
             $("#ingredient_quantities").append(html);
 
-            //una vez puesto el html, llenar los valores de los que haya que ya tenia antes de empezar a editarlo
-
-
-            /*Add medidas a cada ingrediente basandose en el objeto global que dice que medida usa (ing_medida) y tomando submedidas para ese del objeto global medidas*/
+            /*Add medidas a cada ingrediente basandose en el objeto global que dice que medida usa (ing_medida) y tomando subledidas para ese del objeto global medidas*/
             var submedidas = medidas[ing_medidas[ingId]];
             if(!_.isUndefined(submedidas)){
                if(_.size(submedidas) > 0){
@@ -269,44 +283,23 @@
                     }
                 }
             }
-
              $("#"+ingId+"_unit").select2();
-
 
               });
             }
             <g:each in="${element?.fields?.ingredients}" var="ingrediente">
                 $('#${ingrediente?.sync_id}_quantity').val(${ingrediente?.qty});
-                var submedidas = medidas[ing_medidas[${ingrediente?.sync_id}]];
-                var sub = (_.invert(submedidas))[1];
-            $("#${ingrediente?.sync_id}_unit").select2("data", {id: 1, text: sub});
+                        var submedidas = medidas[ing_medidas[${ingrediente?.sync_id}]];
+                        var sub = (_.invert(submedidas))[1];
+                    $("#${ingrediente?.sync_id}_unit").select2("data", {id: 1, text: sub});
+            </g:each>
+            <g:each in="${element?.fields?.products}" var="ingrediente">
+                $('#${ingrediente?.sync_id}_quantity').val(${ingrediente?.qty});
             </g:each>
         });
 
 
-            $.when(fetchProperty('product_category'))
-            .then(function(response){
-                if(response.status == 200){
-                    var cantidad = response.elements.length;
-                    if(cantidad > 0) {
-                       for(var i = 0; i < cantidad; i++){
-                        $("#select-category").append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
-                       }
-                    }
-                    else{
-                        $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addProductCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
-                    }
-
-                }
-                else{
-                  $("#select-category").attr("placeholder","Aún no tienes categorías creadas.").
-                        after('<a href="${createLink(controller: 'company',action: 'addProductCategory')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
-                }
-                $("#select-category").select2();
-            })
-            .fail(callError);
 
             $.when(fetchProperty('measurement_unit'))
             .then(function(response){
@@ -381,41 +374,41 @@
                     var cantidad = response.elements.length;
                     if(cantidad > 0) {
                        for(var i = 0; i < cantidad; i++){
-                        $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+                        $('[name="duallistbox_demo2[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
                         ing_medidas[response.elements[i].syncId] = response.elements[i].fields.unit_id;
                         ingredients[response.elements[i].syncId] = response.elements[i].fields.name;
                        }
                     }
                     else{
-                        $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                        $('[name="duallistbox_demo2[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
                         after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
 
                     }
 
                 }
                 else{
-                  $('[name="duallistbox_demo1[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
+                  $('[name="duallistbox_demo2[]"]').after("<span>Aún no tienes ingredientes creados.</span>").
                         after('<a href="${createLink(controller: 'company',action: 'addIngredient')}" class="btn btn-info">Crear Ahora <span class="icon16 icomoon-icon-arrow-right-3 white"></span></a>');
                 }
 
                 //agrehgar los que sean del producto
                 <g:each in="${element?.fields?.ingredients}" var="ingrediente">
-                    $('[name="duallistbox_demo1[]"] option[value="${ingrediente?.sync_id}"]').attr("selected","selected");
+                    $('[name="duallistbox_demo2[]"] option[value="${ingrediente?.sync_id}"]').attr("selected","selected");
                 </g:each>
 
                 //var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
             })
             .fail(callError);
 
-            $.when(fetchProperty('special_product'))
+            $.when(fetchProperty('product'))
             .then(function(response){
                 if(response.status == 200){
                     var cantidad = response.elements.length;
                     if(cantidad > 0) {
                        for(var i = 0; i < cantidad; i++){
-                        $('[name="duallistbox_demo1[]"]').append('<option data-as-ingredient="true" value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
+                        $('[name="duallistbox_demo1[]"]').append('<option value="'+response.elements[i].syncId+'">'+response.elements[i].fields.name+'</option>');
                         ing_medidas[response.elements[i].syncId] = response.elements[i].fields.unit_id;
-                        specialproducts[response.elements[i].syncId] = response.elements[i].fields.name;
+                        products[response.elements[i].syncId] = response.elements[i].fields.name;
                        }
                     }
                     else{
@@ -435,7 +428,7 @@
 //                $.configureBoxes();
                 var demo1 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
 
-                var demo2 = $('[name="duallistbox_demo1[]"]').bootstrapDualListbox();
+                var demo2 = $('[name="duallistbox_demo2[]"]').bootstrapDualListbox();
 
             })
             .fail(callError);
@@ -454,6 +447,7 @@
             }
             $("#multipliers").select2();
             });
+
             $("form").on('change',"#sell_units",function(){
             $("#sell_multipliers").empty();
             var syncid =  $( "#sell_units option:selected" ).val();
@@ -482,20 +476,7 @@
               //console.log(e, $element, value);
             });
 
-            $('#is_ingredient').on('switchChange', function (e, data) {
-              var $element = $(data.el),
-                  value = data.value;
-                  $("#ingredientable_properties").toggleClass('invisible');
-              //console.log(e, $element, value);
-            });
 
-
-            //Edición
-            $("#select-category").select2('val','${element?.fields?.category_id}');
-            if(${element?.fields?.tax_id ?: 0} != 0){
-                $('#is_taxable').bootstrapSwitch('state', true);
-                $("#tax").select2('val','${element?.fields?.tax_id}');
-            }
 
 
 
@@ -506,7 +487,7 @@
         function saveRow(multi_string){
             var url = "${createLink(controller: 'company',action: 'saveRow')}";
             var table = $("[name='table']").val();
-            var rowid = $("[name='row_id']").val();
+             var rowid = $("[name='row_id']").val();
             var syncrowid = $("[name='sync_row_id']").val();
             var quantity = parseFloat($("#quantity").val()) * parseFloat($("#multipliers option:selected").val());
             var cost = parseFloat($("#cost_edit").val());
@@ -517,74 +498,78 @@
             else
                 tax = 0;
 
+            var products = [];
             var ingredients = [];
-            var otherproducts= [];
 
-              /*Save multiple productingredient relationships taking ingredients present in box2View*/
-                     var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
-                     var total = options.length;
-                     options.each(function(index){
+                /*Save multiple comboproduct relationships taking prodcuts present in box2View*/
+                                         var options = $('[name="duallistbox_demo1[]"] option:selected') || [];
+                                         var total2 = options.length;
+                                         options.each(function(index){
+                                             var proName = $(this).text();
+                                             var proId = $(this).val();
+                                             var quantity2 = parseFloat($("#"+proId+"_quantity").val()) || 0.0;
+                                             var product = new Object();
+                                             product['sync_id'] = proId;
+                                             product['qty'] = quantity2;
+                                             products.push(product);
+
+                                         });
+
+            /*Save multiple comboingredient relationships taking ingredients present in box2View*/
+                     var options2 = $('[name="duallistbox_demo2[]"] option:selected') || [];
+                     var total = options2.length;
+                     options2.each(function(index){
                          var ingName = $(this).text();
                          var ingId = $(this).val();
                          var quantity = parseFloat($("#"+ingId+"_quantity").val()) || 0.0;
                          var multiplier = parseFloat($("#"+ingId+"_unit option:selected").val()) || 1.0;
                          var real_quantity = quantity * multiplier;
-                         var isproduct = $(this).attr('data-as-ingredient') ? true : false;
-                         if(!isproduct){
-                             var productingredient = new Object();
-                             productingredient['sync_id'] = ingId;
-                             productingredient['qty'] = real_quantity;
-                             ingredients.push(productingredient);
-                             //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
-                         }
-                         else{
-                             var productproduct = new Object();
-                             productproduct['sync_id'] = ingId;
-                             productproduct['qty'] = real_quantity;
-                             otherproducts.push(productproduct);
-                             //armar vector de objectos [{sync_id: xx, qty: xxx},{...}]
-                         }
-
+                         var ingredient = new Object();
+                         ingredient['sync_id'] = ingId;
+                         ingredient['qty'] = real_quantity;
+                         ingredients.push(ingredient);
                      });
-
-
             var fields = "{" +
               "\"name\":"+$("[name='name']").val()+
-              ",\"category_id\":"+$("#select-category option:selected").val()+
               ",\"cost\":"+cost+
               ",\"price\":"+price+
               ",\"tax_id\":"+tax+
               ",\"automatic_cost\":"+0+
               ",\"ingredients\":"+JSON.stringify(ingredients)+
-              ",\"products\":"+JSON.stringify(otherproducts)+
+              ",\"products\":"+JSON.stringify(products)+
               "}";
 
             return  $.ajax({
                 type: "POST",
                 url: url,
                 data:{table:table,row_id:rowid,sync_id:syncrowid,sync_row_id:syncrowid,fields:fields},
-                dataType: 'json'
+                dataType : 'json'
             }).promise();
         }
-
-        function saveSpecialRow(product){
+        function saveMultiRow(table,ingredient, quantity, product){
             var url = "${createLink(controller: 'company',action: 'saveRow')}";
-            var table = 'special_product';
+            var table = table;
             var rowid = '0';
-            var syncrowid = ${special ?: 0};
-            var unit = $( "#ing_units option:selected" ).val();
+            var syncrowid = '0';
+
+                /*agregar ingredient_product*/
+
+
             var fields = "{" +
-             "\"name\":"+$("[name='name']").val()+
-              ",\"product_id\":"+product+
-              ",\"unit_id\":"+unit+
+              "\"product_id\":"+product+
+              ",\"ingredient_id\":"+ingredient+
+              ",\"qty\":"+quantity+
               "}";
+
             return  $.ajax({
                 type: "POST",
                 url: url,
-                data:{table:table,row_id:rowid,sync_id:syncrowid,sync_row_id:syncrowid,fields:fields},
+                data:{table:table,row_id:rowid,sync_row_id:syncrowid,fields:fields},
                 dataType: 'json'
             }).promise();
         }
+
+
         function fetchProperty(table){
           var url = "${createLink(controller: 'company',action: 'fetchProperty')}";
             return  $.ajax({
