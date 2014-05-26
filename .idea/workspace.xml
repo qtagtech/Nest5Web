@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/grails-app/views/user/feed.gsp" line="940" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" afterPath="$PROJECT_DIR$/newNest5-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newNest5.iml" afterPath="$PROJECT_DIR$/newNest5.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/company/products.gsp" afterPath="$PROJECT_DIR$/grails-app/views/company/products.gsp" />
-    </list>
+    <list default="true" id="010728a4-c4fd-422e-a0b2-50803e64c4e1" name="Default" comment="" />
     <ignored path="newNest5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -76,7 +71,7 @@
       <file leaf-file-name="products.gsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/views/company/products.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="0" selection-start="7102" selection-end="7102" vertical-scroll-proportion="0.90710384" vertical-offset="1725" max-vertical-offset="2380">
+            <state line="121" column="0" selection-start="7102" selection-end="7102" vertical-scroll-proportion="0.77751756" vertical-offset="1725" max-vertical-offset="2380">
               <folding />
             </state>
           </provider>
@@ -543,12 +538,12 @@
       <workItem from="1398305242693" duration="674000" />
       <workItem from="1398443966676" duration="762000" />
       <workItem from="1399665910010" duration="2676000" />
-      <workItem from="1399739865603" duration="2904000" />
+      <workItem from="1399739865603" duration="3616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126090000" />
+    <option name="totallyTimeSpent" value="126802000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -584,12 +579,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15686275" sideWeight="0.11178248" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2205438" sideWeight="0.7382892" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3763021" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3763021" sideWeight="0.8882175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -788,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/company/products.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="7102" selection-end="7102" vertical-scroll-proportion="0.90710384" vertical-offset="1725" max-vertical-offset="2380">
+        <state line="121" column="0" selection-start="7102" selection-end="7102" vertical-scroll-proportion="0.77751756" vertical-offset="1725" max-vertical-offset="2380">
           <folding />
         </state>
       </provider>
