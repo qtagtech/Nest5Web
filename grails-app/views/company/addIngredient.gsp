@@ -345,6 +345,7 @@
             var priceperunit = 0;
             if($('#is_sellable').bootstrapSwitch('state')){
                  sellquantity = parseFloat($("#sell_quantity").val()) * parseFloat($("#sell_multipliers option:selected").val());
+                 console.log("valores: "+parseFloat($("#sell_quantity").val()) +" --- "+parseFloat($("#sell_multipliers option:selected").val()));
                  priceperunit = parseFloat($("#price").val()) / sellquantity;
             }
             var unit = $("#units option:selected").val();

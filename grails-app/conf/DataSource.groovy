@@ -27,8 +27,16 @@ environments {
     }
     test {
         dataSource {
+            //dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            //url = "jdbc:h2:mem:devDb;MVCC=TRUE"
             dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE"
+            driverClassName = "org.postgresql.Driver"
+            dialect = "org.hibernate.dialect.PostgreSQLDialect"
+            url = "jdbc:postgresql://localhost:5432/newNest5DB2"
+            // url = "jdbc:postgresql://192.168.1.76:5432/newNest5DB2" //oficina
+            //url = "jdbc:postgresql://192.168.11.102:5432/newNest5DB2" //casa
+            username = "postgres"
+            password = "qtagtech"
         }
     }
     /*production {

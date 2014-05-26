@@ -83,22 +83,34 @@ environments {
         plugins {
             proxy {
                 proxyScheme = 'http://'
-                proxyHost = '192.168.11.101'
+                proxyHost = '192.168.11.189'
                 proxyPort = '8090'
                 proxyPath = 'Nest5BussinessData'
             }
         }
     }
+    test{
+        grails.logging.jul.usebridge = true
+        grails.serverURL = "http://ec2-54-207-91-12.sa-east-1.compute.amazonaws.com:8080"
+//        grails.serverURL = "http://hookthemapp.localhost.com:8080"
+        grails.app.context = "/nest5"
+        grails.plugins.springsecurity.facebook.appId='550109801691585'
+        grails.plugins.springsecurity.facebook.secret='513001ad6358dbb1cadedc820bd56b07'
+        com.nest5.Nest5Client.bigDataServerURL = "http://bigdata.nest5.com"
+        com.nest5.Nest5Client.bigDataPath = "/"
+        tomcat.deploy.username="admin"
+        tomcat.deploy.password="admin"
+        tomcat.deploy.url="http://ec2-54-207-91-12.sa-east-1.compute.amazonaws.com:8080/manager/text"
+        grails.tomcat.jvmArgs = ["-server", "-XX:MaxPermSize=512m", "-XX:MaxNewSize=256m", "-XX:NewSize=256m",
+                "-Xms768m", "-Xmx1024m", "-XX:SurvivorRatio=128", "-XX:MaxTenuringThsreshold=0",
+                "-XX:+UseTLAB", "-XX:+UseConcMarkSweepGC", "-XX:+CMSClassUnloadingEnabled",
+                "-XX:+CMSIncrementalMode", "-XX:-UseGCOverheadLimit", "-XX:+ExplicitGCInvokesConcurrent"]
+    }
     production {
         grails.logging.jul.usebridge = true
-
         grails.serverURL = "http://nest5.com"
 //        grails.serverURL = "http://hookthemapp.localhost.com:8080"
         grails.app.context = "/"
-        /*grails.plugins.springsecurity.facebook.appId='271254856287847'
-        grails.plugins.springsecurity.facebook.secret='7c38b8935ccfda16f94d8fe7e2c1295a'*/
-        /*grails.plugins.springsecurity.facebook.appId='171676339619557'
-        grails.plugins.springsecurity.facebook.secret='c75f74270ce8dfdb455f05304fa68fc1'*/
         grails.plugins.springsecurity.facebook.appId='550109801691585'
         grails.plugins.springsecurity.facebook.secret='513001ad6358dbb1cadedc820bd56b07'
         com.nest5.Nest5Client.bigDataServerURL = "http://bigdata.nest5.com"

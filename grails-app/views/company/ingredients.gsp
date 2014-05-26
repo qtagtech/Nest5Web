@@ -86,13 +86,13 @@
                                         </thead>
                                         <tbody>
                                         <g:each in="${elements}" status="i" var="element">
-                                            <tr class="<g:if test="${i % 2 == 0}">even</g:if><g:else>odd</g:else> gradeX <g:if test="${element?.fields?.cost_per_unit / element?.fields?.price_per_unit >=1}">success</g:if>">
+                                            <tr class="<g:if test="${i % 2 == 0}">even</g:if><g:else>odd</g:else> gradeX <g:if test="${element?.fields?.cost_per_unit / (((element?.fields?.price_per_unit != "NaN") && (element?.fields?.price_per_unit != 0)) ? element?.fields?.price_per_unit : 1) >=1}">success</g:if>">
                                                 <td>${element?.fields?.name}</td>
                                                 <td><g:formatDate date="${element?.timeCreated}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
                                                 <td><g:formatDate date="${element?.timeReceived}" type="datetime" style="LONG" timeStyle="SHORT" locale="es_CO"/></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.price_per_unit}" type="currency" currencyCode="COP" locale="es_CO" /></td>
-                                                <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit / ((element?.fields?.price_per_unit != "NaN") && (elemen?.fields?.price_per_unit != 0))}" type="number" maxFractionDigits="2" /></td>
+                                                <td class="center"><g:formatNumber number="${element?.fields?.cost_per_unit / ((element?.fields?.price_per_unit != "NaN") && (element?.fields?.price_per_unit != 0))}" type="number" maxFractionDigits="2" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.quantity}" type="number" maxFractionDigits="2" /></td>
                                                 <td class="center"><g:formatNumber number="${element?.fields?.price_per_unit * element?.fields?.quantity}" type="currency" currencyCode="COP" locale="es_CO" /></td>
                                                 <td>
