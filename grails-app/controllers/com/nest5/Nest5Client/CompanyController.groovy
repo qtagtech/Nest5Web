@@ -22,7 +22,7 @@ class CompanyController {
     def companyService
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def beforeInterceptor = [action:this.&registerDevice,except:'chat,clients,complementary,create,delete,demographics,edit,findCompanies,firstInteraction,index,interactions,list,manualSave,messages,messageUser,panel,save,selectUsers,show,showAllClients,showClients,showCompanies,update']
+    //def beforeInterceptor = [action:this.&registerDevice,except:'chat,clients,complementary,create,delete,demographics,edit,findCompanies,firstInteraction,index,interactions,list,manualSave,messages,messageUser,panel,save,selectUsers,show,showAllClients,showClients,showCompanies,update']
 
     @Secured(["ROLE_ADMIN"])
     def index() {
