@@ -63,3 +63,13 @@ com_crashlytics_export_strings.xml
 
 # "temporary" build files
 /target
+.idea/workspace.xml
+target/classes/com/nest5/Nest5Client/MySecurityEventListener.class
+target/classes/gsp/views.properties
+target/classes/gsp/views.properties
+target/classes/gsp_newNest5_companyproducts_gsp$_run_closure2.class
+target/classes/gsp_newNest5_companyproducts_gsp$_run_closure2.class
+target/classes/gsp_newNest5_companyproducts_gsp.class
+target/classes/gsp_newNest5_companyproducts_gsp_html.data
+target/classes/gsp_newNest5_companyproducts_gsp_linenumbers.data
+target/classes/resources.class
